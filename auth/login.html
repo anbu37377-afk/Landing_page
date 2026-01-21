@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - NovaSaaS</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script defer src="../assets/js/app.js"></script>
+</head>
+<body>
+
+<div class="auth-wrap">
+  <div class="card auth-card">
+    <div class="row">
+      <a class="brand" href="../index.html">
+        <div class="logo"></div><span>NovaSaaS</span>
+      </a>
+      <a class="btn btn-ghost" href="../index.html">Back to Website</a>
+    </div>
+
+    <h2 style="margin-top:16px;">Login to your SaaS account</h2>
+    <p class="lead">
+      Access your dashboard, manage your account, and track SaaS growth performance.
+    </p>
+
+    <form class="form" onsubmit="handleLogin(event)">
+      <input class="input" id="email" type="email" placeholder="Business Email" required />
+      <input class="input" id="password" type="password" placeholder="Password" required />
+      <button class="btn btn-primary" type="submit">Login to Dashboard</button>
+
+      <!-- Divider -->
+      <div class="divider">
+        <span>OR</span>
+      </div>
+
+      <!-- Social Logins -->
+      <button type="button" class="btn btn-social google" onclick="googleLoginDemo()">
+        <span class="social-icon">G</span> Continue with Google
+      </button>
+
+      <button type="button" class="btn btn-social facebook" onclick="facebookLoginDemo()">
+        <span class="social-icon">f</span> Continue with Facebook
+      </button>
+
+      <p class="small">
+        New to NovaSaaS?
+        <a href="./signup.html" style="color:var(--accent); font-weight:800;">Create an account</a>
+      </p>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

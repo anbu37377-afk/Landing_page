@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaSaaS - Blog</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body onload="updateNavbarAuth()">
+
+<header class="navbar">
+  <div class="container navbar-inner">
+    <a class="brand" href="index.html"><div class="logo"></div><span>NovaSaaS</span></a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home 1</a>
+      <a href="home2.html">Home 2</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div id="navAuthArea" class="nav-links"></div>
+  </div>
+</header>
+
+<main class="container section">
+  <!-- BLOG HEADER -->
+  <h2>SaaS Startup Blog</h2>
+  <p class="lead">
+    Learn SaaS growth strategies, MVP launch tips, user onboarding, pricing models, and product marketing.
+  </p>
+
+  <!-- BLOG CATEGORIES -->
+  <div class="badges" style="margin-top:14px;">
+    <div class="badge">🚀 SaaS Launch</div>
+    <div class="badge">📈 Growth</div>
+    <div class="badge">💳 Pricing</div>
+    <div class="badge">🧠 Product</div>
+    <div class="badge">🔍 SEO</div>
+    <div class="badge">📊 Analytics</div>
+  </div>
+
+  <!-- POSTS GRID -->
+  <div class="posts" style="margin-top:16px;">
+
+    <div class="card post">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="blog image">
+      <h3>How to Validate Your SaaS MVP</h3>
+      <p>
+        Validate your SaaS idea using a landing page, waitlist, and customer interviews before building.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="blog-details.html">Read More</a>
+      </div>
+    </div>
+
+    <div class="card post">
+      <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80" alt="blog image">
+      <h3>Landing Page Copy That Converts</h3>
+      <p>
+        Learn how to write a SaaS headline, value proposition, and CTA that increases signup conversions.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="blog-details.html">Read More</a>
+      </div>
+    </div>
+
+    <div class="card post">
+      <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80" alt="blog image">
+      <h3>SaaS Pricing Models That Work</h3>
+      <p>
+        Freemium vs trial vs tiered pricing — choose the best SaaS pricing strategy to grow revenue.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="blog-details.html">Read More</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FEATURED ARTICLE -->
+  <section class="section">
+    <div class="hero-grid">
+      <div class="card">
+        <div class="tag">🔥 Featured Article</div>
+        <h2 style="margin-top:12px;">User Onboarding Checklist for SaaS Startups</h2>
+        <p class="lead">
+          The first 5 minutes decide if a user stays or leaves.
+          Learn how top SaaS companies onboard new users and increase retention.
+        </p>
+
+        <ul class="ul">
+          <li>Clear first-step onboarding screen</li>
+          <li>Show product value quickly (aha moment)</li>
+          <li>Simple UI walkthrough</li>
+          <li>Email follow-up & support</li>
+        </ul>
+
+        <div class="hero-actions">
+          <a class="btn btn-accent" href="blog-details.html">Read Featured Post</a>
+          <a class="btn btn-ghost" href="services.html">Improve Your SaaS</a>
+        </div>
+      </div>
+
+      <div class="card hero-image">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="SaaS onboarding">
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR TOPICS -->
+  <section class="section">
+    <h2>Popular topics for SaaS founders</h2>
+    <p class="lead">Quick guides and strategies used by successful SaaS teams.</p>
+
+    <div class="grid-3">
+      <div class="card feature">
+        <div class="icon-pill">📌</div>
+        <h3>MVP Launch</h3>
+        <p>How to build and launch quickly without wasting time or budget.</p>
+      </div>
+
+      <div class="card feature">
+        <div class="icon-pill">📈</div>
+        <h3>Growth Playbook</h3>
+        <p>Improve conversions, onboarding, and retention using simple growth systems.</p>
+      </div>
+
+      <div class="card feature">
+        <div class="icon-pill">💰</div>
+        <h3>Pricing & Revenue</h3>
+        <p>Choose the best SaaS pricing model and optimize revenue with tiers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="section">
+    <div class="card cta">
+      <div>
+        <h2>Get weekly SaaS growth tips</h2>
+        <p class="lead">Join the newsletter and receive marketing + product insights every week.</p>
+      </div>
+
+      <button class="btn btn-accent" onclick="alert('Subscribed ✅ (Demo)')">Subscribe Now</button>
+    </div>
+
+    <p class="small" style="margin-top:10px;">
+      Newsletter is demo. You can connect real email subscription later.
+    </p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container row">
+    <span>© 2026 NovaSaaS</span>
+    <span>SaaS Startup Blog Module</span>
+  </div>
+</footer>
+
+</body>
+</html>

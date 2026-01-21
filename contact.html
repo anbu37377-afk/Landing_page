@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaSaaS - Contact</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body onload="updateNavbarAuth()">
+
+<header class="navbar">
+  <div class="container navbar-inner">
+    <a class="brand" href="index.html"><div class="logo"></div><span>NovaSaaS</span></a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home 1</a>
+      <a href="home2.html">Home 2</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div id="navAuthArea" class="nav-links"></div>
+  </div>
+</header>
+
+<main class="container section">
+  <!-- CONTACT FORM -->
+  <div class="card">
+    <h2>Contact & Support</h2>
+    <p class="lead">
+      Have questions about NovaSaaS? Send us a message and our team will reply within 24 hours.
+      You can contact us for support, sales, pricing, or custom SaaS website setup.
+    </p>
+
+    <form class="form" onsubmit="event.preventDefault(); alert('Thanks! Your message has been sent ✅'); this.reset();">
+      <input class="input" placeholder="Full Name" required />
+      <input class="input" type="email" placeholder="Business Email" required />
+      <textarea class="input" placeholder="Tell us what you need (support / pricing / custom SaaS setup)..." rows="6" required></textarea>
+
+      <button class="btn btn-primary" type="submit">Send Message</button>
+
+      <p class="small">
+        This is a frontend demo contact form. (You can connect it to EmailJS / backend later.)
+      </p>
+    </form>
+  </div>
+
+  <!-- SUPPORT CHANNELS -->
+  <section class="section">
+    <h2>Support Channels</h2>
+    <p class="lead">Choose the best way to reach us for help or business inquiries.</p>
+
+    <div class="grid-3">
+      <div class="card feature">
+        <div class="icon-pill">📧</div>
+        <h3>Email Support</h3>
+        <p>Send issues/questions and we respond within 24 hours.</p>
+        <div class="badges">
+          <div class="badge">support@novasaas.com</div>
+        </div>
+      </div>
+
+      <div class="card feature">
+        <div class="icon-pill">💬</div>
+        <h3>Live Chat</h3>
+        <p>Fast chat support for startups launching MVP quickly.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="alert('Live chat demo ✅')">Start Chat</button>
+        </div>
+      </div>
+
+      <div class="card feature">
+        <div class="icon-pill">📞</div>
+        <h3>Sales Call</h3>
+        <p>Need a custom SaaS build or upgrade? Let’s discuss your requirements.</p>
+        <div class="badges">
+          <div class="badge">+91 98765 43210</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SALES / PRICING HELP -->
+  <section class="section">
+    <div class="card">
+      <h2>Sales & Pricing Help</h2>
+      <p class="lead">
+        Want a custom SaaS landing page, dashboard, or growth setup?
+        Our team can help you choose the best plan and modules.
+      </p>
+
+      <div class="grid-3" style="margin-top:14px;">
+        <div class="card feature">
+          <div class="icon-pill">💳</div>
+          <h3>Pricing</h3>
+          <p>Understand plans, add-ons, and customization pricing.</p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon-pill">⚙️</div>
+          <h3>Custom Build</h3>
+          <p>Need extra pages, integration, or advanced dashboard features? We can build it.</p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon-pill">🚀</div>
+          <h3>Launch Support</h3>
+          <p>We help deploy on Netlify, Vercel, Hostinger, GitHub Pages, and more.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK FAQ -->
+  <section class="section">
+    <h2>Quick Support FAQ</h2>
+    <p class="lead">Fast answers to the most common SaaS startup questions.</p>
+
+    <div class="grid-3">
+      <div class="card feature">
+        <h3>Do you provide hosting?</h3>
+        <p>You can host anywhere (Netlify, Vercel, GitHub Pages, Hostinger). Hosting is not included.</p>
+      </div>
+
+      <div class="card feature">
+        <h3>Is login system real?</h3>
+        <p>Current auth is demo-based (LocalStorage). Can integrate Firebase/Auth0 for real OAuth login.</p>
+      </div>
+
+      <div class="card feature">
+        <h3>Can we customize branding?</h3>
+        <p>Yes ✅ logo, text, colors, layout, and modules can be customized easily.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section">
+    <div class="card cta">
+      <div>
+        <h2>Ready to build your SaaS startup?</h2>
+        <p class="lead">Start free today or explore services to launch professionally.</p>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-accent" href="auth/signup.html">Start Free Trial</a>
+        <a class="btn btn-ghost" href="services.html">View Services</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container row">
+    <span>© 2026 NovaSaaS</span>
+    <span>SaaS Startup Contact Module</span>
+  </div>
+</footer>
+
+</body>
+</html>

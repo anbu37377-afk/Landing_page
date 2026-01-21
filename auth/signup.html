@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - NovaSaaS</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script defer src="../assets/js/app.js"></script>
+</head>
+<body>
+
+<div class="auth-wrap">
+  <div class="card auth-card">
+    <div class="row">
+      <a class="brand" href="../index.html">
+        <div class="logo"></div><span>NovaSaaS</span>
+      </a>
+      <a class="btn btn-ghost" href="../index.html">Back to Website</a>
+    </div>
+
+    <h2 style="margin-top:16px;">Create your SaaS account</h2>
+    <p class="lead">
+      Start your free trial and access the NovaSaaS dashboard to manage your startup workspace.
+    </p>
+
+    <form class="form" onsubmit="handleSignup(event)">
+      <input class="input" id="name" placeholder="Full Name" required />
+      <input class="input" id="email" type="email" placeholder="Business Email" required />
+      <input class="input" id="password" type="password" placeholder="Create Password" minlength="4" required />
+
+      <button class="btn btn-primary" type="submit">Start Free Trial</button>
+
+      <p class="small">
+        Already have an account?
+        <a href="./login.html" style="color:var(--accent); font-weight:800;">Login</a>
+      </p>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
