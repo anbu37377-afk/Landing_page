@@ -7,18 +7,21 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <script defer src="assets/js/app.js"></script>
 </head>
+
 <body onload="updateNavbarAuth()">
 
 <header class="navbar">
   <div class="container navbar-inner">
-    <a class="brand" href="index.html"><div class="logo"></div><span>NovaSaaS</span></a>
+    <a class="brand" href="index.html">
+      <div class="logo"></div><span>NovaSaaS</span>
+    </a>
 
     <nav class="nav-links">
       <a href="index.html">Home 1</a>
       <a href="home2.html">Home 2</a>
       <a href="services.html">Services</a>
       <a href="blog.html">Blog</a>
-      <a href="about.html">About</a>
+      <a href="about.html" class="active">About</a>
       <a href="contact.html">Contact</a>
     </nav>
 
@@ -27,60 +30,77 @@
 </header>
 
 <main class="container section">
-  <!-- ABOUT INTRO -->
-  <div class="card">
-    <h2>About NovaSaaS</h2>
-    <p class="lead">
-      NovaSaaS is a modern SaaS startup platform built to help founders launch faster.
-      From landing page to login system and dashboard, everything is designed to support MVP launches and growth.
-      Our goal is to provide a clean, startup-ready experience that converts visitors into customers.
-    </p>
 
-    <div class="grid-3">
-
-      <div class="card feature">
-        <div class="icon-pill">🎯</div>
-        <h3>Our Mission</h3>
-        <p>
-          Help SaaS founders and startup teams launch professional websites with high conversion and strong user experience.
-        </p>
-      </div>
-
-      <div class="card feature">
-        <div class="icon-pill">💡</div>
-        <h3>Our Vision</h3>
-        <p>
-          Make SaaS product launches faster and easier — with simple design, smart features, and scalable structure.
-        </p>
-      </div>
-
-      <div class="card feature">
-        <div class="icon-pill">🧩</div>
-        <h3>Our Values</h3>
-        <p>
-          Simplicity, speed, performance, and user-first product thinking — everything we build supports real growth.
-        </p>
-      </div>
-
+  <!-- PAGE HEADER -->
+  <div class="page-title">
+    <div>
+      <h2>About NovaSaaS</h2>
+      <p class="lead">
+        NovaSaaS is built for SaaS founders who want to launch faster with a modern landing page,
+        login/signup flow, and dashboard UI experience.
+      </p>
     </div>
+    <div class="tag">✨ Startup Story</div>
   </div>
 
-  <!-- OUR STORY -->
+  <!-- ABOUT INTRO -->
+  <section class="section" style="padding-top:18px;">
+    <div class="card">
+      <h2>What is NovaSaaS?</h2>
+      <p class="lead">
+        NovaSaaS is a modern SaaS startup landing page + dashboard template.
+        It includes complete modules: Home pages, Services, Blog, About, Contact,
+        plus user signup/login and a protected dashboard.
+      </p>
+
+      <div class="grid-3">
+        <div class="card feature">
+          <div class="icon-pill">🎯</div>
+          <h3>Mission</h3>
+          <p>
+            Help SaaS founders and startup teams launch professional websites that convert visitors into users.
+          </p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon-pill">💡</div>
+          <h3>Vision</h3>
+          <p>
+            Make SaaS product launches faster and easier — with clean UI, smart pages, and scalable structure.
+          </p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon-pill">🧩</div>
+          <h3>Values</h3>
+          <p>
+            Simplicity, speed, trust, performance, and user-first product thinking.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
   <section class="section">
     <div class="hero-grid">
       <div class="card">
         <h2>Our Story</h2>
         <p class="lead">
-          NovaSaaS started with one simple idea: SaaS founders shouldn’t waste weeks building landing pages.
-          Most startups fail because they launch late or communicate value poorly.
-          We created NovaSaaS so founders can launch faster with professional modules already built.
+          NovaSaaS started because most SaaS founders waste weeks building websites instead of validating products.
+          Many startups fail not because the product is bad — but because they launch late or their landing page
+          doesn’t explain value clearly.
+        </p>
+
+        <p class="lead" style="margin-top:10px;">
+          We built NovaSaaS to give founders a ready-to-launch structure with professional UI modules.
         </p>
 
         <ul class="ul">
-          <li>Designed specifically for SaaS MVP launches</li>
-          <li>Landing pages focused on conversion</li>
-          <li>Auth + dashboard experience for real SaaS feel</li>
-          <li>Scalable structure for long-term growth</li>
+          <li>Designed for SaaS MVP launch & startup growth</li>
+          <li>Conversion-focused UI sections + strong CTAs</li>
+          <li>Auth + dashboard included for real SaaS feel</li>
+          <li>Easy to customize branding, colors, content and images</li>
         </ul>
 
         <div class="hero-actions">
@@ -90,33 +110,69 @@
       </div>
 
       <div class="card hero-image">
-        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="team working">
+        <img
+          src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
+          alt="team working"
+        >
       </div>
     </div>
   </section>
 
-  <!-- WHY CHOOSE US -->
+  <!-- WHY CHOOSE -->
   <section class="section">
     <h2>Why founders choose NovaSaaS</h2>
-    <p class="lead">We focus on the things that matter most for SaaS success.</p>
+    <p class="lead">We focus on the key elements that matter most for SaaS success.</p>
 
     <div class="grid-3">
       <div class="card feature">
         <div class="icon-pill">⚡</div>
         <h3>Fast Launch</h3>
-        <p>Launch your SaaS MVP website in minutes — without building everything from zero.</p>
+        <p>Launch your SaaS MVP website in minutes — without building everything from scratch.</p>
       </div>
 
       <div class="card feature">
         <div class="icon-pill">✅</div>
-        <h3>Conversion Focused</h3>
-        <p>Strong CTAs, clean UI, and trust sections designed to increase SaaS signups.</p>
+        <h3>Conversion Optimized</h3>
+        <p>Landing sections and CTA layout designed to increase signups and user trust.</p>
       </div>
 
       <div class="card feature">
         <div class="icon-pill">🔒</div>
-        <h3>Secure Experience</h3>
-        <p>Login/signup + protected dashboard module provides real SaaS product structure.</p>
+        <h3>Real SaaS Feel</h3>
+        <p>Signup/Login + protected dashboard gives the website a true SaaS app experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS / TIMELINE -->
+  <section class="section">
+    <div class="card">
+      <div class="row" style="align-items:center;">
+        <div>
+          <h2>How NovaSaaS helps startups</h2>
+          <p class="lead">A simple approach that matches SaaS growth journey.</p>
+        </div>
+        <div class="tag">🚀 Launch System</div>
+      </div>
+
+      <div class="grid-3" style="margin-top:14px;">
+        <div class="card feature">
+          <div class="icon-pill">1</div>
+          <h3>Launch MVP</h3>
+          <p>Create a landing page + collect leads and signups quickly.</p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon-pill">2</div>
+          <h3>Build Trust</h3>
+          <p>Add pricing, blog posts, testimonials and service proof sections.</p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon-pill">3</div>
+          <h3>Scale Growth</h3>
+          <p>Use dashboard + analytics layout to track conversions and optimize performance.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -124,30 +180,30 @@
   <!-- TEAM -->
   <section class="section">
     <h2>Our Team</h2>
-    <p class="lead">A small team focused on design, product, and growth for startups.</p>
+    <p class="lead">A small team focused on SaaS design, UI engineering, and growth strategy.</p>
 
     <div class="grid-3">
       <div class="card feature">
         <div class="icon-pill">👨‍💻</div>
         <h3>Product & UI</h3>
-        <p>We design clean startup UI systems that improve clarity and user experience.</p>
+        <p>We design modern SaaS UI that improves clarity and user experience.</p>
       </div>
 
       <div class="card feature">
         <div class="icon-pill">⚙️</div>
         <h3>Engineering</h3>
-        <p>We build fast, responsive modules with optimized performance and clean structure.</p>
+        <p>Fast responsive modules with optimized performance and clean code structure.</p>
       </div>
 
       <div class="card feature">
         <div class="icon-pill">📈</div>
         <h3>Growth</h3>
-        <p>We apply SaaS marketing strategy and conversion design that increases signups.</p>
+        <p>Conversion-focused marketing & onboarding strategy for SaaS founders.</p>
       </div>
     </div>
   </section>
 
-  <!-- COMPANY METRICS -->
+  <!-- METRICS -->
   <section class="section">
     <div class="card">
       <div class="row" style="align-items:center;">
@@ -175,7 +231,7 @@
     </div>
   </section>
 
-  <!-- FINAL CTA -->
+  <!-- CTA -->
   <section class="section">
     <div class="card cta">
       <div>
@@ -188,10 +244,57 @@
 
 </main>
 
-<footer class="footer">
-  <div class="container row">
-    <span>© 2026 NovaSaaS</span>
-    <span>SaaS Startup About Module</span>
+<!-- ✅ Premium Footer -->
+<footer class="footer-pro">
+  <div class="container footer-grid">
+
+    <div class="footer-brand">
+      <div class="brand">
+        <div class="logo"></div>
+        <span>NovaSaaS</span>
+      </div>
+      <p class="small" style="margin-top:10px; line-height:1.7;">
+        NovaSaaS is a startup-ready landing + dashboard UI template built to help SaaS founders launch faster.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <h3 style="margin-bottom:10px;">Quick Links</h3>
+      <a href="index.html" class="footer-link">Home 1</a>
+      <a href="home2.html" class="footer-link">Home 2</a>
+      <a href="services.html" class="footer-link">Services</a>
+      <a href="blog.html" class="footer-link">Blog</a>
+    </div>
+
+    <div class="footer-links">
+      <h3 style="margin-bottom:10px;">Support</h3>
+      <a href="contact.html" class="footer-link">Contact</a>
+      <a href="about.html" class="footer-link">About</a>
+      <a href="auth/login.html" class="footer-link">Login</a>
+      <a href="auth/signup.html" class="footer-link">Sign Up</a>
+    </div>
+
+    <div class="footer-links">
+      <h3 style="margin-bottom:10px;">Connect</h3>
+      <div class="badges">
+        <div class="badge">support@novasaas.com</div>
+        <div class="badge">+91 98765 43210</div>
+      </div>
+
+      <div style="margin-top:12px; display:flex; gap:10px;">
+        <a class="social-btn" href="#" onclick="alert('Demo Link ✅')">🌐</a>
+        <a class="social-btn" href="#" onclick="alert('Demo Link ✅')">💼</a>
+        <a class="social-btn" href="#" onclick="alert('Demo Link ✅')">🐦</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container" style="margin-top:18px; border-top:1px solid var(--border); padding-top:14px;">
+    <div class="row">
+      <span>© 2026 NovaSaaS. All rights reserved.</span>
+      <span class="small">SaaS Startup About Module</span>
+    </div>
   </div>
 </footer>
 

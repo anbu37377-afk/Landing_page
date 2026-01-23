@@ -7,182 +7,157 @@
   <link rel="stylesheet" href="../assets/css/style.css" />
   <script defer src="../assets/js/app.js"></script>
 </head>
+
 <body>
 
-<header class="navbar">
-  <div class="container navbar-inner">
+<div class="dashboard-layout">
+
+  <!-- ✅ SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
     <a class="brand" href="../index.html">
-      <div class="logo"></div><span>NovaSaaS</span>
+      <div class="logo"></div>
+      <span>NovaSaaS</span>
     </a>
 
-    <div class="nav-links">
-      <a class="btn btn-ghost" href="../index.html">Back to Website</a>
-      <button class="btn btn-accent" onclick="logout()">Logout</button>
+    <div class="sidebar-links">
+      <a class="active" href="dashboard.html">📊 Dashboard</a>
+      <a href="../services.html">🛠 Services</a>
+      <a href="../blog.html">📝 Blog</a>
+      <a href="../contact.html">💬 Support</a>
+      <a href="../index.html">🌍 Back Website</a>
+
+      <!-- ✅ logout button -->
+      <button class="btn btn-accent" style="margin-top:10px; width:100%;" onclick="logout()">🚪 Logout</button>
+
+      <!-- ✅ theme toggle -->
+      <button class="btn btn-theme" style="margin-top:10px; width:100%;" onclick="toggleTheme()">🌓 Toggle Theme</button>
     </div>
-  </div>
-</header>
+  </aside>
 
-<main class="container section">
-  <div class="card">
-    <h2>SaaS Dashboard</h2>
-    <p class="lead">
-      Welcome to your workspace dashboard. This area is protected — only logged-in users can access it.
-    </p>
+  <!-- ✅ MAIN CONTENT -->
+  <main class="dashboard-main">
 
-    <!-- KPI -->
-    <div class="kpi-grid">
-      <div class="card kpi">
-        <p class="small">Total Users</p>
-        <strong>1,248</strong>
-      </div>
-      <div class="card kpi">
-        <p class="small">Monthly Revenue (MRR)</p>
-        <strong>$9,320</strong>
-      </div>
-      <div class="card kpi">
-        <p class="small">Signup Conversion</p>
-        <strong>12.6%</strong>
-      </div>
-    </div>
+    <!-- ✅ Mobile Menu Toggle -->
+    <button class="btn btn-ghost sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
 
-    <!-- PROFILE -->
-    <div style="margin-top:16px;" class="card">
-      <h3>Account Profile</h3>
-      <p id="userArea" class="lead"></p>
-      <p class="small">
-        This is a demo SaaS dashboard (HTML/CSS/JS). You can connect a backend later for real database users and analytics.
+    <!-- ✅ Dashboard Header -->
+    <div class="card">
+      <h2>SaaS Dashboard</h2>
+      <p class="lead">
+        Welcome to your startup workspace dashboard. This page is protected — only logged-in users can access it.
       </p>
 
-      <div class="hero-actions" style="margin-top:12px;">
-        <a class="btn btn-primary" href="../services.html">Upgrade Services</a>
-        <a class="btn btn-ghost" href="../contact.html">Contact Support</a>
+      <!-- ✅ KPI CARDS -->
+      <div class="kpi-grid">
+        <div class="card kpi">
+          <p class="small">Total Users</p>
+          <strong>1,248</strong>
+        </div>
+        <div class="card kpi">
+          <p class="small">Monthly Revenue (MRR)</p>
+          <strong>$9,320</strong>
+        </div>
+        <div class="card kpi">
+          <p class="small">Signup Conversion</p>
+          <strong>12.6%</strong>
+        </div>
       </div>
+
+      <!-- ✅ PROFILE -->
+      <div style="margin-top:16px;" class="card">
+        <h3>Account Profile</h3>
+        <p id="userArea" class="lead"></p>
+        <p class="small">
+          This is a frontend demo SaaS dashboard (HTML/CSS/JS). You can connect backend later for real analytics.
+        </p>
+      </div>
+
+      <!-- ✅ QUICK ACTIONS -->
+      <div style="margin-top:16px;" class="card">
+        <h3>Quick Actions</h3>
+        <p class="lead">Use quick actions to manage your SaaS startup faster.</p>
+
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="alert('Feature Coming Soon ✅')">Create Campaign</button>
+          <button class="btn btn-ghost" onclick="alert('Feature Coming Soon ✅')">Invite Member</button>
+          <button class="btn btn-ghost" onclick="alert('Feature Coming Soon ✅')">View Analytics</button>
+        </div>
+
+        <p class="small" style="margin-top:10px;">
+          These are demo buttons. You can connect real features using Firebase/Auth0 later.
+        </p>
+      </div>
+
+      <!-- ✅ RECENT ACTIVITY -->
+      <div style="margin-top:16px;" class="card">
+        <h3>Recent Activity</h3>
+        <p class="lead">Latest updates from your SaaS workspace.</p>
+
+        <div class="grid-3" style="margin-top:14px;">
+          <div class="card feature">
+            <div class="icon-pill">✅</div>
+            <h3>Signup Successful</h3>
+            <p>Your account was created and dashboard access is active.</p>
+            <p class="small">Just Now</p>
+          </div>
+
+          <div class="card feature">
+            <div class="icon-pill">📈</div>
+            <h3>Conversion Improved</h3>
+            <p>Landing page CTA engagement increased by 8% this week.</p>
+            <p class="small">2 hours ago</p>
+          </div>
+
+          <div class="card feature">
+            <div class="icon-pill">📝</div>
+            <h3>Blog Module Ready</h3>
+            <p>Your SaaS blog pages are ready to publish growth content.</p>
+            <p class="small">Yesterday</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ✅ GROWTH INSIGHTS -->
+      <div style="margin-top:16px;" class="card">
+        <h3>Growth Insights</h3>
+        <p class="lead">Recommended actions to grow your SaaS faster.</p>
+
+        <ul class="ul">
+          <li>Add testimonials + trust badges on homepage to boost signups</li>
+          <li>Use pricing comparison cards to increase upgrades</li>
+          <li>Publish 1 SEO blog per week for traffic growth</li>
+          <li>Simplify onboarding steps to reduce churn</li>
+        </ul>
+
+        <div class="hero-actions" style="margin-top:12px;">
+          <a class="btn btn-primary" href="../blog.html">Read SaaS Blog</a>
+          <a class="btn btn-ghost" href="../services.html">Upgrade Services</a>
+        </div>
+      </div>
+
     </div>
+  </main>
 
-    <!-- QUICK ACTIONS -->
-    <div style="margin-top:16px;" class="card">
-      <h3>Quick Actions</h3>
-      <p class="lead">Manage your SaaS setup faster using quick actions.</p>
-
-      <div class="hero-actions">
-        <button class="btn btn-primary" onclick="alert('Feature Coming Soon ✅')">Create New Campaign</button>
-        <button class="btn btn-ghost" onclick="alert('Feature Coming Soon ✅')">Invite Team Member</button>
-        <button class="btn btn-ghost" onclick="alert('Feature Coming Soon ✅')">View Analytics</button>
-      </div>
-
-      <p class="small" style="margin-top:10px;">
-        These actions are demo buttons. You can connect real features later using backend/Firebase.
-      </p>
-    </div>
-
-    <!-- SUBSCRIPTION PLAN -->
-    <div style="margin-top:16px;" class="card">
-      <div class="row" style="align-items:center;">
-        <div>
-          <h3>Subscription Plan</h3>
-          <p class="lead">Your current SaaS access and plan status.</p>
-        </div>
-        <div class="tag">⭐ Free Trial</div>
-      </div>
-
-      <div class="grid-3" style="margin-top:14px;">
-        <div class="card feature">
-          <div class="icon-pill">💳</div>
-          <h3>Current Plan</h3>
-          <p><b>Startup Trial</b> — Includes dashboard + blog + services modules.</p>
-        </div>
-
-        <div class="card feature">
-          <div class="icon-pill">📅</div>
-          <h3>Trial Ends</h3>
-          <p>In <b>7 days</b>. Upgrade to keep full access and unlock analytics.</p>
-        </div>
-
-        <div class="card feature">
-          <div class="icon-pill">🔐</div>
-          <h3>Access</h3>
-          <p>Protected dashboard access is enabled for your account.</p>
-        </div>
-      </div>
-
-      <div class="hero-actions" style="margin-top:10px;">
-        <a class="btn btn-accent" href="../services.html">Upgrade Plan</a>
-        <a class="btn btn-ghost" href="../contact.html">Talk to Sales</a>
-      </div>
-    </div>
-
-    <!-- RECENT ACTIVITY -->
-    <div style="margin-top:16px;" class="card">
-      <h3>Recent Activity</h3>
-      <p class="lead">Latest actions and performance updates.</p>
-
-      <div class="grid-3" style="margin-top:14px;">
-        <div class="card feature">
-          <div class="icon-pill">✅</div>
-          <h3>Signup Completed</h3>
-          <p>Your account was created successfully and dashboard access is active.</p>
-          <p class="small">Just now</p>
-        </div>
-
-        <div class="card feature">
-          <div class="icon-pill">📈</div>
-          <h3>Conversion Improved</h3>
-          <p>Landing page CTA engagement increased by 8% this week.</p>
-          <p class="small">2 hours ago</p>
-        </div>
-
-        <div class="card feature">
-          <div class="icon-pill">📝</div>
-          <h3>New Blog Published</h3>
-          <p>Your SaaS blog module is ready to publish growth content.</p>
-          <p class="small">Yesterday</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- GROWTH INSIGHTS -->
-    <div style="margin-top:16px;" class="card">
-      <h3>Growth Insights</h3>
-      <p class="lead">Simple recommendations for SaaS founders and teams.</p>
-
-      <ul class="ul">
-        <li>Add testimonials & trust badges on homepage to boost signups</li>
-        <li>Use pricing comparison cards to improve upgrades</li>
-        <li>Publish 1 SEO blog per week for organic traffic growth</li>
-        <li>Simplify onboarding steps to reduce churn</li>
-      </ul>
-
-      <div class="hero-actions" style="margin-top:12px;">
-        <a class="btn btn-primary" href="../blog.html">Read Growth Blog</a>
-        <a class="btn btn-ghost" href="../services.html">Improve Website</a>
-      </div>
-    </div>
-
-    <!-- NOTIFICATIONS -->
-    <div style="margin-top:16px;" class="card">
-      <h3>Product Updates</h3>
-      <p class="lead">Latest improvements and upcoming features.</p>
-
-      <div class="badges" style="margin-top:14px;">
-        <div class="badge">✅ Improved Landing Sections</div>
-        <div class="badge">✅ Social Login UI Added</div>
-        <div class="badge">✅ Blog + Service Details Pages</div>
-        <div class="badge">🚀 Coming Soon: Real OAuth</div>
-      </div>
-
-      <p class="small" style="margin-top:10px;">
-        This dashboard is a UI demo. You can upgrade functionality using Firebase/Auth0 + database later.
-      </p>
-    </div>
-
-  </div>
-</main>
+</div>
 
 <script>
-  // Protect this page
+  // ✅ Protect this page
   const session = requireAuth();
-  document.getElementById("userArea").innerHTML =
-    `<b>User:</b> ${session.name} <br/> <b>Email:</b> ${session.email}`;
+
+  if (session) {
+    document.getElementById("userArea").innerHTML =
+      `<b>User:</b> ${session.name} <br/> <b>Email:</b> ${session.email}`;
+  } else {
+    document.getElementById("userArea").innerHTML = "Session expired. Redirecting...";
+  }
+
+  // ✅ Close sidebar after click (mobile UX)
+  document.querySelectorAll(".sidebar-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      const sidebar = document.getElementById("sidebar");
+      if (sidebar) sidebar.classList.remove("open");
+    });
+  });
 </script>
 
 </body>

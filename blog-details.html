@@ -7,17 +7,20 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <script defer src="assets/js/app.js"></script>
 </head>
+
 <body onload="updateNavbarAuth()">
 
 <header class="navbar">
   <div class="container navbar-inner">
-    <a class="brand" href="index.html"><div class="logo"></div><span>NovaSaaS</span></a>
+    <a class="brand" href="index.html">
+      <div class="logo"></div><span>NovaSaaS</span>
+    </a>
 
     <nav class="nav-links">
       <a href="index.html">Home 1</a>
       <a href="home2.html">Home 2</a>
       <a href="services.html">Services</a>
-      <a href="blog.html">Blog</a>
+      <a href="blog.html" class="active">Blog</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -27,6 +30,8 @@
 </header>
 
 <main class="container section">
+
+  <!-- PAGE TITLE -->
   <div class="page-title">
     <div>
       <h2>SaaS Blog Details</h2>
@@ -36,14 +41,18 @@
   </div>
 
   <div class="detail-layout blog-detail">
+
     <!-- MAIN POST -->
     <article class="card content">
-      <img class="cover" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1400&q=80" alt="blog" />
+      <img class="cover"
+        src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80"
+        alt="blog"
+      />
 
       <h2 style="margin-top:16px;">Landing Page Copy That Converts SaaS Visitors</h2>
       <p class="small">By NovaSaaS Growth Team • Jan 2026 • SaaS Marketing</p>
 
-      <!-- TABLE OF CONTENTS -->
+      <!-- TOC -->
       <div class="card" style="margin-top:16px;">
         <h3>Table of Contents</h3>
         <ul class="ul">
@@ -101,7 +110,7 @@
         <li>Simple pricing + transparent plans</li>
       </ul>
 
-      <!-- QUICK FRAMEWORK -->
+      <!-- FRAMEWORK -->
       <div class="card" style="margin-top:16px;">
         <h3>🚀 Quick Copy Framework (AIDA)</h3>
         <p class="lead" style="margin-top:8px;">
@@ -124,7 +133,7 @@
         <li>Reduce friction: simple signup + short onboarding</li>
       </ul>
 
-      <!-- KEY TAKEAWAYS -->
+      <!-- TAKEAWAYS -->
       <div class="card" style="margin-top:16px;">
         <h3>Key Takeaways</h3>
         <ul class="ul">
@@ -136,11 +145,11 @@
       </div>
 
       <p style="margin-top:12px;">
-        Remember: SaaS marketing is not about writing more words — it’s about writing the right words. When users feel
-        clarity and confidence, conversion happens naturally.
+        Remember: SaaS marketing is not about writing more words — it’s about writing the right words.
+        When users feel clarity and confidence, conversion happens naturally.
       </p>
 
-      <!-- CTA BOX -->
+      <!-- CTA -->
       <div style="margin-top:16px;" class="card">
         <h3>Need a SaaS Landing Page like this?</h3>
         <p class="lead">Explore services and launch your SaaS MVP with login + dashboard modules.</p>
@@ -152,43 +161,45 @@
       </div>
 
       <!-- RELATED POSTS -->
-      <div style="margin-top:16px;">
+      <div style="margin-top:18px;">
         <h3>Related Articles</h3>
+
         <div class="grid-3" style="margin-top:12px;">
-          <div class="card feature">
+          <div class="card feature" style="display:flex; flex-direction:column;">
             <div class="icon-pill">📌</div>
             <h3>Validate SaaS MVP</h3>
-            <p>Learn how to validate product-market fit before building.</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="blog-details.html">Read</a>
+            <p style="flex:1;">Learn how to validate product-market fit before building.</p>
+            <div class="hero-actions" style="margin-top:auto;">
+              <a class="btn btn-primary" style="width:100%; justify-content:center;" href="blog-details.html">Read</a>
             </div>
           </div>
 
-          <div class="card feature">
+          <div class="card feature" style="display:flex; flex-direction:column;">
             <div class="icon-pill">💰</div>
             <h3>SaaS Pricing Strategy</h3>
-            <p>Find the best pricing plan for your SaaS revenue model.</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="blog-details.html">Read</a>
+            <p style="flex:1;">Find the best pricing plan for your SaaS revenue model.</p>
+            <div class="hero-actions" style="margin-top:auto;">
+              <a class="btn btn-primary" style="width:100%; justify-content:center;" href="blog-details.html">Read</a>
             </div>
           </div>
 
-          <div class="card feature">
+          <div class="card feature" style="display:flex; flex-direction:column;">
             <div class="icon-pill">🚀</div>
             <h3>User Onboarding</h3>
-            <p>Improve retention by building a better onboarding experience.</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="blog-details.html">Read</a>
+            <p style="flex:1;">Improve retention by building a better onboarding experience.</p>
+            <div class="hero-actions" style="margin-top:auto;">
+              <a class="btn btn-primary" style="width:100%; justify-content:center;" href="blog-details.html">Read</a>
             </div>
           </div>
         </div>
+
       </div>
     </article>
 
     <!-- SIDEBAR -->
     <aside class="card sidebar-box">
-      <h3>Latest SaaS Articles</h3>
 
+      <h3>Latest SaaS Articles</h3>
       <a class="sidebar-link" href="blog-details.html">✅ Landing Page Copy That Converts</a>
       <a class="sidebar-link" href="blog-details.html">✅ Validate Your SaaS MVP in 7 Days</a>
       <a class="sidebar-link" href="blog-details.html">✅ SaaS Pricing Models That Work</a>
@@ -201,11 +212,17 @@
         <a class="sidebar-link" href="service-details.html">⭐ SEO + SaaS Growth Marketing</a>
       </div>
 
-      <!-- NEWSLETTER -->
+      <!-- NEWSLETTER FIX -->
       <div style="margin-top:14px;" class="card">
         <h3>Weekly SaaS Tips</h3>
-        <p class="lead">Get growth strategies directly in your inbox.</p>
-        <button class="btn btn-accent" style="width:100%;" onclick="alert('Subscribed ✅ (Demo)')">Subscribe</button>
+        <p class="lead">Get strategies directly in your inbox.</p>
+
+        <input class="input" style="margin-top:10px;" placeholder="Enter email" />
+        <button class="btn btn-accent" style="width:100%; margin-top:10px;"
+          onclick="alert('Subscribed ✅ (Demo)')">
+          Subscribe
+        </button>
+
         <p class="small" style="margin-top:10px;">Demo newsletter (connect backend later).</p>
       </div>
 
@@ -217,14 +234,66 @@
         <a class="sidebar-link" href="services.html">📥 MVP Launch Guide</a>
       </div>
 
+      <div style="margin-top:14px;">
+        <a class="btn btn-accent" style="width:100%;" href="auth/signup.html">Start Free Trial</a>
+      </div>
+
     </aside>
   </div>
+
 </main>
 
-<footer class="footer">
-  <div class="container row">
-    <span>© 2026 NovaSaaS</span>
-    <span>SaaS Startup Blog Details Module</span>
+<!-- ✅ Premium Footer -->
+<footer class="footer-pro">
+  <div class="container footer-grid">
+
+    <div class="footer-brand">
+      <div class="brand">
+        <div class="logo"></div>
+        <span>NovaSaaS</span>
+      </div>
+      <p class="small" style="margin-top:10px; line-height:1.7;">
+        NovaSaaS is a startup-ready landing + dashboard UI template built to help SaaS founders launch faster.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <h3 style="margin-bottom:10px;">Quick Links</h3>
+      <a href="index.html" class="footer-link">Home 1</a>
+      <a href="home2.html" class="footer-link">Home 2</a>
+      <a href="services.html" class="footer-link">Services</a>
+      <a href="blog.html" class="footer-link">Blog</a>
+    </div>
+
+    <div class="footer-links">
+      <h3 style="margin-bottom:10px;">Support</h3>
+      <a href="contact.html" class="footer-link">Contact</a>
+      <a href="about.html" class="footer-link">About</a>
+      <a href="auth/login.html" class="footer-link">Login</a>
+      <a href="auth/signup.html" class="footer-link">Sign Up</a>
+    </div>
+
+    <div class="footer-links">
+      <h3 style="margin-bottom:10px;">Connect</h3>
+      <div class="badges">
+        <div class="badge">support@novasaas.com</div>
+        <div class="badge">+91 98765 43210</div>
+      </div>
+
+      <div style="margin-top:12px; display:flex; gap:10px;">
+        <a class="social-btn" href="#" onclick="alert('Demo Link ✅')">🌐</a>
+        <a class="social-btn" href="#" onclick="alert('Demo Link ✅')">💼</a>
+        <a class="social-btn" href="#" onclick="alert('Demo Link ✅')">🐦</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container" style="margin-top:18px; border-top:1px solid var(--border); padding-top:14px;">
+    <div class="row">
+      <span>© 2026 NovaSaaS. All rights reserved.</span>
+      <span class="small">SaaS Startup Blog Details Module</span>
+    </div>
   </div>
 </footer>
 

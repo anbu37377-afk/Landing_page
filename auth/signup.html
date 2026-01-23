@@ -7,10 +7,12 @@
   <link rel="stylesheet" href="../assets/css/style.css" />
   <script defer src="../assets/js/app.js"></script>
 </head>
+
 <body>
 
 <div class="auth-wrap">
   <div class="card auth-card">
+
     <div class="row">
       <a class="brand" href="../index.html">
         <div class="logo"></div><span>NovaSaaS</span>
@@ -24,19 +26,63 @@
     </p>
 
     <form class="form" onsubmit="handleSignup(event)">
+
       <input class="input" id="name" placeholder="Full Name" required />
       <input class="input" id="email" type="email" placeholder="Business Email" required />
       <input class="input" id="password" type="password" placeholder="Create Password" minlength="4" required />
 
+      <p class="small">
+        Password must be at least 4 characters (demo auth system).
+      </p>
+
+      <!-- ✅ Terms Checkbox -->
+      <label class="check-row">
+        <input type="checkbox" id="termsCheck" required />
+        <span class="small">
+          I agree to the
+          <a href="#" onclick="alert('Demo Terms ✅')" style="color:var(--accent); font-weight:800;">Terms</a>
+          and
+          <a href="#" onclick="alert('Demo Privacy ✅')" style="color:var(--accent); font-weight:800;">Privacy Policy</a>.
+        </span>
+      </label>
+
       <button class="btn btn-primary" type="submit">Start Free Trial</button>
+
+      <!-- Divider -->
+      <div class="divider">
+        <span>OR</span>
+      </div>
+
+      <!-- Social Signup -->
+      <button type="button" class="btn btn-social google" onclick="googleLoginDemo()">
+        <span class="social-icon">G</span> Continue with Google
+      </button>
+
+      <button type="button" class="btn btn-social facebook" onclick="facebookLoginDemo()">
+        <span class="social-icon">f</span> Continue with Facebook
+      </button>
 
       <p class="small">
         Already have an account?
         <a href="./login.html" style="color:var(--accent); font-weight:800;">Login</a>
       </p>
     </form>
+
   </div>
 </div>
+
+<!-- ✅ Extra validation -->
+<script>
+  // Add checkbox validation before signup
+  const signupForm = document.querySelector("form");
+  signupForm.addEventListener("submit", function(e){
+    const check = document.getElementById("termsCheck");
+    if(!check.checked){
+      e.preventDefault();
+      alert("Please agree to Terms & Privacy Policy ✅");
+    }
+  });
+</script>
 
 </body>
 </html>

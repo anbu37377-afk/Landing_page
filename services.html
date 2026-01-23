@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <script defer src="assets/js/app.js"></script>
 </head>
+
 <body onload="updateNavbarAuth()">
 
 <header class="navbar">
@@ -18,7 +19,7 @@
     <nav class="nav-links">
       <a href="index.html">Home 1</a>
       <a href="home2.html">Home 2</a>
-      <a href="services.html">Services</a>
+      <a href="services.html" class="active">Services</a>
       <a href="blog.html">Blog</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
@@ -29,140 +30,185 @@
 </header>
 
 <main class="container section">
-  <!-- PAGE TITLE -->
+
+  <!-- PAGE HEADER -->
   <div class="page-title">
     <div>
       <h2>Startup Services</h2>
       <p class="lead">
         Everything your SaaS startup needs — from landing page to dashboard, onboarding, and growth setup.
+        Choose a service to explore details, pricing and FAQs.
       </p>
     </div>
     <div class="tag">🚀 Built for SaaS Founders</div>
   </div>
 
+  <!-- SERVICES HERO -->
+  <section class="section" style="padding-top:18px;">
+    <div class="hero-grid">
+      <div class="card">
+        <h2>Launch faster with SaaS-ready modules</h2>
+        <p class="lead">
+          We provide ready UI modules that look like real SaaS products:
+          landing page, services pages, blog, contact, login/signup, and a protected dashboard.
+        </p>
+
+        <ul class="ul">
+          <li>Modern UI/UX for SaaS landing pages</li>
+          <li>Auth system + dashboard UX</li>
+          <li>Conversion-focused CTAs and trust sections</li>
+          <li>SEO-ready blog module and service details</li>
+        </ul>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="service-details.html">View Service Details</a>
+          <a class="btn btn-ghost" href="contact.html">Talk to Sales</a>
+        </div>
+      </div>
+
+      <div class="card hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1600&q=80"
+          alt="SaaS services team"
+        />
+      </div>
+    </div>
+  </section>
+
   <!-- SERVICES GRID -->
-  <div class="services-grid">
+  <section class="section">
+    <h2>What we offer</h2>
+    <p class="lead">High-impact services designed for SaaS MVP launch and startup growth.</p>
 
-    <div class="card service-card">
-      <div class="icon-pill">🎨</div>
-      <h3>SaaS UI/UX Design</h3>
-      <p>Modern UI for SaaS landing pages, dashboards, onboarding screens, and product flows.</p>
-      <div class="service-meta">
-        <span class="badge">UI</span>
-        <span class="badge">UX</span>
-        <span class="badge">Prototype</span>
+    <div class="services-grid">
+
+      <div class="card service-card">
+        <div class="icon-pill">🎨</div>
+        <h3>SaaS UI/UX Design</h3>
+        <p>Modern UI for SaaS landing pages, dashboards, onboarding screens, and product flows.</p>
+        <div class="service-meta">
+          <span class="badge">UI</span>
+          <span class="badge">UX</span>
+          <span class="badge">Prototype</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="service-details.html">Explore Service</a>
+        </div>
       </div>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="service-details.html">Explore Service</a>
+
+      <div class="card service-card">
+        <div class="icon-pill">⚙️</div>
+        <h3>MVP Website Development</h3>
+        <p>Fast responsive SaaS website using HTML/CSS/JS with clean structure and high performance.</p>
+        <div class="service-meta">
+          <span class="badge">Frontend</span>
+          <span class="badge">Landing</span>
+          <span class="badge">Modules</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="service-details.html">Explore Service</a>
+        </div>
       </div>
+
+      <div class="card service-card">
+        <div class="icon-pill">📊</div>
+        <h3>Dashboard & Analytics Setup</h3>
+        <p>Startup-ready dashboard UI with KPIs and analytics sections to track SaaS growth performance.</p>
+        <div class="service-meta">
+          <span class="badge">Analytics</span>
+          <span class="badge">KPIs</span>
+          <span class="badge">Growth</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="service-details.html">Explore Service</a>
+        </div>
+      </div>
+
+      <div class="card service-card">
+        <div class="icon-pill">🔒</div>
+        <h3>Auth & User Access</h3>
+        <p>Login/signup, protected pages, and onboarding — experience exactly like real SaaS apps.</p>
+        <div class="service-meta">
+          <span class="badge">Security</span>
+          <span class="badge">Auth</span>
+          <span class="badge">Users</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="service-details.html">Explore Service</a>
+        </div>
+      </div>
+
+      <div class="card service-card">
+        <div class="icon-pill">📈</div>
+        <h3>Marketing & SEO Growth</h3>
+        <p>SEO-optimized landing pages + content strategy to drive organic traffic and conversions.</p>
+        <div class="service-meta">
+          <span class="badge">SEO</span>
+          <span class="badge">Content</span>
+          <span class="badge">Leads</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="service-details.html">Explore Service</a>
+        </div>
+      </div>
+
+      <div class="card service-card">
+        <div class="icon-pill">💬</div>
+        <h3>Customer Support Setup</h3>
+        <p>FAQ sections, contact module, onboarding docs and help center structure for SaaS users.</p>
+        <div class="service-meta">
+          <span class="badge">FAQ</span>
+          <span class="badge">Support</span>
+          <span class="badge">Docs</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="service-details.html">Explore Service</a>
+        </div>
+      </div>
+
     </div>
-
-    <div class="card service-card">
-      <div class="icon-pill">⚙️</div>
-      <h3>MVP Website Development</h3>
-      <p>Fast responsive SaaS website using HTML/CSS/JS with clean structure and high performance.</p>
-      <div class="service-meta">
-        <span class="badge">Frontend</span>
-        <span class="badge">Landing</span>
-        <span class="badge">Modules</span>
-      </div>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="service-details.html">Explore Service</a>
-      </div>
-    </div>
-
-    <div class="card service-card">
-      <div class="icon-pill">📊</div>
-      <h3>Dashboard & Analytics Setup</h3>
-      <p>Startup-ready dashboard UI with KPIs and analytics sections to track your SaaS performance.</p>
-      <div class="service-meta">
-        <span class="badge">Analytics</span>
-        <span class="badge">KPIs</span>
-        <span class="badge">Growth</span>
-      </div>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="service-details.html">Explore Service</a>
-      </div>
-    </div>
-
-    <div class="card service-card">
-      <div class="icon-pill">🔒</div>
-      <h3>Auth & User Access</h3>
-      <p>Login/signup, protected pages, and onboarding experience — exactly like real SaaS apps.</p>
-      <div class="service-meta">
-        <span class="badge">Security</span>
-        <span class="badge">Auth</span>
-        <span class="badge">Users</span>
-      </div>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="service-details.html">Explore Service</a>
-      </div>
-    </div>
-
-    <div class="card service-card">
-      <div class="icon-pill">📈</div>
-      <h3>Marketing & SEO Growth</h3>
-      <p>SEO-optimized landing pages + blog content strategy to drive traffic and conversions.</p>
-      <div class="service-meta">
-        <span class="badge">SEO</span>
-        <span class="badge">Content</span>
-        <span class="badge">Leads</span>
-      </div>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="service-details.html">Explore Service</a>
-      </div>
-    </div>
-
-    <div class="card service-card">
-      <div class="icon-pill">💬</div>
-      <h3>Customer Support & Help Center</h3>
-      <p>FAQ sections, contact modules, onboarding docs, and help center structure for SaaS users.</p>
-      <div class="service-meta">
-        <span class="badge">FAQ</span>
-        <span class="badge">Support</span>
-        <span class="badge">Docs</span>
-      </div>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="service-details.html">Explore Service</a>
-      </div>
-    </div>
-
-  </div>
+  </section>
 
   <!-- HOW WE WORK -->
   <section class="section">
     <div class="card">
-      <h2>How we deliver SaaS-ready results</h2>
-      <p class="lead">A simple proven process used by fast-moving startup teams.</p>
+      <div class="row" style="align-items:center;">
+        <div>
+          <h2>How we deliver SaaS-ready results</h2>
+          <p class="lead">A proven process used by fast-moving startup teams.</p>
+        </div>
+        <div class="tag">✅ 3-Step Process</div>
+      </div>
 
-      <div class="grid-3">
+      <div class="grid-3" style="margin-top:14px;">
         <div class="card feature">
           <div class="icon-pill">1</div>
           <h3>Discovery</h3>
-          <p>We understand your SaaS idea, goals, target users, and positioning message.</p>
+          <p>We understand your SaaS idea, goals, target users, and product positioning.</p>
         </div>
 
         <div class="card feature">
           <div class="icon-pill">2</div>
           <h3>Build</h3>
-          <p>We design & develop landing, services, blog, auth pages, dashboard and details layout.</p>
+          <p>We design & develop landing pages, services/blog modules, auth system and dashboard.</p>
         </div>
 
         <div class="card feature">
           <div class="icon-pill">3</div>
           <h3>Launch</h3>
-          <p>We optimize UI for conversions and help you launch quickly with deployment support.</p>
+          <p>We optimize UI for conversions and help you deploy on Netlify/Vercel/GitHub Pages.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SERVICE PACKAGES -->
+  <!-- PACKAGES -->
   <section class="section">
     <h2>Service Packages</h2>
     <p class="lead">Choose a plan depending on where your SaaS startup is right now.</p>
 
     <div class="grid-3">
+
       <div class="card feature">
         <div class="tag">Starter</div>
         <h3 style="margin-top:10px;">Launch Setup</h3>
@@ -171,7 +217,7 @@
         <ul class="ul">
           <li>Landing (Home 1)</li>
           <li>Contact + About</li>
-          <li>Basic SEO</li>
+          <li>Basic SEO Setup</li>
         </ul>
         <div class="hero-actions">
           <a class="btn btn-primary" href="contact.html">Get Starter</a>
@@ -200,13 +246,14 @@
         <p>For growth-ready SaaS businesses.</p>
         <ul class="ul">
           <li>Everything in Startup</li>
-          <li>Service Details + Blog Details</li>
-          <li>FAQ + Pricing page setup</li>
+          <li>Service + Blog Details</li>
+          <li>Pricing + FAQ Modules</li>
         </ul>
         <div class="hero-actions">
           <a class="btn btn-primary" href="contact.html">Talk to Sales</a>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -221,7 +268,7 @@
         <h3>Fast launch</h3>
         <p>
           We launched our SaaS landing and started collecting leads in one day.
-          <br /><br /><b>- Founder, SaaSPro</b>
+          <br><br><b>- Founder, SaaSPro</b>
         </p>
       </div>
 
@@ -230,7 +277,7 @@
         <h3>Better conversion</h3>
         <p>
           The page layout improved trust and our signup conversion rate increased.
-          <br /><br /><b>- Growth Team, DevFlow</b>
+          <br><br><b>- Growth Team, DevFlow</b>
         </p>
       </div>
 
@@ -239,7 +286,7 @@
         <h3>Premium design</h3>
         <p>
           It looks like a real SaaS product — dashboard + auth gives a pro experience.
-          <br /><br /><b>- Startup Team, CloudStack</b>
+          <br><br><b>- Startup Team, CloudStack</b>
         </p>
       </div>
     </div>
@@ -258,10 +305,58 @@
 
 </main>
 
-<footer class="footer">
-  <div class="container row">
-    <span>© 2026 NovaSaaS</span>
-    <span>SaaS Startup Services Module</span>
+<!-- ✅ Premium Footer -->
+<footer class="footer-pro">
+  <div class="container footer-grid">
+
+    <div class="footer-brand">
+      <div class="brand">
+        <div class="logo"></div>
+        <span>NovaSaaS</span>
+      </div>
+      <p class="small" style="margin-top:10px; line-height:1.7;">
+        NovaSaaS provides SaaS-ready landing pages and startup modules designed to help founders launch faster.
+      </p>
+
+      <div style="margin-top:12px; display:flex; gap:10px;">
+        <a class="social-btn" href="#" onclick="alert('Demo Link ✅')">🌐</a>
+        <a class="social-btn" href="#" onclick="alert('Demo Link ✅')">💼</a>
+        <a class="social-btn" href="#" onclick="alert('Demo Link ✅')">🐦</a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h3 style="margin-bottom:10px;">Quick Links</h3>
+      <a href="index.html" class="footer-link">Home 1</a>
+      <a href="home2.html" class="footer-link">Home 2</a>
+      <a href="services.html" class="footer-link">Services</a>
+      <a href="blog.html" class="footer-link">Blog</a>
+    </div>
+
+    <div class="footer-links">
+      <h3 style="margin-bottom:10px;">Modules</h3>
+      <a href="service-details.html" class="footer-link">Service Details</a>
+      <a href="blog-details.html" class="footer-link">Blog Details</a>
+      <a href="dashboard/dashboard.html" class="footer-link">Dashboard</a>
+      <a href="contact.html" class="footer-link">Support</a>
+    </div>
+
+    <div class="footer-links">
+      <h3 style="margin-bottom:10px;">Contact</h3>
+      <div class="badges">
+        <div class="badge">support@novasaas.com</div>
+        <div class="badge">+91 98765 43210</div>
+        <div class="badge">India</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container" style="margin-top:18px; border-top:1px solid var(--border); padding-top:14px;">
+    <div class="row">
+      <span>© 2026 NovaSaaS. All rights reserved.</span>
+      <span class="small">SaaS Startup Services Module</span>
+    </div>
   </div>
 </footer>
 

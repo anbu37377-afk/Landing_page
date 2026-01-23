@@ -7,10 +7,12 @@
   <link rel="stylesheet" href="../assets/css/style.css" />
   <script defer src="../assets/js/app.js"></script>
 </head>
+
 <body>
 
 <div class="auth-wrap">
   <div class="card auth-card">
+
     <div class="row">
       <a class="brand" href="../index.html">
         <div class="logo"></div><span>NovaSaaS</span>
@@ -24,9 +26,33 @@
     </p>
 
     <form class="form" onsubmit="handleLogin(event)">
+
+      <!-- ✅ Email (Full width like signup) -->
       <input class="input" id="email" type="email" placeholder="Business Email" required />
+
+      <!-- ✅ Password (Full width like signup) -->
       <input class="input" id="password" type="password" placeholder="Password" required />
-      <button class="btn btn-primary" type="submit">Login to Dashboard</button>
+
+      <!-- Remember / Forgot -->
+      <div class="row" style="justify-content:space-between; align-items:center; margin-top:2px;">
+        <label style="display:flex; gap:10px; align-items:center;">
+          <input type="checkbox" id="rememberMe" />
+          <span class="small">Remember me</span>
+        </label>
+
+        <a href="#" class="small" style="color:var(--accent); font-weight:900;"
+           onclick="alert('Forgot password demo ✅ (connect backend later)')">
+          Forgot Password?
+        </a>
+      </div>
+
+      <button class="btn btn-primary" type="submit" style="width:100%; justify-content:center;">
+        Login to Dashboard
+      </button>
+
+      <p class="small">
+        Demo login uses LocalStorage auth. (Real OAuth can be added later using Firebase/Auth0.)
+      </p>
 
       <!-- Divider -->
       <div class="divider">
@@ -42,11 +68,13 @@
         <span class="social-icon">f</span> Continue with Facebook
       </button>
 
-      <p class="small">
+      <p class="small" style="text-align:center; margin-top:10px;">
         New to NovaSaaS?
-        <a href="./signup.html" style="color:var(--accent); font-weight:800;">Create an account</a>
+        <a href="./signup.html" style="color:var(--accent); font-weight:900;">Create an account</a>
       </p>
+
     </form>
+
   </div>
 </div>
 
