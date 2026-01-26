@@ -234,6 +234,12 @@ body.light .navbar {
   width: 100%;
 }
 
+.home-1 .hero-actions .btn,
+.home-1 .cta .btn {
+  min-width: 10.5rem;
+  justify-content: center;
+}
+
 .section {
   padding: 38px 0;
   text-align: center;
@@ -564,7 +570,18 @@ body.light .input::placeholder {
 
 .service-card .btn,
 .post .btn {
-  padding: 12px 18px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8rem;
+  line-height: 1.15;
+}
+
+.service-card .hero-actions {
+  margin-top: auto;
+  padding-top: 0.6rem;
+}
+
+.post .hero-actions {
+  margin-top: 0.6rem;
 }
 
 .post {
@@ -638,6 +655,23 @@ body.light .input::placeholder {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
+}
+
+.price-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.price-card .hero-actions {
+  margin-top: auto;
+  padding-top: 0.6rem;
+}
+
+.price-card .btn {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8rem;
+  line-height: 1.15;
 }
 
 .price-card h3 {
