@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard - NovaSaaS</title>
   <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/favicon.svg" />
   <script defer src="../assets/js/app.js"></script>
 </head>
 
@@ -20,17 +22,22 @@
     </a>
 
     <div class="sidebar-links">
-      <a class="active" href="dashboard.html">📊 Dashboard</a>
+      <!-- ✅ FIXED PATH -->
+      <a class="active" href="./dashboard.html">📊 Dashboard</a>
       <a href="../services.html">🛠 Services</a>
       <a href="../blog.html">📝 Blog</a>
       <a href="../contact.html">💬 Support</a>
       <a href="../index.html">🌍 Back Website</a>
 
       <!-- ✅ logout button -->
-      <button class="btn btn-accent" style="margin-top:10px; width:100%;" onclick="logout()">🚪 Logout</button>
+      <button class="btn btn-accent" style="margin-top:12px; width:100%;" onclick="logout()">
+        🚪 Logout
+      </button>
 
       <!-- ✅ theme toggle -->
-      <button class="btn btn-theme" style="margin-top:10px; width:100%;" onclick="toggleTheme()">🌓 Toggle Theme</button>
+      <button class="btn btn-theme" style="margin-top:10px; width:100%;" onclick="toggleTheme()">
+        🌓 Toggle Theme
+      </button>
     </div>
   </aside>
 
@@ -40,7 +47,6 @@
     <!-- ✅ Mobile Menu Toggle -->
     <button class="btn btn-ghost sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
 
-    <!-- ✅ Dashboard Header -->
     <div class="card">
       <h2>SaaS Dashboard</h2>
       <p class="lead">
@@ -147,8 +153,6 @@
   if (session) {
     document.getElementById("userArea").innerHTML =
       `<b>User:</b> ${session.name} <br/> <b>Email:</b> ${session.email}`;
-  } else {
-    document.getElementById("userArea").innerHTML = "Session expired. Redirecting...";
   }
 
   // ✅ Close sidebar after click (mobile UX)

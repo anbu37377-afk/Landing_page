@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NovaSaaS - Service Details</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
   <script defer src="assets/js/app.js"></script>
 </head>
 
@@ -12,22 +14,33 @@
 
 <header class="navbar">
   <div class="container navbar-inner">
+
     <a class="brand" href="index.html">
       <div class="logo"></div><span>NovaSaaS</span>
     </a>
 
-    <nav class="nav-links">
+    <button class="btn btn-ghost nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+        <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+      </svg>
+    </button>
+
+    <nav class="nav-links" id="mobileNav">
       <a href="index.html">Home 1</a>
       <a href="home2.html">Home 2</a>
-      <a href="services.html" class="active">Services</a>
+      <a href="services.html">Services</a>
       <a href="blog.html">Blog</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
 
     <div id="navAuthArea" class="nav-links"></div>
+
   </div>
 </header>
+
 
 <main class="container section">
 
@@ -347,3 +360,4 @@
 
 </body>
 </html>
+

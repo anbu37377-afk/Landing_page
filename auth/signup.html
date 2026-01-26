@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign Up - NovaSaaS</title>
   <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/favicon.svg" />
   <script defer src="../assets/js/app.js"></script>
 </head>
 
@@ -31,27 +33,25 @@
       <input class="input" id="email" type="email" placeholder="Business Email" required />
       <input class="input" id="password" type="password" placeholder="Create Password" minlength="4" required />
 
-      <p class="small">
-        Password must be at least 4 characters (demo auth system).
-      </p>
+      <p class="small">Password must be at least 4 characters (demo auth system).</p>
 
       <!-- ✅ Terms Checkbox -->
       <label class="check-row">
         <input type="checkbox" id="termsCheck" required />
         <span class="small">
           I agree to the
-          <a href="#" onclick="alert('Demo Terms ✅')" style="color:var(--accent); font-weight:800;">Terms</a>
+          <a href="#" onclick="alert('Demo Terms')" style="color:var(--accent); font-weight:800;">Terms of Service</a>
           and
-          <a href="#" onclick="alert('Demo Privacy ✅')" style="color:var(--accent); font-weight:800;">Privacy Policy</a>.
+          <a href="#" onclick="alert('Demo Privacy')" style="color:var(--accent); font-weight:800;">Privacy Policy</a>.
         </span>
       </label>
 
-      <button class="btn btn-primary" type="submit">Start Free Trial</button>
+      <button class="btn btn-primary" type="submit" style="width:100%; justify-content:center;">
+        Start Free Trial
+      </button>
 
       <!-- Divider -->
-      <div class="divider">
-        <span>OR</span>
-      </div>
+      <div class="divider"><span>OR</span></div>
 
       <!-- Social Signup -->
       <button type="button" class="btn btn-social google" onclick="googleLoginDemo()">
@@ -62,7 +62,7 @@
         <span class="social-icon">f</span> Continue with Facebook
       </button>
 
-      <p class="small">
+      <p class="small" style="text-align:center; margin-top:10px;">
         Already have an account?
         <a href="./login.html" style="color:var(--accent); font-weight:800;">Login</a>
       </p>
@@ -70,19 +70,6 @@
 
   </div>
 </div>
-
-<!-- ✅ Extra validation -->
-<script>
-  // Add checkbox validation before signup
-  const signupForm = document.querySelector("form");
-  signupForm.addEventListener("submit", function(e){
-    const check = document.getElementById("termsCheck");
-    if(!check.checked){
-      e.preventDefault();
-      alert("Please agree to Terms & Privacy Policy ✅");
-    }
-  });
-</script>
 
 </body>
 </html>

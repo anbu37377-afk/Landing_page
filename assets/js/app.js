@@ -1,6 +1,8 @@
 // ✅ LocalStorage Authentication System (HTML/CSS/JS only)
 
-/* ---------- Helpers ---------- */
+/* =========================================================
+   Helpers
+========================================================= */
 function getUsers() {
   return JSON.parse(localStorage.getItem("saas_users") || "[]");
 }
@@ -9,70 +11,99 @@ function setUsers(users) {
   localStorage.setItem("saas_users", JSON.stringify(users));
 }
 
-function setSession(user) {
-  localStorage.setItem("saas_session", JSON.stringify(user));
+/**
+ * ✅ Session storage choice:
+ * - remember = true  -> localStorage (persistent)
+ * - remember = false -> sessionStorage (until browser close)
+ */
+function setSession(user, remember = true) {
+  const storage = remember ? localStorage : sessionStorage;
+  storage.setItem("saas_session", JSON.stringify(user));
 }
 
 function getSession() {
-  return JSON.parse(localStorage.getItem("saas_session") || "null");
+  // ✅ read from localStorage first, then sessionStorage
+  return (
+    JSON.parse(localStorage.getItem("saas_session") || "null") ||
+    JSON.parse(sessionStorage.getItem("saas_session") || "null")
+  );
 }
 
-/* ✅ Smart path resolver (Fix GitHub Pages + folder issue) */
-function goTo(path) {
-  // Works for GitHub pages + local host
-  const base = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "/");
-  window.location.href = new URL(path, base).href;
-}
-
-/* ---------- Auth ---------- */
-function logout() {
+function clearSession() {
   localStorage.removeItem("saas_session");
+  sessionStorage.removeItem("saas_session");
+}
 
-  // ✅ redirect properly (dashboard or normal pages)
-  const isInsideDashboard = window.location.pathname.includes("/dashboard/");
-  if (isInsideDashboard) {
-    window.location.href = "../auth/login.html";
-  } else {
-    window.location.href = "auth/login.html";
-  }
+/**
+ * ✅ Get correct base path regardless of:
+ * - root pages (index.html, blog.html)
+ * - auth pages (/auth/)
+ * - dashboard pages (/dashboard/)
+ */
+function getRootPrefix() {
+  const path = window.location.pathname;
+
+  if (path.includes("/auth/")) return "../";
+  if (path.includes("/dashboard/")) return "../";
+  return "";
+}
+
+/**
+ * ✅ Redirect helper
+ */
+function goTo(pagePath) {
+  window.location.href = pagePath;
+}
+
+/* =========================================================
+   Auth Functions
+========================================================= */
+function logout() {
+  clearSession();
+
+  // redirect depending where user is
+  const prefix = getRootPrefix();
+  goTo(prefix + "auth/login.html");
 }
 
 function requireAuth() {
   const session = getSession();
   if (!session) {
-    window.location.href = "../auth/login.html"; // only dashboard uses this
+    const prefix = getRootPrefix();
+    goTo(prefix + "auth/login.html");
     return null;
   }
   return session;
 }
 
-/* ---------- Navbar Auth Buttons ---------- */
+/* =========================================================
+   Navbar Auth Buttons + Theme Button
+========================================================= */
 function updateNavbarAuth() {
   const session = getSession();
   const el = document.getElementById("navAuthArea");
   if (!el) return;
 
-  // ✅ Correct dashboard link path
-  const dashboardLink = window.location.pathname.includes("/dashboard/")
-    ? "./dashboard.html"
-    : "dashboard/dashboard.html";
+  const prefix = getRootPrefix();
 
   if (session) {
     el.innerHTML = `
-      <a class="btn btn-ghost" href="${dashboardLink}">Dashboard</a>
+      <a class="btn btn-ghost" href="${prefix}dashboard/dashboard.html">Dashboard</a>
       <button class="btn btn-accent" onclick="logout()">Logout</button>
-      <button class="btn btn-theme" onclick="toggleTheme()">🌓</button>
+      <button class="btn btn-theme" onclick="toggleTheme()" title="Toggle Theme" aria-label="Toggle Theme">&#9680;</button>
     `;
   } else {
     el.innerHTML = `
-      <a class="btn btn-ghost" href="auth/login.html">Login</a>
-      <a class="btn btn-primary" href="auth/signup.html">Sign Up</a>
-      <button class="btn btn-theme" onclick="toggleTheme()">🌓</button>
+      <a class="btn btn-ghost" href="${prefix}auth/login.html">Login</a>
+      <a class="btn btn-primary" href="${prefix}auth/signup.html">Sign Up</a>
+      <button class="btn btn-theme" onclick="toggleTheme()" title="Toggle Theme" aria-label="Toggle Theme">&#9680;</button>
     `;
   }
 }
 
-/* ---------- Active Nav Highlight ---------- */
+/* =========================================================
+   Active Nav Highlight
+========================================================= */
 function setActiveNav() {
   const links = document.querySelectorAll(".nav-links a");
   if (!links.length) return;
@@ -83,21 +114,19 @@ function setActiveNav() {
     const href = link.getAttribute("href");
     if (!href) return;
 
-    // ✅ compare only file name
     const file = href.split("/").pop();
+    if (file === current) link.classList.add("active");
 
-    if (file === current) {
-      link.classList.add("active");
-    }
-
-    // ✅ Home special case
+    // Home special case
     if ((current === "" || current === "index.html") && file === "index.html") {
       link.classList.add("active");
     }
   });
 }
 
-/* ---------- Theme Toggle ---------- */
+/* =========================================================
+   Theme Toggle
+========================================================= */
 function toggleTheme() {
   const isLight = document.body.classList.toggle("light");
   localStorage.setItem("theme", isLight ? "light" : "dark");
@@ -108,19 +137,27 @@ function applyTheme() {
   if (saved === "light") document.body.classList.add("light");
 }
 
-/* ---------- Signup ---------- */
+/* =========================================================
+   Signup
+========================================================= */
 function handleSignup(e) {
   e.preventDefault();
 
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim().toLowerCase();
   const password = document.getElementById("password").value.trim();
+  const terms = document.getElementById("termsCheck");
+
+  if (terms && !terms.checked) {
+    alert("Please accept the Terms of Service and Privacy Policy.");
+    return;
+  }
 
   const users = getUsers();
 
   if (users.some(u => u.email === email)) {
     alert("Email already exists. Please login.");
-    window.location.href = "./login.html";
+    goTo("./login.html");
     return;
   }
 
@@ -128,18 +165,25 @@ function handleSignup(e) {
   users.push(newUser);
   setUsers(users);
 
-  setSession({ id: newUser.id, name: newUser.name, email: newUser.email });
-  alert("Signup successful ✅");
+  // ✅ by default signup should persist login
+  setSession({ id: newUser.id, name: newUser.name, email: newUser.email }, true);
 
-  window.location.href = "../dashboard/dashboard.html";
+  alert("Signup successful ✅");
+  goTo("../dashboard/dashboard.html");
 }
 
-/* ---------- Login ---------- */
+/* =========================================================
+   Login
+========================================================= */
 function handleLogin(e) {
   e.preventDefault();
 
   const email = document.getElementById("email").value.trim().toLowerCase();
   const password = document.getElementById("password").value.trim();
+
+  const remember = document.getElementById("rememberMe")
+    ? document.getElementById("rememberMe").checked
+    : true;
 
   const users = getUsers();
   const user = users.find(u => u.email === email && u.password === password);
@@ -149,24 +193,24 @@ function handleLogin(e) {
     return;
   }
 
-  setSession({ id: user.id, name: user.name, email: user.email });
-  window.location.href = "../dashboard/dashboard.html";
+  setSession({ id: user.id, name: user.name, email: user.email }, remember);
+  goTo("../dashboard/dashboard.html");
 }
 
-/* ---------- Demo Social Login ---------- */
+/* =========================================================
+   Demo Social Login
+========================================================= */
 function googleLoginDemo() {
-  alert("Google Login Demo ✅ (To make it real, integrate Firebase/Auth0 OAuth)");
-  setSession({ id: Date.now(), name: "Google User", email: "googleuser@gmail.com" });
-  window.location.href = "../dashboard/dashboard.html";
+  alert("Google Login Demo (connect real OAuth later).");
 }
 
 function facebookLoginDemo() {
-  alert("Facebook Login Demo ✅ (To make it real, integrate Firebase/Auth0 OAuth)");
-  setSession({ id: Date.now(), name: "Facebook User", email: "fbuser@facebook.com" });
-  window.location.href = "../dashboard/dashboard.html";
+  alert("Facebook Login Demo (connect real OAuth later).");
 }
 
-/* ---------- FAQ Toggle ---------- */
+/* =========================================================
+   FAQ Toggle
+========================================================= */
 function initFAQ() {
   const items = document.querySelectorAll(".faq-item");
   if (!items.length) return;
@@ -178,14 +222,33 @@ function initFAQ() {
   });
 }
 
-/* ---------- Dashboard Sidebar Toggle ---------- */
+/* =========================================================
+   Dashboard Sidebar Toggle
+========================================================= */
 function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");
   if (sidebar) sidebar.classList.toggle("open");
 }
 
-/* ✅ Run on every page */
+/* =========================================================
+   Run on every page
+========================================================= */
 document.addEventListener("DOMContentLoaded", () => {
   applyTheme();
   setActiveNav();
 });
+
+
+/* ✅ Mobile nav toggle */
+function toggleMobileNav() {
+  const nav = document.getElementById("mobileNav");
+  const auth = document.getElementById("navAuthArea");
+  const toggle = document.querySelector(".nav-toggle");
+  if (nav) nav.classList.toggle("open");
+  if (auth) auth.classList.toggle("open");
+  if (toggle) {
+    const expanded = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", (!expanded).toString());
+  }
+}
+

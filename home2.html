@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NovaSaaS - Home 2</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
   <script defer src="assets/js/app.js"></script>
 </head>
 
@@ -12,24 +14,58 @@
 
 <header class="navbar">
   <div class="container navbar-inner">
+
     <a class="brand" href="index.html">
       <div class="logo"></div><span>NovaSaaS</span>
     </a>
 
-    <!-- NAV LINKS -->
-    <nav class="nav-links">
+    <button class="btn btn-ghost nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+        <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+      </svg>
+    </button>
+
+    <nav class="nav-links" id="mobileNav">
       <a href="index.html">Home 1</a>
-      <a href="home2.html" class="active">Home 2</a>
+      <a href="home2.html">Home 2</a>
       <a href="services.html">Services</a>
       <a href="blog.html">Blog</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
 
-    <!-- AUTH BUTTONS -->
     <div id="navAuthArea" class="nav-links"></div>
+
   </div>
 </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <main class="container section">
 
@@ -291,10 +327,53 @@
 
 </main>
 
-<footer class="footer">
-  <div class="container row">
-    <span>© 2026 NovaSaaS</span>
-    <span>Modern SaaS Startup Home Module</span>
+<footer class="footer-pro">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <div class="brand">
+        <div class="logo"></div>
+        <span>NovaSaaS</span>
+      </div>
+      <p>
+        A modern SaaS landing page template with authentication, dashboard,
+        blog module, services and premium UI.
+      </p>
+
+      <div class="footer-social">
+        <a class="social-btn" href="#" title="Facebook">f</a>
+        <a class="social-btn" href="#" title="Twitter">x</a>
+        <a class="social-btn" href="#" title="Instagram">ig</a>
+        <a class="social-btn" href="#" title="LinkedIn">in</a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-title">Quick Links</div>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-title">Modules</div>
+      <a href="home2.html">Home 2</a>
+      <a href="service-details.html">Service Details</a>
+      <a href="blog-details.html">Blog Details</a>
+      <a href="dashboard/dashboard.html">Dashboard</a>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-title">Contact</div>
+      <a href="#">support@novasaas.com</a>
+      <a href="#">+91 98765 43210</a>
+      <a href="#">India</a>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>© 2026 NovaSaaS. All rights reserved.</span>
+    <span>Premium SaaS Startup Landing Page</span>
   </div>
 </footer>
 
@@ -305,3 +384,4 @@
 
 </body>
 </html>
+
