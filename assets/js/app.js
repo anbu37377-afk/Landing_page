@@ -1,3 +1,4 @@
+
 // ✅ LocalStorage Authentication System (HTML/CSS/JS only)
 
 /* =========================================================
@@ -61,9 +62,9 @@ function goTo(pagePath) {
 function logout() {
   clearSession();
 
-  // redirect depending where user is
+  // redirect to Home 1 page instead of login page
   const prefix = getRootPrefix();
-  goTo(prefix + "auth/login.html");
+  goTo(prefix + "index.html");
 }
 
 function requireAuth() {
@@ -216,8 +217,26 @@ function initFAQ() {
   if (!items.length) return;
 
   items.forEach(item => {
-    item.addEventListener("click", () => {
+    const question = item.querySelector(".faq-q");
+    const icon = question.querySelector("span:last-child");
+    
+    question.addEventListener("click", (e) => {
+      e.stopPropagation();
+      
+      // Close other items
+      items.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove("active");
+          const otherIcon = otherItem.querySelector(".faq-q span:last-child");
+          if (otherIcon) otherIcon.textContent = "+";
+        }
+      });
+      
+      // Toggle current item
       item.classList.toggle("active");
+      if (icon) {
+        icon.textContent = item.classList.contains("active") ? "−" : "+";
+      }
     });
   });
 }
@@ -252,3 +271,34 @@ function toggleMobileNav() {
   }
 }
 
+/* ✅ New mobile nav toggle for main-header */
+function initMobileMenu() {
+  const mobileToggle = document.getElementById('mobileToggle');
+  const navMenu = document.getElementById('navMenu');
+  
+  if (mobileToggle && navMenu) {
+    // Remove any existing listeners to prevent duplicates
+    mobileToggle.removeEventListener('click', handleMobileToggle);
+    // Add the click handler
+    mobileToggle.addEventListener('click', handleMobileToggle);
+  }
+}
+
+function handleMobileToggle() {
+  const navMenu = document.getElementById('navMenu');
+  if (navMenu) {
+    navMenu.classList.toggle('active');
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', (!expanded).toString());
+  }
+}
+
+// Initialize on DOM content loaded
+document.addEventListener('DOMContentLoaded', initMobileMenu);
+
+// Also initialize immediately if DOM is already loaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initMobileMenu);
+} else {
+  initMobileMenu();
+}

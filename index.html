@@ -1,239 +1,585 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NovaSaaS - Home 1</title>
+  <title>SaaS Landing - Home</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="apple-touch-icon" href="assets/favicon.svg" />
   <script defer src="assets/js/app.js"></script>
 </head>
-<body onload="updateNavbarAuth()">
 
-<header class="navbar">
-  <div class="container navbar-inner">
+<body>
 
-    <a class="brand" href="index.html">
-      <div class="logo"></div><span>NovaSaaS</span>
-    </a>
+  <!-- MOBILE-FIRST HEADER -->
+  <header class="site-header">
+    <div class="header-container">
 
-    <button class="btn btn-ghost nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu" aria-expanded="false">
-      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
-        <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
-        <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
-        <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
-      </svg>
-    </button>
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
 
-    <nav class="nav-links" id="mobileNav">
-      <a href="index.html">Home 1</a>
-      <a href="home2.html">Home 2</a>
-      <a href="services.html">Services</a>
-      <a href="blog.html">Blog</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-    <div id="navAuthArea" class="nav-links"></div>
-
-  </div>
-</header>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<main class="home-bg home-1">
-  <!-- HERO -->
-  <section class="hero container">
-    <div class="hero-grid">
-      <div>
-        <h1>Grow your SaaS business with smart tools & automation 🚀</h1>
-        <p>
-          NovaSaaS helps startups manage users, track performance, and convert visitors into paying customers.
-          Built for founders launching MVPs and scaling SaaS products.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="auth/signup.html">Start Free Trial</a>
-          <a class="btn btn-ghost" href="services.html">Explore Services</a>
-        </div>
-
-        <div class="badges">
-          <div class="badge">⚡ Lightning Fast Setup</div>
-          <div class="badge">🔒 Secure Auth Login</div>
-          <div class="badge">📊 Analytics Dashboard</div>
-          <div class="badge">💳 Pricing & Growth Ready</div>
-        </div>
+      <!-- Brand Logo (Centered) -->
+      <div class="brand-center">
+        <div class="brand-logo"></div>
+        <span class="brand-name">NovaSaaS</span>
       </div>
 
-      <div class="card hero-image">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="SaaS dashboard preview">
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="home2.html" class="nav-link">Home 2</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="dashboard/dashboard.html" class="nav-link">Dashboard</a>
+      </nav>
+
+      <!-- Desktop Auth -->
+      <div class="desktop-auth">
+        <button class="btn btn-ghost" onclick="toggleTheme()" aria-label="Toggle theme">
+          <span id="themeIcon">🌙</span>
+        </button>
+        <a href="auth/login.html" class="btn btn-ghost">Login</a>
+        <a href="auth/signup.html" class="btn btn-primary">Sign Up</a>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <div class="mobile-nav-menu" id="mobileNavMenu">
+      <div class="mobile-nav-header">
+        <div class="mobile-nav-title">Menu</div>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+          <span class="close-line"></span>
+          <span class="close-line"></span>
+        </button>
+      </div>
+
+      <div class="mobile-nav-content">
+        <ul class="mobile-nav-list">
+          <li><a href="index.html" class="mobile-nav-link active">Home</a></li>
+          <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
+          <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+          <li><a href="service-details.html" class="mobile-nav-link">Service Details</a></li>
+          <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+          <li><a href="blog-details.html" class="mobile-nav-link">Blog Details</a></li>
+          <li><a href="about.html" class="mobile-nav-link">About</a></li>
+          <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+          <li><a href="dashboard/dashboard.html" class="mobile-nav-link">Dashboard</a></li>
+        </ul>
+
+        <div class="mobile-nav-divider"></div>
+
+        <ul class="mobile-nav-list">
+          <li><a href="auth/login.html" class="mobile-nav-link">Login</a></li>
+          <li><a href="auth/signup.html" class="mobile-nav-link">Sign Up</a></li>
+        </ul>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- TRUSTED BY -->
-  <section class="section container">
-    <div class="card">
-      <div class="row" style="align-items:center;">
+  <main class="home-bg home-1" style="margin-top: 40px;">
+
+    <!-- Mobile-specific gap styling -->
+    <style>
+      @media (max-width: 768px) {
+        .home-1 {
+          margin-top: 60px !important;
+          padding-top: 20px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .home-1 {
+          margin-top: 50px !important;
+          padding-top: 30px;
+        }
+      }
+
+      @media (max-width: 425px) {
+        .home-1 {
+          margin-top: 40px !important;
+          padding-top: 25px;
+        }
+      }
+    </style>
+
+    <!-- HERO -->
+    <section class="hero container">
+      <div class="hero-grid">
         <div>
-          <h2>Trusted by startup teams worldwide</h2>
-          <p class="lead">Founders use NovaSaaS to launch faster, track growth, and scale with confidence.</p>
+          <h1 style="text-align: center; font-size: 42px; line-height: 1.2;">Transform Your Vision into Reality</h1>
+          <p style="text-align: center; font-size: 20px; line-height: 1.6;">
+            Every great idea deserves a beautiful home. We help passionate founders like you build stunning SaaS
+            applications that users love and that grow your business beyond imagination.
+          </p>
+
+          <div class="hero-actions" style="text-align: center; justify-content: center;">
+            <a class="btn btn-primary" href="services.html">Get Started</a>
+            <a class="btn btn-ghost" href="about.html">Learn More</a>
+          </div>
+
+          <div class="badges" style="text-align: center; justify-content: center;">
+            <div class="badge">✓ User-Centered Design</div>
+            <div class="badge">✓ Fast & Secure</div>
+            <div class="badge">✓ Conversion Focused</div>
+            <div class="badge">✓ Scalable Solutions</div>
+          </div>
         </div>
-        <div class="tag">⭐ 4.9/5 User Rating</div>
+
+        <div class="card hero-image">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
+            alt="SaaS dashboard preview">
+        </div>
       </div>
+    </section>
 
-      <div class="badges" style="margin-top:14px;">
-        <div class="badge">StartupHub</div>
-        <div class="badge">CloudStack</div>
-        <div class="badge">DevFlow</div>
-        <div class="badge">GrowthPilot</div>
-        <div class="badge">SaaSPro</div>
+    <!-- TRUSTED BY -->
+    <section class="section container">
+      <div class="card">
+        <div style="text-align:center;">
+          <div>
+            <h2>Trusted by innovative companies worldwide</h2>
+            <p class="lead">B2B SaaS companies trust us to deliver exceptional user experiences that drive growth.</p>
+          </div>
+          <div class="tag" style="margin-top: 10px;">⭐ 4.9/5 User Rating</div>
+        </div>
+
+        <div class="badges" style="margin-top:14px;">
+          <div class="badge">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=40&q=80"
+              alt="StartupHub"
+              style="width: 24px; height: 24px; margin-right: 8px; border-radius: 4px; object-fit: cover;">
+            StartupHub
+          </div>
+          <div class="badge">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=40&q=80"
+              alt="CloudStack"
+              style="width: 24px; height: 24px; margin-right: 8px; border-radius: 4px; object-fit: cover;">
+            CloudStack
+          </div>
+          <div class="badge">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=40&q=80"
+              alt="DevFlow"
+              style="width: 24px; height: 24px; margin-right: 8px; border-radius: 4px; object-fit: cover;">
+            DevFlow
+          </div>
+          <div class="badge">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=40&q=80"
+              alt="GrowthPilot"
+              style="width: 24px; height: 24px; margin-right: 8px; border-radius: 4px; object-fit: cover;">
+            GrowthPilot
+          </div>
+          <div class="badge">
+            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=40&q=80"
+              alt="SaaSPro"
+              style="width: 24px; height: 24px; margin-right: 8px; border-radius: 4px; object-fit: cover;">
+            SaaSPro
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FEATURES -->
-  <section class="section container">
-    <h2>Everything you need to launch and scale</h2>
-    <p class="lead">
-      From landing page to user dashboard — NovaSaaS is designed to help SaaS startups convert faster and grow smarter.
-    </p>
-
-    <div class="grid-3">
-      <div class="card feature">
-        <div class="icon-pill">⚙️</div>
-        <h3>Complete SaaS Modules</h3>
-        <p>Landing pages, services, blog, about, contact and detailed pages — all included.</p>
-      </div>
-
-      <div class="card feature">
-        <div class="icon-pill">🔒</div>
-        <h3>User Login System</h3>
-        <p>Signup/login experience with protected dashboard access to simulate real SaaS apps.</p>
-      </div>
-
-      <div class="card feature">
-        <div class="icon-pill">📈</div>
-        <h3>Built for Conversions</h3>
-        <p>Optimized layout, CTAs, and clean UI so visitors turn into users and users into customers.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES OVERVIEW -->
-  <section class="section container">
-    <h2>Service-ready features that remove launch friction</h2>
-    <p class="lead">
-      Each module is designed to deliver trust, clarity, and conversion so your SaaS looks professional from day one.
-    </p>
-
-    <div class="grid-3">
-      <div class="card feature">
-        <div class="icon-pill">âš¡</div>
-        <h3>Launch-Ready UI</h3>
-        <p>Responsive sections that feel like a real SaaS product, not a basic landing page.</p>
-      </div>
-
-      <div class="card feature">
-        <div class="icon-pill">ðŸ§ </div>
-        <h3>Conversion Sections</h3>
-        <p>CTA blocks, trust badges, and clean layouts that guide visitors to sign up.</p>
-      </div>
-
-      <div class="card feature">
-        <div class="icon-pill">ðŸ› </div>
-        <h3>Scalable Structure</h3>
-        <p>Services, blog, and details pages organized for growth as your SaaS expands.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="section container">
-    <div class="card cta">
-      <div>
-        <h2>Ready to launch your SaaS today?</h2>
-        <p class="lead">Create your account and access the dashboard instantly.</p>
-      </div>
-      <a class="btn btn-accent" href="auth/signup.html">Create Your Account</a>
-    </div>
-  </section>
-
-</main>
-
-<!-- ✅ Premium Footer -->
-<footer class="footer-pro">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <div class="brand">
-        <div class="logo"></div>
-        <span>NovaSaaS</span>
-      </div>
-      <p>
-        A modern SaaS landing page template with authentication, dashboard,
-        blog module, services and premium UI.
+    <!-- FEATURES -->
+    <section class="section container">
+      <h2>Everything you need to build exceptional SaaS experiences</h2>
+      <p class="lead">
+        From user research to deployment — we create SaaS applications that customers love and that scale with your
+        business.
       </p>
 
-      <div class="footer-social">
-        <a class="social-btn" href="#" title="Facebook">f</a>
-        <a class="social-btn" href="#" title="Twitter">x</a>
-        <a class="social-btn" href="#" title="Instagram">ig</a>
-        <a class="social-btn" href="#" title="LinkedIn">in</a>
+      <div class="grid-3">
+        <div class="card feature">
+          <div class="icon-pill">⚙️</div>
+          <h3>Complete SaaS Modules</h3>
+          <p>Landing pages, services, blog, about, contact and detailed pages — all included.</p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon-pill">🔒</div>
+          <h3>User Login System</h3>
+          <p>Signup/login experience with protected dashboard access to simulate real SaaS apps.</p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon-pill">📈</div>
+          <h3>Built for Conversions</h3>
+          <p>Optimized layout, CTAs, and clean UI so visitors turn into users and users into customers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES OVERVIEW -->
+    <section class="section container">
+      <h2>Service-ready features that remove launch friction</h2>
+      <p class="lead">
+        Each module is designed to deliver trust, clarity, and conversion so your SaaS looks professional from day one.
+      </p>
+
+      <div class="grid-3">
+        <div class="card feature">
+          <div class="icon-pill">⚡</div>
+          <h3>Launch-Ready UI</h3>
+          <p>Responsive sections that feel like a real SaaS product, not a basic landing page.</p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon-pill">🧠</div>
+          <h3>Conversion Sections</h3>
+          <p>CTA blocks, trust badges, and clean layouts that guide visitors to sign up.</p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon-pill">🛠</div>
+          <h3>Scalable Structure</h3>
+          <p>Services, blog, and details pages organized for growth as your SaaS expands.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section container">
+      <h2>What founders are saying</h2>
+      <p class="lead">Real feedback from startup teams who launched with NovaSaaS</p>
+
+      <div class="grid-3">
+        <div class="card feature">
+          <div style="display: flex; align-items: center; margin-bottom: 12px;">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=80&q=80"
+              alt="Sarah Chen"
+              style="width: 48px; height: 48px; border-radius: 50%; margin-right: 12px; object-fit: cover;">
+            <div>
+              <div style="font-weight: 600;">Sarah Chen</div>
+              <div style="font-size: 12px; color: var(--muted);">CEO, TechStart</div>
+            </div>
+          </div>
+          <p style="font-style: italic;">"SaaS Landing helped us transform our user experience. Conversion rates
+            increased by 40% in just 3 months."</p>
+        </div>
+
+        <div class="card feature">
+          <div style="display: flex; align-items: center; margin-bottom: 12px;">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80"
+              alt="Alex Kumar"
+              style="width: 48px; height: 48px; border-radius: 50%; margin-right: 12px; object-fit: cover;">
+            <div>
+              <div style="font-weight: 600;">Alex Kumar</div>
+              <div style="font-size: 12px; color: var(--muted);">Founder, DataFlow</div>
+            </div>
+          </div>
+          <p style="font-style: italic;">"The design expertise and development quality exceeded our expectations. Highly
+            recommended!"</p>
+        </div>
+
+        <div class="card feature">
+          <div style="display: flex; align-items: center; margin-bottom: 12px;">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=80&q=80"
+              alt="Maria Rodriguez"
+              style="width: 48px; height: 48px; border-radius: 50%; margin-right: 12px; object-fit: cover;">
+            <div>
+              <div style="font-weight: 600;">Maria Rodriguez</div>
+              <div style="font-size: 12px; color: var(--muted);">CTO, CloudBase</div>
+            </div>
+          </div>
+          <p style="font-style: italic;">"Professional team, exceptional results. Our SaaS platform looks and performs
+            perfectly."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section container">
+      <h2>How SaaS Landing Works</h2>
+      <p class="lead">
+        From concept to launch — our streamlined process gets your SaaS website live in days, not weeks.
+      </p>
+
+      <div class="grid-3">
+        <div class="card feature">
+          <div class="icon-pill">🎯</div>
+          <h3>1. Discovery & Planning</h3>
+          <p>We understand your SaaS vision, target audience, and business goals to create a strategic roadmap.</p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon-pill">🎨</div>
+          <h3>2. Design & Development</h3>
+          <p>Our team builds your custom SaaS website with modern UI, responsive design, and conversion-focused
+            features.</p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon-pill">🚀</div>
+          <h3>3. Launch & Support</h3>
+          <p>We deploy your website, integrate essential tools, and provide ongoing support to ensure your success.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section container">
+      <h2>Frequently Asked Questions</h2>
+      <p class="lead">Common questions about SaaS Landing and our services</p>
+
+      <div class="faq-container">
+        <div class="card faq-item">
+          <div class="faq-question">
+            <h3>What is SaaS Landing?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>SaaS Landing is a comprehensive B2B SaaS website template designed to help startups launch their products
+              quickly. It includes landing pages, authentication, dashboard, blog, and service modules - everything you
+              need to convert visitors into customers.</p>
+          </div>
+        </div>
+
+        <div class="card faq-item">
+          <div class="faq-question">
+            <h3>How quickly can I launch my SaaS website?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Most founders launch within 2-3 days using our template. The structure is already built, so you just need
+              to customize your content, branding, and connect your backend services. We provide deployment guides for
+              popular platforms like Netlify, Vercel, and GitHub Pages.</p>
+          </div>
+        </div>
+
+        <div class="card faq-item">
+          <div class="faq-question">
+            <h3>Can I customize the design and features?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Absolutely! The template is built with clean, modular code that's easy to customize. You can modify
+              colors, fonts, layouts, add new sections, or integrate third-party services. We use modern HTML, CSS, and
+              JavaScript with no framework dependencies.</p>
+          </div>
+        </div>
+
+        <div class="card faq-item">
+          <div class="faq-question">
+            <h3>Does this include user authentication?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes! The template includes a complete authentication system with signup, login, and password recovery. It
+              currently uses LocalStorage for demo purposes, but you can easily integrate Firebase, Auth0, or your own
+              backend authentication system.</p>
+          </div>
+        </div>
+
+        <div class="card faq-item">
+          <div class="faq-question">
+            <h3>What hosting platforms do you support?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>You can deploy on any static hosting platform including Netlify, Vercel, GitHub Pages, Cloudflare Pages,
+              or traditional web hosts. The template is platform-agnostic and includes deployment instructions for each
+              major service.</p>
+          </div>
+        </div>
+
+        <div class="card faq-item">
+          <div class="faq-question">
+            <h3>Do you provide support and updates?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes! We provide comprehensive documentation, video tutorials, and email support. The template receives
+              regular updates with new features, security improvements, and compatibility updates. You also get access
+              to our community of SaaS founders.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section container">
+      <div class="card cta">
+        <div>
+          <h2>Ready to launch your SaaS today?</h2>
+          <p class="lead">Create your account and access the dashboard instantly.</p>
+        </div>
+        <a class="btn btn-accent" href="auth/signup.html">Create Your Account</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- NEW FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+
+      <!-- Brand Section -->
+      <div class="footer-brand">
+        <div class="footer-brand-info">
+          <div class="brand-logo"></div>
+          <span class="brand-name">NovaSaaS</span>
+        </div>
+        <p class="footer-description">
+          We help B2B SaaS companies design & build intuitive, high-converting web apps that users love.
+          From MVP to scale, we've got you covered.
+        </p>
+
+        <!-- Social Links -->
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path
+                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Links Grid -->
+      <div class="footer-links-grid">
+        <div class="footer-column">
+          <h4 class="footer-title">Quick Links</h4>
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="services.html" class="footer-link">Services</a>
+          <a href="blog.html" class="footer-link">Blog</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Modules</h4>
+          <a href="home2.html" class="footer-link">Home 2</a>
+          <a href="service-details.html" class="footer-link">Service Details</a>
+          <a href="blog-details.html" class="footer-link">Blog Details</a>
+          <a href="dashboard/dashboard.html" class="footer-link">Dashboard</a>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Contact</h4>
+          <a href="mailto:contact@saaslanding.com" class="footer-link">contact@saaslanding.com</a>
+          <a href="tel:+919876543210" class="footer-link">+91 98765 43210</a>
+          <a href="#" class="footer-link">India</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <span>&copy; 2026 NovaSaaS. All rights reserved.</span>
+        <span>Premium B2B SaaS Design & Development</span>
       </div>
     </div>
+  </footer>
 
-    <div class="footer-links">
-      <div class="footer-title">Quick Links</div>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
-    </div>
+  <script>
+    // MOBILE-FIRST HEADER FUNCTIONALITY
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const mobileNavMenu = document.getElementById('mobileNavMenu');
+      const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+      const mobileNavClose = document.getElementById('mobileNavClose');
 
-    <div class="footer-links">
-      <div class="footer-title">Modules</div>
-      <a href="home2.html">Home 2</a>
-      <a href="service-details.html">Service Details</a>
-      <a href="blog-details.html">Blog Details</a>
-      <a href="dashboard/dashboard.html">Dashboard</a>
-    </div>
+      if (mobileMenuToggle && mobileNavMenu && mobileNavOverlay && mobileNavClose) {
+        // Open mobile menu
+        function openMobileMenu() {
+          mobileMenuToggle.classList.add('active');
+          mobileNavMenu.classList.add('active');
+          mobileNavOverlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          mobileMenuToggle.setAttribute('aria-expanded', 'true');
+        }
 
-    <div class="footer-links">
-      <div class="footer-title">Contact</div>
-      <a href="#">support@novasaas.com</a>
-      <a href="#">+91 98765 43210</a>
-      <a href="#">India</a>
-    </div>
-  </div>
+        // Close mobile menu
+        function closeMobileMenu() {
+          mobileMenuToggle.classList.remove('active');
+          mobileNavMenu.classList.remove('active');
+          mobileNavOverlay.classList.remove('active');
+          document.body.style.overflow = '';
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        }
 
-  <div class="container footer-bottom">
-    <span>© 2026 NovaSaaS. All rights reserved.</span>
-    <span>Premium SaaS Startup Landing Page</span>
-  </div>
-</footer>
+        // Toggle menu on hamburger click
+        mobileMenuToggle.addEventListener('click', function () {
+          if (mobileNavMenu.classList.contains('active')) {
+            closeMobileMenu();
+          } else {
+            openMobileMenu();
+          }
+        });
+
+        // Close menu on close button click
+        mobileNavClose.addEventListener('click', closeMobileMenu);
+
+        // Close menu on overlay click
+        mobileNavOverlay.addEventListener('click', closeMobileMenu);
+
+        // Close menu on link click
+        const mobileNavLinks = mobileNavMenu.querySelectorAll('.mobile-nav-link');
+        mobileNavLinks.forEach(link => {
+          link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function () {
+          if (window.innerWidth > 768) {
+            closeMobileMenu();
+          }
+        });
+
+        // Handle escape key
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape' && mobileNavMenu.classList.contains('active')) {
+            closeMobileMenu();
+          }
+        });
+      }
+    });
+
+    // FAQ Accordion Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+
+        if (question) {
+          question.addEventListener('click', function () {
+            // Close other items
+            faqItems.forEach(otherItem => {
+              if (otherItem !== item) {
+                otherItem.classList.remove('active');
+              }
+            });
+
+            // Toggle current item
+            item.classList.toggle('active');
+          });
+        }
+      });
+    });
+  </script>
 
 </body>
-</html>
 
+</html>

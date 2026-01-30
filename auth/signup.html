@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,64 +13,66 @@
 
 <body>
 
-<div class="auth-wrap">
-  <div class="card auth-card">
+  <div class="auth-wrap">
+    <div class="card auth-card">
 
-    <div class="row">
-      <a class="brand" href="../index.html">
-        <div class="logo"></div><span>NovaSaaS</span>
-      </a>
-      <a class="btn btn-ghost" href="../index.html">Back to Website</a>
-    </div>
+      <div style="text-align: center; margin-bottom: 20px;">
+        <a class="brand" href="../index.html"
+          style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+          <div class="brand-logo"></div><span>NovaSaaS</span>
+        </a>
+      </div>
 
-    <h2 style="margin-top:16px;">Create your SaaS account</h2>
-    <p class="lead">
-      Start your free trial and access the NovaSaaS dashboard to manage your startup workspace.
-    </p>
-
-    <form class="form" onsubmit="handleSignup(event)">
-
-      <input class="input" id="name" placeholder="Full Name" required />
-      <input class="input" id="email" type="email" placeholder="Business Email" required />
-      <input class="input" id="password" type="password" placeholder="Create Password" minlength="4" required />
-
-      <p class="small">Password must be at least 4 characters (demo auth system).</p>
-
-      <!-- ✅ Terms Checkbox -->
-      <label class="check-row">
-        <input type="checkbox" id="termsCheck" required />
-        <span class="small">
-          I agree to the
-          <a href="#" onclick="alert('Demo Terms')" style="color:var(--accent); font-weight:800;">Terms of Service</a>
-          and
-          <a href="#" onclick="alert('Demo Privacy')" style="color:var(--accent); font-weight:800;">Privacy Policy</a>.
-        </span>
-      </label>
-
-      <button class="btn btn-primary" type="submit" style="width:100%; justify-content:center;">
-        Start Free Trial
-      </button>
-
-      <!-- Divider -->
-      <div class="divider"><span>OR</span></div>
-
-      <!-- Social Signup -->
-      <button type="button" class="btn btn-social google" onclick="googleLoginDemo()">
-        <span class="social-icon">G</span> Continue with Google
-      </button>
-
-      <button type="button" class="btn btn-social facebook" onclick="facebookLoginDemo()">
-        <span class="social-icon">f</span> Continue with Facebook
-      </button>
-
-      <p class="small" style="text-align:center; margin-top:10px;">
-        Already have an account?
-        <a href="./login.html" style="color:var(--accent); font-weight:800;">Login</a>
+      <h2 style="margin-top:16px;">Create your SaaS account</h2>
+      <p class="lead">
+        Start your free trial and access the NovaSaaS dashboard to manage your startup workspace.
       </p>
-    </form>
 
+      <form class="form" onsubmit="handleSignup(event)">
+
+        <input class="input" id="name" placeholder="Full Name" required />
+        <input class="input" id="email" type="email" placeholder="Business Email" required />
+        <input class="input" id="password" type="password" placeholder="Create Password" minlength="4" required />
+
+        <p class="small">Password must be at least 4 characters (demo auth system).</p>
+
+        <!-- ✅ Terms Checkbox -->
+        <label class="check-row">
+          <input type="checkbox" id="termsCheck" required />
+          <span class="small">
+            I agree to the
+            <a href="#" onclick="alert('Demo Terms')" style="color:var(--accent); font-weight:800;">Terms of Service</a>
+            and
+            <a href="#" onclick="alert('Demo Privacy')" style="color:var(--accent); font-weight:800;">Privacy
+              Policy</a>.
+          </span>
+        </label>
+
+        <button class="btn btn-primary" type="submit" style="width:100%; justify-content:center;">
+          Start Free Trial
+        </button>
+
+        <!-- Divider -->
+        <div class="divider"><span>OR</span></div>
+
+        <!-- Social Signup -->
+        <button type="button" class="btn btn-social google" onclick="googleLoginDemo()">
+          <span class="social-icon">G</span> Continue with Google
+        </button>
+
+        <button type="button" class="btn btn-social facebook" onclick="facebookLoginDemo()">
+          <span class="social-icon">f</span> Continue with Facebook
+        </button>
+
+        <p class="small" style="text-align:center; margin-top:10px;">
+          Already have an account?
+          <a href="./login.html" style="color:var(--accent); font-weight:800;">Login</a>
+        </p>
+      </form>
+
+    </div>
   </div>
-</div>
 
 </body>
+
 </html>

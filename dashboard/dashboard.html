@@ -10,9 +10,116 @@
   <script defer src="../assets/js/app.js"></script>
 </head>
 
-<body>
+<body onload="updateNavbarAuth()">
 
-<div class="dashboard-layout">
+<!-- MOBILE-FIRST HEADER -->
+<header class="site-header">
+  <div class="header-container">
+    
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <!-- Brand Logo (Centered) -->
+    <div class="brand-center">
+      <div class="brand-logo"></div>
+      <span class="brand-name">NovaSaaS</span>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+      <a href="../index.html" class="nav-link">Home 1</a>
+      <a href="../home2.html" class="nav-link">Home 2</a>
+      <a href="../services.html" class="nav-link">Services</a>
+      <a href="../blog.html" class="nav-link">Blog</a>
+      <a href="../about.html" class="nav-link">About</a>
+      <a href="../contact.html" class="nav-link">Contact</a>
+      <a href="./dashboard.html" class="nav-link active">Dashboard</a>
+    </nav>
+
+    <!-- Desktop Auth -->
+    <div class="desktop-auth">
+      <button class="btn btn-ghost" onclick="toggleTheme()" aria-label="Toggle theme">
+        <span id="themeIcon">🌙</span>
+      </button>
+      <a href="../auth/login.html" class="btn btn-ghost">Login</a>
+      <a href="../auth/signup.html" class="btn btn-primary">Sign Up</a>
+    </div>
+
+    <!-- Dashboard Mobile Menu Icon (Mobile Only) -->
+    <button class="dashboard-mobile-menu-toggle" id="dashboardMobileMenuToggle" aria-label="Toggle dashboard menu">
+      <span class="menu-icon">⋮</span>
+    </button>
+
+  </div>
+
+  <!-- Mobile Navigation Menu -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <div class="mobile-nav-menu" id="mobileNavMenu">
+    <div class="mobile-nav-header">
+      <div class="mobile-nav-title">Menu</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+        <span class="close-line"></span>
+        <span class="close-line"></span>
+      </button>
+    </div>
+    
+    <div class="mobile-nav-content">
+      <ul class="mobile-nav-list">
+        <li><a href="../index.html" class="mobile-nav-link">Home 1</a></li>
+        <li><a href="../home2.html" class="mobile-nav-link">Home 2</a></li>
+        <li><a href="../services.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="../service-details.html" class="mobile-nav-link">Service Details</a></li>
+        <li><a href="../blog.html" class="mobile-nav-link">Blog</a></li>
+        <li><a href="../blog-details.html" class="mobile-nav-link">Blog Details</a></li>
+        <li><a href="../about.html" class="mobile-nav-link">About</a></li>
+        <li><a href="../contact.html" class="mobile-nav-link">Contact</a></li>
+        <li><a href="./dashboard.html" class="mobile-nav-link active">Dashboard</a></li>
+      </ul>
+      
+      <div class="mobile-nav-divider"></div>
+      
+      <ul class="mobile-nav-list">
+        <li><a href="../auth/login.html" class="mobile-nav-link">Login</a></li>
+        <li><a href="../auth/signup.html" class="mobile-nav-link">Sign Up</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Dashboard Mobile Menu Overlay (Mobile Only) -->
+  <div class="dashboard-mobile-overlay" id="dashboardMobileOverlay"></div>
+  <div class="dashboard-mobile-menu" id="dashboardMobileMenu">
+    <div class="dashboard-mobile-header">
+      <div class="dashboard-mobile-title">NovaSaaS</div>
+      <button class="dashboard-mobile-close" id="dashboardMobileClose" aria-label="Close menu">
+        <span class="close-line"></span>
+        <span class="close-line"></span>
+      </button>
+    </div>
+    
+    <div class="dashboard-mobile-content">
+      <ul class="dashboard-mobile-list">
+        <li><a href="./dashboard.html" class="dashboard-mobile-link">📊 Dashboard</a></li>
+        <li><a href="../services.html" class="dashboard-mobile-link">🛠 Services</a></li>
+        <li><a href="../blog.html" class="dashboard-mobile-link">📝 Blog</a></li>
+        <li><a href="../contact.html" class="dashboard-mobile-link">💬 Support</a></li>
+        <li><a href="../index.html" class="dashboard-mobile-link">🌍 Back Website</a></li>
+      </ul>
+      
+      <div class="dashboard-mobile-divider"></div>
+      
+      <ul class="dashboard-mobile-list">
+        <li><button class="dashboard-mobile-link" onclick="logout()">🚪 Logout</button></li>
+        <li><button class="dashboard-mobile-link" onclick="toggleTheme()">🌓 Toggle Theme</button></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="dashboard-layout" style="margin-top: 80px;">
 
   <!-- ✅ SIDEBAR -->
   <aside class="sidebar" id="sidebar">
@@ -44,14 +151,10 @@
   <!-- ✅ MAIN CONTENT -->
   <main class="dashboard-main">
 
-    <!-- ✅ Mobile Menu Toggle -->
-    <button class="btn btn-ghost sidebar-toggle" onclick="toggleSidebar()">☰ Menu</button>
-
+    <!-- Dashboard content starts here -->
     <div class="card">
       <h2>SaaS Dashboard</h2>
-      <p class="lead">
-        Welcome to your startup workspace dashboard. This page is protected — only logged-in users can access it.
-      </p>
+      <p class="lead">Welcome back! Here's your startup overview.</p>
 
       <!-- ✅ KPI CARDS -->
       <div class="kpi-grid">
@@ -147,21 +250,151 @@
 </div>
 
 <script>
-  // ✅ Protect this page
-  const session = requireAuth();
-
-  if (session) {
-    document.getElementById("userArea").innerHTML =
-      `<b>User:</b> ${session.name} <br/> <b>Email:</b> ${session.email}`;
+// MOBILE-FIRST HEADER FUNCTIONALITY
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const mobileNavMenu = document.getElementById('mobileNavMenu');
+  const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+  const mobileNavClose = document.getElementById('mobileNavClose');
+  
+  if (mobileMenuToggle && mobileNavMenu && mobileNavOverlay && mobileNavClose) {
+    // Open mobile menu
+    function openMobileMenu() {
+      mobileMenuToggle.classList.add('active');
+      mobileNavMenu.classList.add('active');
+      mobileNavOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      mobileMenuToggle.setAttribute('aria-expanded', 'true');
+    }
+    
+    // Close mobile menu
+    function closeMobileMenu() {
+      mobileMenuToggle.classList.remove('active');
+      mobileNavMenu.classList.remove('active');
+      mobileNavOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+      mobileMenuToggle.setAttribute('aria-expanded', 'false');
+    }
+    
+    // Toggle menu on hamburger click
+    mobileMenuToggle.addEventListener('click', function() {
+      if (mobileNavMenu.classList.contains('active')) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+    
+    // Close menu on close button click
+    mobileNavClose.addEventListener('click', closeMobileMenu);
+    
+    // Close menu on overlay click
+    mobileNavOverlay.addEventListener('click', closeMobileMenu);
+    
+    // Close menu on link click
+    const mobileNavLinks = mobileNavMenu.querySelectorAll('.mobile-nav-link');
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        closeMobileMenu();
+      }
+    });
+    
+    // Handle escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && mobileNavMenu.classList.contains('active')) {
+        closeMobileMenu();
+      }
+    });
   }
 
-  // ✅ Close sidebar after click (mobile UX)
-  document.querySelectorAll(".sidebar-links a").forEach(link => {
-    link.addEventListener("click", () => {
-      const sidebar = document.getElementById("sidebar");
-      if (sidebar) sidebar.classList.remove("open");
+  // Dashboard Mobile Menu Functionality (Mobile Only)
+  const dashboardMobileMenuToggle = document.getElementById('dashboardMobileMenuToggle');
+  const dashboardMobileMenu = document.getElementById('dashboardMobileMenu');
+  const dashboardMobileOverlay = document.getElementById('dashboardMobileOverlay');
+  const dashboardMobileClose = document.getElementById('dashboardMobileClose');
+  
+  if (dashboardMobileMenuToggle && dashboardMobileMenu && dashboardMobileOverlay && dashboardMobileClose) {
+    // Open dashboard mobile menu
+    function openDashboardMobileMenu() {
+      console.log('Opening dashboard mobile menu'); // Debug log
+      dashboardMobileMenuToggle.classList.add('active');
+      dashboardMobileMenu.classList.add('active');
+      dashboardMobileOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      dashboardMobileMenuToggle.setAttribute('aria-expanded', 'true');
+      console.log('Classes added:', dashboardMobileMenu.className); // Debug log
+    }
+    
+    // Close dashboard mobile menu
+    function closeDashboardMobileMenu() {
+      console.log('Closing dashboard mobile menu'); // Debug log
+      dashboardMobileMenuToggle.classList.remove('active');
+      dashboardMobileMenu.classList.remove('active');
+      dashboardMobileOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+      dashboardMobileMenuToggle.setAttribute('aria-expanded', 'false');
+    }
+    
+    // Toggle menu on dashboard menu icon click
+    dashboardMobileMenuToggle.addEventListener('click', function() {
+      console.log('Dashboard menu toggle clicked'); // Debug log
+      if (dashboardMobileMenu.classList.contains('active')) {
+        console.log('Closing dashboard menu'); // Debug log
+        closeDashboardMobileMenu();
+      } else {
+        console.log('Opening dashboard menu'); // Debug log
+        openDashboardMobileMenu();
+      }
     });
+    
+    // Close menu on close button click
+    dashboardMobileClose.addEventListener('click', closeDashboardMobileMenu);
+    
+    // Close menu on overlay click
+    dashboardMobileOverlay.addEventListener('click', closeDashboardMobileMenu);
+    
+    // Close menu on option click
+    const dashboardMobileLinks = dashboardMobileMenu.querySelectorAll('.dashboard-mobile-link');
+    dashboardMobileLinks.forEach(link => {
+      link.addEventListener('click', closeDashboardMobileMenu);
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        closeDashboardMobileMenu();
+      }
+    });
+    
+    // Handle escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && dashboardMobileMenu.classList.contains('active')) {
+        closeDashboardMobileMenu();
+      }
+    });
+  }
+});
+
+// ✅ Protect this page
+const session = requireAuth();
+
+if (session) {
+  document.getElementById("userArea").innerHTML =
+    `<b>User:</b> ${session.name} <br/> <b>Email:</b> ${session.email}`;
+}
+
+// ✅ Close sidebar after click (mobile UX)
+document.querySelectorAll(".sidebar-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    const sidebar = document.getElementById("sidebar");
+    if (sidebar) sidebar.classList.remove("open");
   });
+});
 </script>
 
 </body>

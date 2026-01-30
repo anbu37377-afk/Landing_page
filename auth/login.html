@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,73 +13,74 @@
 
 <body>
 
-<div class="auth-wrap">
-  <div class="card auth-card">
+  <div class="auth-wrap">
+    <div class="card auth-card">
 
-    <div class="row">
-      <a class="brand" href="../index.html">
-        <div class="logo"></div><span>NovaSaaS</span>
-      </a>
-      <a class="btn btn-ghost" href="../index.html">Back to Website</a>
-    </div>
-
-    <h2 style="margin-top:16px;">Login to your SaaS account</h2>
-    <p class="lead">
-      Access your dashboard, manage your account, and track SaaS growth performance.
-    </p>
-
-    <form class="form" onsubmit="handleLogin(event)">
-
-      <!-- ✅ Email (Full width like signup) -->
-      <input class="input" id="email" type="email" placeholder="Business Email" required />
-
-      <!-- ✅ Password (Full width like signup) -->
-      <input class="input" id="password" type="password" placeholder="Password" required />
-
-      <!-- Remember / Forgot -->
-      <div class="row" style="justify-content:space-between; align-items:center; margin-top:2px;">
-        <label style="display:flex; gap:10px; align-items:center;">
-          <input type="checkbox" id="rememberMe" />
-          <span class="small">Remember me</span>
-        </label>
-
-        <a href="#" class="small" style="color:var(--accent); font-weight:900;"
-           onclick="alert('Forgot password demo ✅ (connect backend later)')">
-          Forgot Password?
+      <div style="text-align: center; margin-bottom: 20px;">
+        <a class="brand" href="../index.html"
+          style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+          <div class="brand-logo"></div><span>NovaSaaS</span>
         </a>
       </div>
 
-      <button class="btn btn-primary" type="submit" style="width:100%; justify-content:center;">
-        Login to Dashboard
-      </button>
-
-      <p class="small">
-        Demo login uses LocalStorage auth. (Real OAuth can be added later using Firebase/Auth0.)
+      <h2 style="margin-top:16px;">Login to your SaaS account</h2>
+      <p class="lead">
+        Access your dashboard, manage your account, and track SaaS growth performance.
       </p>
 
-      <!-- Divider -->
-      <div class="divider">
-        <span>OR</span>
-      </div>
+      <form class="form" onsubmit="handleLogin(event)">
 
-      <!-- Social Logins -->
-      <button type="button" class="btn btn-social google" onclick="googleLoginDemo()">
-        <span class="social-icon">G</span> Continue with Google
-      </button>
+        <!-- ✅ Email (Full width like signup) -->
+        <input class="input" id="email" type="email" placeholder="Business Email" required />
 
-      <button type="button" class="btn btn-social facebook" onclick="facebookLoginDemo()">
-        <span class="social-icon">f</span> Continue with Facebook
-      </button>
+        <!-- ✅ Password (Full width like signup) -->
+        <input class="input" id="password" type="password" placeholder="Password" required />
 
-      <p class="small" style="text-align:center; margin-top:10px;">
-        New to NovaSaaS?
-        <a href="./signup.html" style="color:var(--accent); font-weight:900;">Create an account</a>
-      </p>
+        <!-- Remember / Forgot -->
+        <div class="row" style="justify-content:space-between; align-items:center; margin-top:2px;">
+          <label style="display:flex; gap:10px; align-items:center;">
+            <input type="checkbox" id="rememberMe" />
+            <span class="small">Remember me</span>
+          </label>
 
-    </form>
+          <a href="#" class="small" style="color:var(--accent); font-weight:900;"
+            onclick="alert('Forgot password demo ✅ (connect backend later)')">
+            Forgot Password?
+          </a>
+        </div>
 
+        <button class="btn btn-primary" type="submit" style="width:100%; justify-content:center;">
+          Login to Dashboard
+        </button>
+
+        <p class="small">
+          Demo login uses LocalStorage auth. (Real OAuth can be added later using Firebase/Auth0.)
+        </p>
+
+        <!-- Divider -->
+        <div class="divider">
+          <span>OR</span>
+        </div>
+
+        <!-- Social Logins -->
+        <button type="button" class="btn btn-social google" onclick="googleLoginDemo()">
+          <span class="social-icon">G</span> Continue with Google
+        </button>
+
+        <button type="button" class="btn btn-social facebook" onclick="facebookLoginDemo()">
+          <span class="social-icon">f</span> Continue with Facebook
+        </button>
+
+        <p class="small" style="text-align:center; margin-top:10px;">
+          New to NovaSaaS?
+          <a href="./signup.html" style="color:var(--accent); font-weight:900;">Create an account</a>
+        </p>
+
+      </form>
+
+    </div>
   </div>
-</div>
 
 </body>
+
 </html>

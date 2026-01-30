@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,309 +13,488 @@
 
 <body onload="updateNavbarAuth()">
 
-<header class="navbar">
-  <div class="container navbar-inner">
+  <!-- MOBILE-FIRST HEADER -->
+  <header class="site-header">
+    <div class="header-container">
 
-    <a class="brand" href="index.html">
-      <div class="logo"></div><span>NovaSaaS</span>
-    </a>
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
 
-    <button class="btn btn-ghost nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu" aria-expanded="false">
-      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
-        <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
-        <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
-        <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
-      </svg>
-    </button>
+      <!-- Brand Logo (Centered) -->
+      <div class="brand-center">
+        <div class="brand-logo"></div>
+        <span class="brand-name">NovaSaaS</span>
+      </div>
 
-    <nav class="nav-links" id="mobileNav">
-      <a href="index.html">Home 1</a>
-      <a href="home2.html">Home 2</a>
-      <a href="services.html">Services</a>
-      <a href="blog.html">Blog</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link">Home 1</a>
+        <a href="home2.html" class="nav-link">Home 2</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="dashboard/dashboard.html" class="nav-link">Dashboard</a>
+      </nav>
 
-    <div id="navAuthArea" class="nav-links"></div>
+      <!-- Desktop Auth -->
+      <div class="desktop-auth">
+        <button class="btn btn-ghost" onclick="toggleTheme()" aria-label="Toggle theme">
+          <span id="themeIcon">🌙</span>
+        </button>
+        <a href="auth/login.html" class="btn btn-ghost">Login</a>
+        <a href="auth/signup.html" class="btn btn-primary">Sign Up</a>
+      </div>
 
-  </div>
-</header>
-
-
-
-
-
-
-
-
-
-
-<main class="container section">
-
-  <!-- PAGE HEADER -->
-  <div class="page-title">
-    <div>
-      <h2>About NovaSaaS</h2>
-      <p class="lead">
-        NovaSaaS is built for SaaS founders who want to launch faster with a modern landing page,
-        login/signup flow, and dashboard UI experience.
-      </p>
     </div>
-    <div class="tag">✨ Startup Story</div>
-  </div>
 
-  <!-- ABOUT INTRO -->
-  <section class="section" style="padding-top:18px;">
-    <div class="card">
-      <h2>What is NovaSaaS?</h2>
-      <p class="lead">
-        NovaSaaS is a modern SaaS startup landing page + dashboard template.
-        It includes complete modules: Home pages, Services, Blog, About, Contact,
-        plus user signup/login and a protected dashboard.
-      </p>
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <div class="mobile-nav-menu" id="mobileNavMenu">
+      <div class="mobile-nav-header">
+        <div class="mobile-nav-title">Menu</div>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+          <span class="close-line"></span>
+          <span class="close-line"></span>
+        </button>
+      </div>
+
+      <div class="mobile-nav-content">
+        <ul class="mobile-nav-list">
+          <li><a href="index.html" class="mobile-nav-link">Home 1</a></li>
+          <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
+          <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+          <li><a href="service-details.html" class="mobile-nav-link">Service Details</a></li>
+          <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+          <li><a href="blog-details.html" class="mobile-nav-link">Blog Details</a></li>
+          <li><a href="about.html" class="mobile-nav-link active">About</a></li>
+          <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+          <li><a href="dashboard/dashboard.html" class="mobile-nav-link">Dashboard</a></li>
+        </ul>
+
+        <div class="mobile-nav-divider"></div>
+
+        <ul class="mobile-nav-list">
+          <li><a href="auth/login.html" class="mobile-nav-link">Login</a></li>
+          <li><a href="auth/signup.html" class="mobile-nav-link">Sign Up</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+
+
+
+
+  <main class="container section">
+
+    <!-- PAGE HEADER -->
+    <div class="page-title" style="margin-top: 30px;">
+      <div>
+        <h2>About NovaSaaS</h2>
+        <p class="lead">
+          NovaSaaS is built for SaaS founders who want to launch faster with a modern landing page,
+          login/signup flow, and dashboard UI experience.
+        </p>
+      </div>
+      <div class="tag">✨ Startup Story</div>
+    </div>
+
+    <!-- ABOUT INTRO -->
+    <section class="section" style="padding-top: 20px;">
+
+      <!-- Mobile-specific gap styling -->
+      <style>
+        @media (max-width: 768px) {
+          .section {
+            padding-top: 40px !important;
+            margin-top: 10px;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .section {
+            padding-top: 35px !important;
+            margin-top: 8px;
+          }
+        }
+
+        @media (max-width: 425px) {
+          .section {
+            padding-top: 30px !important;
+            margin-top: 5px;
+          }
+        }
+      </style>
+
+      <div class="card">
+        <h2>What is NovaSaaS?</h2>
+        <p class="lead">
+          NovaSaaS is a modern SaaS startup landing page + dashboard template.
+          It includes complete modules: Home pages, Services, Blog, About, Contact,
+          plus user signup/login and a protected dashboard.
+        </p>
+
+        <div class="grid-3">
+          <div class="card feature">
+            <div class="icon-pill">🎯</div>
+            <h3>Mission</h3>
+            <p>
+              Help SaaS founders and startup teams launch professional websites that convert visitors into users.
+            </p>
+          </div>
+
+          <div class="card feature">
+            <div class="icon-pill">💡</div>
+            <h3>Vision</h3>
+            <p>
+              Make SaaS product launches faster and easier — with clean UI, smart pages, and scalable structure.
+            </p>
+          </div>
+
+          <div class="card feature">
+            <div class="icon-pill">🧩</div>
+            <h3>Values</h3>
+            <p>
+              Simplicity, speed, trust, performance, and user-first product thinking.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="section">
+      <div class="hero-grid">
+        <div class="card">
+          <h2>Our Story</h2>
+          <p class="lead">
+            NovaSaaS started because most SaaS founders waste weeks building websites instead of validating products.
+            Many startups fail not because the product is bad — but because they launch late or their landing page
+            doesn’t explain value clearly.
+          </p>
+
+          <p class="lead" style="margin-top:10px;">
+            We built NovaSaaS to give founders a ready-to-launch structure with professional UI modules.
+          </p>
+
+          <ul class="ul">
+            <li>Designed for SaaS MVP launch & startup growth</li>
+            <li>Conversion-focused UI sections + strong CTAs</li>
+            <li>Auth + dashboard included for real SaaS feel</li>
+            <li>Easy to customize branding, colors, content and images</li>
+          </ul>
+
+          <div class="hero-actions" style="text-align: center; justify-content: center;">
+            <a href="services.html" class="btn btn-primary" style="text-align: center; justify-content: center;">Explore
+              Services</a>
+            <a href="auth/signup.html" class="btn btn-ghost" style="text-align: center; justify-content: center;">Start
+              Free Trial</a>
+          </div>
+        </div>
+
+        <div class="card hero-image">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
+            alt="team working">
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE -->
+    <section class="section">
+      <h2>Why founders choose NovaSaaS</h2>
+      <p class="lead">We focus on the key elements that matter most for SaaS success.</p>
 
       <div class="grid-3">
         <div class="card feature">
-          <div class="icon-pill">🎯</div>
-          <h3>Mission</h3>
-          <p>
-            Help SaaS founders and startup teams launch professional websites that convert visitors into users.
-          </p>
+          <div class="icon-pill">⚡</div>
+          <h3>Fast Launch</h3>
+          <p>Launch your SaaS MVP website in minutes — without building everything from scratch.</p>
         </div>
 
         <div class="card feature">
-          <div class="icon-pill">💡</div>
-          <h3>Vision</h3>
-          <p>
-            Make SaaS product launches faster and easier — with clean UI, smart pages, and scalable structure.
-          </p>
+          <div class="icon-pill">✅</div>
+          <h3>Conversion Optimized</h3>
+          <p>Landing sections and CTA layout designed to increase signups and user trust.</p>
         </div>
 
         <div class="card feature">
-          <div class="icon-pill">🧩</div>
-          <h3>Values</h3>
-          <p>
-            Simplicity, speed, trust, performance, and user-first product thinking.
-          </p>
+          <div class="icon-pill">🔒</div>
+          <h3>Real SaaS Feel</h3>
+          <p>Signup/Login + protected dashboard gives the website a true SaaS app experience.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- STORY -->
-  <section class="section">
-    <div class="hero-grid">
+    <!-- PROCESS / TIMELINE -->
+    <section class="section">
       <div class="card">
-        <h2>Our Story</h2>
-        <p class="lead">
-          NovaSaaS started because most SaaS founders waste weeks building websites instead of validating products.
-          Many startups fail not because the product is bad — but because they launch late or their landing page
-          doesn’t explain value clearly.
-        </p>
+        <div style="text-align:center;">
+          <div style="text-align: center;">
+            <h2>How NovaSaaS helps startups</h2>
+            <p class="lead">A simple approach that matches SaaS growth journey.</p>
+          </div>
+          <div class="tag" style="margin-top: 10px;">🚀 Launch System</div>
+        </div>
 
-        <p class="lead" style="margin-top:10px;">
-          We built NovaSaaS to give founders a ready-to-launch structure with professional UI modules.
-        </p>
+        <div class="grid-3" style="margin-top:14px;">
+          <div class="card feature">
+            <div class="icon-pill">1</div>
+            <h3>Launch MVP</h3>
+            <p>Create a landing page + collect leads and signups quickly.</p>
+          </div>
 
-        <ul class="ul">
-          <li>Designed for SaaS MVP launch & startup growth</li>
-          <li>Conversion-focused UI sections + strong CTAs</li>
-          <li>Auth + dashboard included for real SaaS feel</li>
-          <li>Easy to customize branding, colors, content and images</li>
-        </ul>
+          <div class="card feature">
+            <div class="icon-pill">2</div>
+            <h3>Build Trust</h3>
+            <p>Add pricing, blog posts, testimonials and service proof sections.</p>
+          </div>
 
-        <div class="hero-actions">
-          <a href="services.html" class="btn btn-primary">Explore Services</a>
-          <a href="auth/signup.html" class="btn btn-ghost">Start Free Trial</a>
+          <div class="card feature">
+            <div class="icon-pill">3</div>
+            <h3>Scale Growth</h3>
+            <p>Use dashboard + analytics layout to track conversions and optimize performance.</p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="card hero-image">
-        <img
-          src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
-          alt="team working"
-        >
+    <!-- TEAM -->
+    <section class="section">
+      <h2>Our Team</h2>
+      <p class="lead">A small team focused on SaaS design, UI engineering, and growth strategy.</p>
+
+      <div class="grid-3">
+        <div class="card feature">
+          <div class="icon-pill">👨‍💻</div>
+          <h3>Product & UI</h3>
+          <p>We design modern SaaS UI that improves clarity and user experience.</p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon-pill">⚙️</div>
+          <h3>Engineering</h3>
+          <p>Fast responsive modules with optimized performance and clean code structure.</p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon-pill">📈</div>
+          <h3>Growth</h3>
+          <p>Conversion-focused marketing & onboarding strategy for SaaS founders.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- WHY CHOOSE -->
-  <section class="section">
-    <h2>Why founders choose NovaSaaS</h2>
-    <p class="lead">We focus on the key elements that matter most for SaaS success.</p>
+    <!-- METRICS -->
+    <section class="section">
+      <div class="card">
+        <div style="text-align:center;">
+          <div>
+            <h2>Trusted by SaaS builders</h2>
+            <p class="lead">We’re proud to support founders and startup teams worldwide.</p>
+          </div>
+          <div class="tag" style="margin-top: 10px;">📊 Startup Metrics</div>
+        </div>
 
-    <div class="grid-3">
-      <div class="card feature">
-        <div class="icon-pill">⚡</div>
-        <h3>Fast Launch</h3>
-        <p>Launch your SaaS MVP website in minutes — without building everything from scratch.</p>
+        <div class="kpi-grid">
+          <div class="card kpi">
+            <p class="small">Startups Supported</p>
+            <strong>1,200+</strong>
+          </div>
+          <div class="card kpi">
+            <p class="small">Avg. Conversion Boost</p>
+            <strong>+28%</strong>
+          </div>
+          <div class="card kpi">
+            <p class="small">Customer Satisfaction</p>
+            <strong>4.9/5</strong>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="card feature">
-        <div class="icon-pill">✅</div>
-        <h3>Conversion Optimized</h3>
-        <p>Landing sections and CTA layout designed to increase signups and user trust.</p>
-      </div>
-
-      <div class="card feature">
-        <div class="icon-pill">🔒</div>
-        <h3>Real SaaS Feel</h3>
-        <p>Signup/Login + protected dashboard gives the website a true SaaS app experience.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS / TIMELINE -->
-  <section class="section">
-    <div class="card">
-      <div class="row" style="align-items:center;">
+    <!-- CTA -->
+    <section class="section">
+      <div class="card cta">
         <div>
-          <h2>How NovaSaaS helps startups</h2>
-          <p class="lead">A simple approach that matches SaaS growth journey.</p>
+          <h2>Join the next generation of SaaS founders</h2>
+          <p class="lead">Launch faster, look professional, and start growing today.</p>
         </div>
-        <div class="tag">🚀 Launch System</div>
+        <a class="btn btn-accent" href="auth/signup.html">Create Free Account</a>
       </div>
+    </section>
 
-      <div class="grid-3" style="margin-top:14px;">
-        <div class="card feature">
-          <div class="icon-pill">1</div>
-          <h3>Launch MVP</h3>
-          <p>Create a landing page + collect leads and signups quickly.</p>
-        </div>
+  </main>
 
-        <div class="card feature">
-          <div class="icon-pill">2</div>
-          <h3>Build Trust</h3>
-          <p>Add pricing, blog posts, testimonials and service proof sections.</p>
-        </div>
+ <!-- NEW FOOTER -->
+ <footer class="site-footer">
+  <div class="footer-container">
 
-        <div class="card feature">
-          <div class="icon-pill">3</div>
-          <h3>Scale Growth</h3>
-          <p>Use dashboard + analytics layout to track conversions and optimize performance.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TEAM -->
-  <section class="section">
-    <h2>Our Team</h2>
-    <p class="lead">A small team focused on SaaS design, UI engineering, and growth strategy.</p>
-
-    <div class="grid-3">
-      <div class="card feature">
-        <div class="icon-pill">👨‍💻</div>
-        <h3>Product & UI</h3>
-        <p>We design modern SaaS UI that improves clarity and user experience.</p>
-      </div>
-
-      <div class="card feature">
-        <div class="icon-pill">⚙️</div>
-        <h3>Engineering</h3>
-        <p>Fast responsive modules with optimized performance and clean code structure.</p>
-      </div>
-
-      <div class="card feature">
-        <div class="icon-pill">📈</div>
-        <h3>Growth</h3>
-        <p>Conversion-focused marketing & onboarding strategy for SaaS founders.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- METRICS -->
-  <section class="section">
-    <div class="card">
-      <div class="row" style="align-items:center;">
-        <div>
-          <h2>Trusted by SaaS builders</h2>
-          <p class="lead">We’re proud to support founders and startup teams worldwide.</p>
-        </div>
-        <div class="tag">📊 Startup Metrics</div>
-      </div>
-
-      <div class="kpi-grid">
-        <div class="card kpi">
-          <p class="small">Startups Supported</p>
-          <strong>1,200+</strong>
-        </div>
-        <div class="card kpi">
-          <p class="small">Avg. Conversion Boost</p>
-          <strong>+28%</strong>
-        </div>
-        <div class="card kpi">
-          <p class="small">Customer Satisfaction</p>
-          <strong>4.9/5</strong>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section">
-    <div class="card cta">
-      <div>
-        <h2>Join the next generation of SaaS founders</h2>
-        <p class="lead">Launch faster, look professional, and start growing today.</p>
-      </div>
-      <a class="btn btn-accent" href="auth/signup.html">Create Free Account</a>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer-pro">
-  <div class="container footer-grid">
+    <!-- Brand Section -->
     <div class="footer-brand">
-      <div class="brand">
-        <div class="logo"></div>
-        <span>NovaSaaS</span>
+      <div class="footer-brand-info">
+        <div class="brand-logo"></div>
+        <span class="brand-name">NovaSaaS</span>
       </div>
-      <p>
-        A modern SaaS landing page template with authentication, dashboard,
-        blog module, services and premium UI.
+      <p class="footer-description">
+        We help B2B SaaS companies design & build intuitive, high-converting web apps that users love.
+        From MVP to scale, we've got you covered.
       </p>
 
+      <!-- Social Links -->
       <div class="footer-social">
-        <a class="social-btn" href="#" title="Facebook">f</a>
-        <a class="social-btn" href="#" title="Twitter">x</a>
-        <a class="social-btn" href="#" title="Instagram">ig</a>
-        <a class="social-btn" href="#" title="LinkedIn">in</a>
+        <a href="#" class="social-link" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path
+              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+          </svg>
+        </a>
+        <a href="#" class="social-link" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path
+              d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+          </svg>
+        </a>
+        <a href="#" class="social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+        </a>
       </div>
     </div>
 
-    <div class="footer-links">
-      <div class="footer-title">Quick Links</div>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
+    <!-- Footer Links Grid -->
+    <div class="footer-links-grid">
+      <div class="footer-column">
+        <h4 class="footer-title">Quick Links</h4>
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="services.html" class="footer-link">Services</a>
+        <a href="blog.html" class="footer-link">Blog</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+      </div>
+
+      <div class="footer-column">
+        <h4 class="footer-title">Modules</h4>
+        <a href="home2.html" class="footer-link">Home 2</a>
+        <a href="service-details.html" class="footer-link">Service Details</a>
+        <a href="blog-details.html" class="footer-link">Blog Details</a>
+        <a href="dashboard/dashboard.html" class="footer-link">Dashboard</a>
+      </div>
+
+      <div class="footer-column">
+        <h4 class="footer-title">Contact</h4>
+        <a href="mailto:contact@saaslanding.com" class="footer-link">contact@saaslanding.com</a>
+        <a href="tel:+919876543210" class="footer-link">+91 98765 43210</a>
+        <a href="#" class="footer-link">India</a>
+      </div>
     </div>
 
-    <div class="footer-links">
-      <div class="footer-title">Modules</div>
-      <a href="home2.html">Home 2</a>
-      <a href="service-details.html">Service Details</a>
-      <a href="blog-details.html">Blog Details</a>
-      <a href="dashboard/dashboard.html">Dashboard</a>
-    </div>
-
-    <div class="footer-links">
-      <div class="footer-title">Contact</div>
-      <a href="#">support@novasaas.com</a>
-      <a href="#">+91 98765 43210</a>
-      <a href="#">India</a>
-    </div>
   </div>
 
-  <div class="container footer-bottom">
-    <span>© 2026 NovaSaaS. All rights reserved.</span>
-    <span>Premium SaaS Startup Landing Page</span>
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-content">
+      <span>&copy; 2026 NovaSaaS. All rights reserved.</span>
+      <span>Premium B2B SaaS Design & Development</span>
+    </div>
   </div>
 </footer>
 
-</body>
-</html>
+<script>
+  // MOBILE-FIRST HEADER FUNCTIONALITY
+  document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileNavMenu = document.getElementById('mobileNavMenu');
+    const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+    const mobileNavClose = document.getElementById('mobileNavClose');
 
+    if (mobileMenuToggle && mobileNavMenu && mobileNavOverlay && mobileNavClose) {
+      // Open mobile menu
+      function openMobileMenu() {
+        mobileMenuToggle.classList.add('active');
+        mobileNavMenu.classList.add('active');
+        mobileNavOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        mobileMenuToggle.setAttribute('aria-expanded', 'true');
+      }
+
+      // Close mobile menu
+      function closeMobileMenu() {
+        mobileMenuToggle.classList.remove('active');
+        mobileNavMenu.classList.remove('active');
+        mobileNavOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+      }
+
+      // Toggle menu on hamburger click
+      mobileMenuToggle.addEventListener('click', function () {
+        if (mobileNavMenu.classList.contains('active')) {
+          closeMobileMenu();
+        } else {
+          openMobileMenu();
+        }
+      });
+
+      // Close menu on close button click
+      mobileNavClose.addEventListener('click', closeMobileMenu);
+
+      // Close menu on overlay click
+      mobileNavOverlay.addEventListener('click', closeMobileMenu);
+
+      // Close menu on link click
+      const mobileNavLinks = mobileNavMenu.querySelectorAll('.mobile-nav-link');
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
+
+      // Handle window resize
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 768) {
+          closeMobileMenu();
+        }
+      });
+
+      // Handle escape key
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && mobileNavMenu.classList.contains('active')) {
+          closeMobileMenu();
+        }
+      });
+    }
+  });
+
+  // FAQ Accordion Functionality
+  document.addEventListener('DOMContentLoaded', function () {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+
+      if (question) {
+        question.addEventListener('click', function () {
+          // Close other items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+            }
+          });
+
+          // Toggle current item
+          item.classList.toggle('active');
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+
+
+</html>
