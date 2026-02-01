@@ -2415,16 +2415,15 @@ body.light .social-btn {
 /* Dashboard Mobile Menu (Mobile Only) */
 .dashboard-mobile-menu-toggle {
   display: none;
-  position: absolute;
-  top: 50%;
+  position: fixed;
+  top: 15px;
   right: 20px;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
+  background: var(--card);
+  border: 1px solid var(--border);
   cursor: pointer;
   padding: 8px;
   border-radius: 8px;
-  z-index: 1001;
+  z-index: 1005;
 }
 
 .dashboard-mobile-menu-toggle .menu-icon {
@@ -2556,6 +2555,10 @@ body.light .social-btn {
 @media (max-width: 768px) {
   .dashboard-mobile-menu-toggle {
     display: block !important;
+    position: fixed !important;
+    top: 15px !important;
+    right: 20px !important;
+    z-index: 10000 !important;
   }
 
   /* Force proper positioning and visibility on mobile */
@@ -2579,7 +2582,224 @@ body.light .social-btn {
     visibility: hidden !important;
   }
 
+
   .dashboard-mobile-overlay.active {
     visibility: visible !important;
   }
+}
+
+/* ============================================================
+   ✅ MOBILE & TABLET FIX: LOGIN/SIGNUP OVERLAP ISSUE
+   Fixes the issue where logo overlaps the heading text on mobile.
+   Desktop view remains unchanged.
+   ============================================================ */
+@media (max-width: 991px) {
+  .auth-card .brand {
+    position: relative !important;
+    left: auto !important;
+    transform: none !important;
+    display: inline-flex !important;
+    margin: 0 auto !important;
+  }
+
+  /* Ensure the heading has enough space from the logo area */
+  .auth-card h2 {
+    margin-top: 24px !important;
+    padding-top: 10px;
+    clear: both;
+  }
+
+  /* Center alignment for the brand container in auth card */
+  .auth-card>div:first-child {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px !important;
+  }
+}
+
+/* ============================================================
+   ✅ MOBILE & TABLET FIX: HEADER LOGO AND HAMBURGER ALIGNMENT
+   Aligns logo to the LEFT and hamburger menu to the RIGHT.
+   Applies only to mobile and tablet breakpoints (up to 991px).
+   ============================================================ */
+@media (max-width: 991px) {
+  .site-header .header-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    position: relative !important;
+  }
+
+  /* Website Logo to the LEFT side */
+  .site-header .brand-center {
+    position: static !important;
+    transform: none !important;
+    order: 1 !important;
+    flex: none !important;
+    margin: 0 !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Hamburger Menu to the RIGHT corner */
+  .site-header .mobile-menu-toggle {
+    display: flex !important;
+    order: 2 !important;
+    margin-left: auto !important;
+  }
+
+  /* Ensure desktop elements are hidden on tablets too */
+  .site-header .desktop-nav,
+  .site-header .desktop-auth {
+    display: none !important;
+  }
+}
+
+/* ============================================================
+   ✅ MOBILE & TABLET FIX: SUB-PAGE TOP SPACING
+   Ensures Services, Blog, Contact etc. start below the header.
+   Applies only to mobile and tablet breakpoints (up to 991px).
+   ============================================================ */
+@media (max-width: 991px) {
+  .sub-page-fix {
+    margin-top: 80px !important;
+    /* Clears 70px fixed header */
+    padding-top: 20px !important;
+    min-height: calc(100vh - 80px);
+    /* Ensures full page height */
+  }
+
+  .sub-page-fix .page-title {
+    margin-bottom: 25px;
+  }
+}
+
+/* ============================================================
+   ✅ DASHBOARD MOBILE HEADER FIX (Image 2 Match)
+   Implements: Hamburger (Left), Logo (Center), Three-dot (Right)
+   Applies ONLY to Dashboard page on Mobile (< 991px).
+   ============================================================ */
+@media (max-width: 991px) {
+  .dashboard-header {
+    display: block !important;
+    background: var(--card) !important;
+    border-bottom: 1px solid var(--border) !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    height: 70px !important;
+  }
+
+  .dashboard-header .header-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    height: 100% !important;
+    padding: 0 20px !important;
+    position: relative !important;
+  }
+
+  /* Hamburger Menu (Left) */
+  .dashboard-header .mobile-menu-toggle {
+    display: flex !important;
+    position: static !important;
+    order: 1 !important;
+    margin: 0 !important;
+    flex: 0 0 auto !important;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  /* Brand Logo & Name (Center) */
+  .dashboard-header .brand-center {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    order: 2 !important;
+  }
+
+  /* Three-dot Toggle (Right) */
+  .dashboard-header .dashboard-mobile-menu-toggle {
+    display: flex !important;
+    position: static !important;
+    order: 3 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 8px !important;
+    flex: 0 0 auto !important;
+    box-shadow: none !important;
+  }
+
+  .dashboard-header .dashboard-mobile-menu-toggle .menu-icon {
+    font-size: 24px !important;
+    color: var(--text) !important;
+  }
+
+  /* Dashboard Content Spacing on Mobile */
+  .dashboard-layout {
+    margin-top: 80px !important;
+  }
+}
+
+/* Hide Dashboard Header on Desktop/Tablet Large */
+@media (min-width: 992px) {
+  .dashboard-header {
+    display: none !important;
+  }
+
+  .dashboard-layout {
+    margin-top: 0 !important;
+  }
+}
+
+/* ============================================================
+   ✅ FOOTER BRAND ALIGNMENT FIX
+   Ensures logo/name are left-aligned on desktop, centered on mobile.
+   ============================================================ */
+.footer-brand-info {
+  display: flex !important;
+  align-items: center !important;
+  gap: 15px !important;
+  flex-wrap: nowrap !important;
+}
+
+@media (min-width: 768px) {
+  .footer-brand {
+    text-align: left !important;
+  }
+
+  .footer-brand-info {
+    justify-content: flex-start !important;
+  }
+
+  .footer-description {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  .footer-social {
+    justify-content: flex-start !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-brand-info {
+    justify-content: center !important;
+  }
+}
+
+/* ============================================================
+    BLOG \u0026 SERVICE CONTENT BOX FIX
+   ============================================================ */
+.detail-layout .content {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }

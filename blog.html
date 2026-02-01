@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,424 +15,431 @@
 
 
 
-<!-- MOBILE-FIRST HEADER -->
-<header class="site-header">
-  <div class="header-container">
-    
-    <!-- Mobile Menu Toggle -->
-    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-    </button>
+  <!-- MOBILE-FIRST HEADER -->
+  <header class="site-header">
+    <div class="header-container">
 
-    <!-- Brand Logo (Centered) -->
-    <div class="brand-center">
-      <div class="brand-logo"></div>
-      <span class="brand-name">NovaSaaS</span>
-    </div>
-
-    <!-- Desktop Navigation -->
-    <nav class="desktop-nav">
-      <a href="index.html" class="nav-link">Home 1</a>
-      <a href="home2.html" class="nav-link">Home 2</a>
-      <a href="services.html" class="nav-link">Services</a>
-      <a href="blog.html" class="nav-link active">Blog</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-      <a href="dashboard/dashboard.html" class="nav-link">Dashboard</a>
-    </nav>
-
-    <!-- Desktop Auth -->
-    <div class="desktop-auth">
-      <button class="btn btn-ghost" onclick="toggleTheme()" aria-label="Toggle theme">
-        <span id="themeIcon">🌙</span>
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
-      <a href="auth/login.html" class="btn btn-ghost">Login</a>
-      <a href="auth/signup.html" class="btn btn-primary">Sign Up</a>
-    </div>
 
-  </div>
-
-  <!-- Mobile Navigation Menu -->
-  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
-  <div class="mobile-nav-menu" id="mobileNavMenu">
-    <div class="mobile-nav-header">
-      <div class="mobile-nav-title">Menu</div>
-      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
-        <span class="close-line"></span>
-        <span class="close-line"></span>
-      </button>
-    </div>
-    
-    <div class="mobile-nav-content">
-      <ul class="mobile-nav-list">
-        <li><a href="index.html" class="mobile-nav-link">Home 1</a></li>
-        <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
-        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
-        <li><a href="service-details.html" class="mobile-nav-link">Service Details</a></li>
-        <li><a href="blog.html" class="mobile-nav-link active">Blog</a></li>
-        <li><a href="blog-details.html" class="mobile-nav-link">Blog Details</a></li>
-        <li><a href="about.html" class="mobile-nav-link">About</a></li>
-        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
-        <li><a href="dashboard/dashboard.html" class="mobile-nav-link">Dashboard</a></li>
-      </ul>
-      
-      <div class="mobile-nav-divider"></div>
-      
-      <ul class="mobile-nav-list">
-        <li><a href="auth/login.html" class="mobile-nav-link">Login</a></li>
-        <li><a href="auth/signup.html" class="mobile-nav-link">Sign Up</a></li>
-      </ul>
-    </div>
-  </div>
-</header>
-
-
-
-
-<main class="container section" style="margin-top: 40px;">
-
-  <!-- BLOG HEADER -->
-  <div class="page-title">
-    <div>
-      <h2>SaaS Startup Blog</h2>
-      <p class="lead">
-        Learn SaaS growth strategies, MVP launch tips, user onboarding, pricing models, and product marketing.
-      </p>
-    </div>
-    <div class="tag">📝 SaaS Knowledge Hub</div>
-  </div>
-
-  <!-- BLOG CATEGORIES -->
-  <div class="badges" style="margin-top:14px;">
-    <div class="badge">🚀 SaaS Launch</div>
-    <div class="badge">📈 Growth</div>
-    <div class="badge">💳 Pricing</div>
-    <div class="badge">🧠 Product</div>
-    <div class="badge">🔍 SEO</div>
-    <div class="badge">📊 Analytics</div>
-  </div>
-
-  <!-- POSTS GRID -->
-  <div class="posts" style="margin-top:16px;">
-
-    <div class="card post" style="display:flex; flex-direction:column;">
-      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="blog image">
-      <h3>How to Validate Your SaaS MVP</h3>
-      <p style="flex:1;">
-        Validate your SaaS idea using a landing page, waitlist, and customer interviews before building.
-      </p>
-      <div class="hero-actions" style="margin-top:auto;">
-        <a class="btn btn-primary" href="blog-details.html">Read More</a>
-      </div>
-    </div>
-
-    <div class="card post" style="display:flex; flex-direction:column;">
-      <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80" alt="blog image">
-      <h3>Landing Page Copy That Converts</h3>
-      <p style="flex:1;">
-        Learn how to write a SaaS headline, value proposition, and CTA that increases signup conversions.
-      </p>
-      <div class="hero-actions" style="margin-top:auto;">
-        <a class="btn btn-primary" href="blog-details.html">Read More</a>
-      </div>
-    </div>
-
-    <div class="card post" style="display:flex; flex-direction:column;">
-      <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80" alt="blog image">
-      <h3>SaaS Pricing Models That Work</h3>
-      <p style="flex:1;">
-        Freemium vs trial vs tiered pricing — choose the best SaaS pricing strategy to grow revenue.
-      </p>
-      <div class="hero-actions" style="margin-top:auto;">
-        <a class="btn btn-primary" href="blog-details.html">Read More</a>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- FEATURED ARTICLE -->
-  <section class="section">
-    <div class="hero-grid">
-
-      <div class="card">
-        <div class="tag">🔥 Featured Article</div>
-
-        <h2 style="margin-top:12px;">User Onboarding Checklist for SaaS Startups</h2>
-        <p class="lead">
-          The first 5 minutes decide if a user stays or leaves.
-          Learn how top SaaS companies onboard users and boost retention.
-        </p>
-
-        <ul class="ul">
-          <li>Clear first-step onboarding screen</li>
-          <li>Deliver “aha moment” quickly</li>
-          <li>Simple UI walkthrough + tooltip flow</li>
-          <li>Email follow-up + support call-to-action</li>
-        </ul>
-
-        <div class="hero-actions">
-          <a class="btn btn-accent" href="blog-details.html">Read Featured Post</a>
-          <a class="btn btn-ghost" href="services.html">Improve Your SaaS</a>
-        </div>
-      </div>
-
-      <div class="card hero-image">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80" alt="SaaS onboarding">
-      </div>
-
-    </div>
-  </section>
-
-  <!-- LATEST POSTS + SIDEBAR STYLE -->
-  <section class="section">
-    <div class="detail-layout blog-detail">
-
-      <!-- LEFT -->
-      <div class="card content">
-        <h2>Latest articles for founders</h2>
-        <p class="lead">
-          Growth tips, onboarding strategies, pricing experiments, and MVP launch guides written for SaaS teams.
-        </p>
-
-        <div class="grid-3" style="margin-top:14px;">
-          <div class="card feature">
-            <div class="icon-pill">📌</div>
-            <h3>MVP Launch</h3>
-            <p>How to build and launch quickly without wasting budget.</p>
-          </div>
-
-          <div class="card feature">
-            <div class="icon-pill">📈</div>
-            <h3>Growth Playbook</h3>
-            <p>Conversion + onboarding + retention systems to scale your SaaS.</p>
-          </div>
-
-          <div class="card feature">
-            <div class="icon-pill">💰</div>
-            <h3>Pricing & Revenue</h3>
-            <p>Pick the best SaaS model and increase upgrades using pricing tiers.</p>
-          </div>
-        </div>
-
-        <div style="margin-top:16px;" class="card">
-          <h3>Want to publish your SaaS blog like this?</h3>
-          <p class="lead">Use our blog module + details page structure for SEO growth.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="services.html">Explore Services</a>
-            <a class="btn btn-ghost" href="contact.html">Talk to Team</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT SIDEBAR -->
-      <aside class="card sidebar-box">
-        <h3>Quick Links</h3>
-
-        <a class="sidebar-link" href="blog-details.html">✅ Landing Page Copy That Converts</a>
-        <a class="sidebar-link" href="blog-details.html">✅ Validate SaaS MVP in 7 Days</a>
-        <a class="sidebar-link" href="blog-details.html">✅ Pricing Models That Work</a>
-        <a class="sidebar-link" href="blog-details.html">✅ SaaS Onboarding Checklist</a>
-
-        <div style="margin-top:14px;">
-          <h3>Popular Services</h3>
-          <a class="sidebar-link" href="service-details.html">⭐ SaaS Website + Dashboard</a>
-          <a class="sidebar-link" href="service-details.html">⭐ UI/UX Design</a>
-          <a class="sidebar-link" href="service-details.html">⭐ SEO + SaaS Growth</a>
-        </div>
-
-        <div style="margin-top:14px; text-align: center;">
-          <a class="btn btn-accent" style="width:100%; text-align: center; justify-content: center;" href="auth/signup.html">Start Free Trial</a>
-        </div>
-      </aside>
-
-    </div>
-  </section>
-
-  <!-- NEWSLETTER -->
-  <section class="section">
-    <div class="card cta">
-      <div>
-        <h2>Get weekly SaaS growth tips</h2>
-        <p class="lead">Join the newsletter and receive marketing + product insights every week.</p>
-      </div>
-
-      <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content: center;">
-        <input class="input" style="min-width:240px; flex: 1; max-width: 300px;" placeholder="Enter your email" />
-        <button class="btn btn-accent" style="text-align: center; justify-content: center;" onclick="alert('Subscribed ✅ (Demo)')">Subscribe</button>
-      </div>
-    </div>
-
-    <p class="small" style="margin-top:10px;">
-      Newsletter is demo. You can connect real email subscription later.
-    </p>
-  </section>
-
-</main>
-
-<!-- NEW FOOTER -->
-<footer class="site-footer">
-  <div class="footer-container">
-
-    <!-- Brand Section -->
-    <div class="footer-brand">
-      <div class="footer-brand-info">
+      <!-- Brand Logo (Centered) -->
+      <div class="brand-center">
         <div class="brand-logo"></div>
         <span class="brand-name">NovaSaaS</span>
       </div>
-      <p class="footer-description">
-        We help B2B SaaS companies design & build intuitive, high-converting web apps that users love.
-        From MVP to scale, we've got you covered.
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link">Home 1</a>
+        <a href="home2.html" class="nav-link">Home 2</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="dashboard/dashboard.html" class="nav-link">Dashboard</a>
+      </nav>
+
+      <!-- Desktop Auth -->
+      <div class="desktop-auth">
+        <button class="btn btn-ghost" onclick="toggleTheme()" aria-label="Toggle theme">
+          <span id="themeIcon">🌙</span>
+        </button>
+        <a href="auth/login.html" class="btn btn-ghost">Login</a>
+        <a href="auth/signup.html" class="btn btn-primary">Sign Up</a>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <div class="mobile-nav-menu" id="mobileNavMenu">
+      <div class="mobile-nav-header">
+        <div class="mobile-nav-title">Menu</div>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+          <span class="close-line"></span>
+          <span class="close-line"></span>
+        </button>
+      </div>
+
+      <div class="mobile-nav-content">
+        <ul class="mobile-nav-list">
+          <li><a href="index.html" class="mobile-nav-link">Home 1</a></li>
+          <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
+          <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+          <li><a href="blog.html" class="mobile-nav-link active">Blog</a></li>
+          <li><a href="about.html" class="mobile-nav-link">About</a></li>
+          <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+          <li><a href="dashboard/dashboard.html" class="mobile-nav-link">Dashboard</a></li>
+        </ul>
+
+        <div class="mobile-nav-divider"></div>
+
+        <ul class="mobile-nav-list">
+          <li><a href="auth/login.html" class="mobile-nav-link">Login</a></li>
+          <li><a href="auth/signup.html" class="mobile-nav-link">Sign Up</a></li>
+          <li><button class="mobile-nav-link" onclick="toggleTheme()"
+              style="width: 100%; text-align: left; background: none; border: none; cursor: pointer;">🌓 Toggle
+              Mode</button></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+
+
+  <main class="container section sub-page-fix" style="margin-top: 40px;">
+
+    <!-- BLOG HEADER -->
+    <div class="page-title">
+      <div>
+        <h2>SaaS Startup Blog</h2>
+        <p class="lead">
+          Learn SaaS growth strategies, MVP launch tips, user onboarding, pricing models, and product marketing.
+        </p>
+      </div>
+      <div class="tag">📝 SaaS Knowledge Hub</div>
+    </div>
+
+    <!-- BLOG CATEGORIES -->
+    <div class="badges" style="margin-top:14px;">
+      <div class="badge">🚀 SaaS Launch</div>
+      <div class="badge">📈 Growth</div>
+      <div class="badge">💳 Pricing</div>
+      <div class="badge">🧠 Product</div>
+      <div class="badge">🔍 SEO</div>
+      <div class="badge">📊 Analytics</div>
+    </div>
+
+    <!-- POSTS GRID -->
+    <div class="posts" style="margin-top:16px;">
+
+      <div class="card post" style="display:flex; flex-direction:column;">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
+          alt="blog image">
+        <h3>How to Validate Your SaaS MVP</h3>
+        <p style="flex:1;">
+          Validate your SaaS idea using a landing page, waitlist, and customer interviews before building.
+        </p>
+        <div class="hero-actions" style="margin-top:auto;">
+          <a class="btn btn-primary" href="blog-details.html">Read More</a>
+        </div>
+      </div>
+
+      <div class="card post" style="display:flex; flex-direction:column;">
+        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80"
+          alt="blog image">
+        <h3>Landing Page Copy That Converts</h3>
+        <p style="flex:1;">
+          Learn how to write a SaaS headline, value proposition, and CTA that increases signup conversions.
+        </p>
+        <div class="hero-actions" style="margin-top:auto;">
+          <a class="btn btn-primary" href="blog-details.html">Read More</a>
+        </div>
+      </div>
+
+      <div class="card post" style="display:flex; flex-direction:column;">
+        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80"
+          alt="blog image">
+        <h3>SaaS Pricing Models That Work</h3>
+        <p style="flex:1;">
+          Freemium vs trial vs tiered pricing — choose the best SaaS pricing strategy to grow revenue.
+        </p>
+        <div class="hero-actions" style="margin-top:auto;">
+          <a class="btn btn-primary" href="blog-details.html">Read More</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FEATURED ARTICLE -->
+    <section class="section">
+      <div class="hero-grid">
+
+        <div class="card">
+          <div class="tag">🔥 Featured Article</div>
+
+          <h2 style="margin-top:12px;">User Onboarding Checklist for SaaS Startups</h2>
+          <p class="lead">
+            The first 5 minutes decide if a user stays or leaves.
+            Learn how top SaaS companies onboard users and boost retention.
+          </p>
+
+          <ul class="ul">
+            <li>Clear first-step onboarding screen</li>
+            <li>Deliver “aha moment” quickly</li>
+            <li>Simple UI walkthrough + tooltip flow</li>
+            <li>Email follow-up + support call-to-action</li>
+          </ul>
+
+          <div class="hero-actions">
+            <a class="btn btn-accent" href="blog-details.html">Read Featured Post</a>
+            <a class="btn btn-ghost" href="services.html">Improve Your SaaS</a>
+          </div>
+        </div>
+
+        <div class="card hero-image">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80"
+            alt="SaaS onboarding">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LATEST POSTS + SIDEBAR STYLE -->
+    <section class="section">
+      <div class="detail-layout blog-detail">
+
+        <!-- LEFT -->
+        <div class="card content">
+          <h2>Latest articles for founders</h2>
+          <p class="lead">
+            Growth tips, onboarding strategies, pricing experiments, and MVP launch guides written for SaaS teams.
+          </p>
+
+          <div class="grid-3" style="margin-top:14px;">
+            <div class="card feature">
+              <div class="icon-pill">📌</div>
+              <h3>MVP Launch</h3>
+              <p>How to build and launch quickly without wasting budget.</p>
+            </div>
+
+            <div class="card feature">
+              <div class="icon-pill">📈</div>
+              <h3>Growth Playbook</h3>
+              <p>Conversion + onboarding + retention systems to scale your SaaS.</p>
+            </div>
+
+            <div class="card feature">
+              <div class="icon-pill">💰</div>
+              <h3>Pricing & Revenue</h3>
+              <p>Pick the best SaaS model and increase upgrades using pricing tiers.</p>
+            </div>
+          </div>
+
+          <div style="margin-top:16px;" class="card">
+            <h3>Want to publish your SaaS blog like this?</h3>
+            <p class="lead">Use our blog module + details page structure for SEO growth.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="services.html">Explore Services</a>
+              <a class="btn btn-ghost" href="contact.html">Talk to Team</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="card sidebar-box">
+          <h3>Quick Links</h3>
+
+          <a class="sidebar-link" href="blog-details.html">✅ Landing Page Copy That Converts</a>
+          <a class="sidebar-link" href="blog-details.html">✅ Validate SaaS MVP in 7 Days</a>
+          <a class="sidebar-link" href="blog-details.html">✅ Pricing Models That Work</a>
+          <a class="sidebar-link" href="blog-details.html">✅ SaaS Onboarding Checklist</a>
+
+          <div style="margin-top:14px;">
+            <h3>Popular Services</h3>
+            <a class="sidebar-link" href="service-details.html">⭐ SaaS Website + Dashboard</a>
+            <a class="sidebar-link" href="service-details.html">⭐ UI/UX Design</a>
+            <a class="sidebar-link" href="service-details.html">⭐ SEO + SaaS Growth</a>
+          </div>
+
+          <div style="margin-top:14px; text-align: center;">
+            <a class="btn btn-accent" style="width:100%; text-align: center; justify-content: center;"
+              href="auth/signup.html">Start Free Trial</a>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="section">
+      <div class="card cta">
+        <div>
+          <h2>Get weekly SaaS growth tips</h2>
+          <p class="lead">Join the newsletter and receive marketing + product insights every week.</p>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content: center;">
+          <input class="input" style="min-width:240px; flex: 1; max-width: 300px;" placeholder="Enter your email" />
+          <button class="btn btn-accent" style="text-align: center; justify-content: center;"
+            onclick="alert('Subscribed ✅ (Demo)')">Subscribe</button>
+        </div>
+      </div>
+
+      <p class="small" style="margin-top:10px;">
+        Newsletter is demo. You can connect real email subscription later.
       </p>
+    </section>
 
-      <!-- Social Links -->
-      <div class="footer-social">
-        <a href="#" class="social-link" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-            <path
-              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-          </svg>
-        </a>
-        <a href="#" class="social-link" aria-label="Twitter">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-            <path
-              d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-          </svg>
-        </a>
-        <a href="#" class="social-link" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-            <path
-              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-          </svg>
-        </a>
+  </main>
+
+  <!-- NEW FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+
+      <!-- Brand Section -->
+      <div class="footer-brand">
+        <div class="footer-brand-info">
+          <div class="brand-logo"></div>
+          <span class="brand-name">NovaSaaS</span>
+        </div>
+        <p class="footer-description">
+          We help B2B SaaS companies design & build intuitive, high-converting web apps that users love.
+          From MVP to scale, we've got you covered.
+        </p>
+
+        <!-- Social Links -->
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path
+                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+        </div>
       </div>
+
+      <!-- Footer Links Grid -->
+      <div class="footer-links-grid">
+        <div class="footer-column">
+          <h4 class="footer-title">Quick Links</h4>
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="services.html" class="footer-link">Services</a>
+          <a href="blog.html" class="footer-link">Blog</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Modules</h4>
+          <a href="home2.html" class="footer-link">Home 2</a>
+          <a href="service-details.html" class="footer-link">Service Details</a>
+          <a href="blog-details.html" class="footer-link">Blog Details</a>
+          <a href="dashboard/dashboard.html" class="footer-link">Dashboard</a>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Contact</h4>
+          <a href="mailto:contact@saaslanding.com" class="footer-link">contact@saaslanding.com</a>
+          <a href="tel:+919876543210" class="footer-link">+91 98765 43210</a>
+          <a href="#" class="footer-link">India</a>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Footer Links Grid -->
-    <div class="footer-links-grid">
-      <div class="footer-column">
-        <h4 class="footer-title">Quick Links</h4>
-        <a href="index.html" class="footer-link">Home</a>
-        <a href="services.html" class="footer-link">Services</a>
-        <a href="blog.html" class="footer-link">Blog</a>
-        <a href="contact.html" class="footer-link">Contact</a>
-      </div>
-
-      <div class="footer-column">
-        <h4 class="footer-title">Modules</h4>
-        <a href="home2.html" class="footer-link">Home 2</a>
-        <a href="service-details.html" class="footer-link">Service Details</a>
-        <a href="blog-details.html" class="footer-link">Blog Details</a>
-        <a href="dashboard/dashboard.html" class="footer-link">Dashboard</a>
-      </div>
-
-      <div class="footer-column">
-        <h4 class="footer-title">Contact</h4>
-        <a href="mailto:contact@saaslanding.com" class="footer-link">contact@saaslanding.com</a>
-        <a href="tel:+919876543210" class="footer-link">+91 98765 43210</a>
-        <a href="#" class="footer-link">India</a>
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <span>&copy; 2026 NovaSaaS. All rights reserved.</span>
+        <span>Premium B2B SaaS Design & Development</span>
       </div>
     </div>
+  </footer>
 
-  </div>
+  <script>
+    // MOBILE-FIRST HEADER FUNCTIONALITY
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const mobileNavMenu = document.getElementById('mobileNavMenu');
+      const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+      const mobileNavClose = document.getElementById('mobileNavClose');
 
-  <!-- Footer Bottom -->
-  <div class="footer-bottom">
-    <div class="footer-bottom-content">
-      <span>&copy; 2026 NovaSaaS. All rights reserved.</span>
-      <span>Premium B2B SaaS Design & Development</span>
-    </div>
-  </div>
-</footer>
-
-<script>
-  // MOBILE-FIRST HEADER FUNCTIONALITY
-  document.addEventListener('DOMContentLoaded', function () {
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const mobileNavMenu = document.getElementById('mobileNavMenu');
-    const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-    const mobileNavClose = document.getElementById('mobileNavClose');
-
-    if (mobileMenuToggle && mobileNavMenu && mobileNavOverlay && mobileNavClose) {
-      // Open mobile menu
-      function openMobileMenu() {
-        mobileMenuToggle.classList.add('active');
-        mobileNavMenu.classList.add('active');
-        mobileNavOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        mobileMenuToggle.setAttribute('aria-expanded', 'true');
-      }
-
-      // Close mobile menu
-      function closeMobileMenu() {
-        mobileMenuToggle.classList.remove('active');
-        mobileNavMenu.classList.remove('active');
-        mobileNavOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-        mobileMenuToggle.setAttribute('aria-expanded', 'false');
-      }
-
-      // Toggle menu on hamburger click
-      mobileMenuToggle.addEventListener('click', function () {
-        if (mobileNavMenu.classList.contains('active')) {
-          closeMobileMenu();
-        } else {
-          openMobileMenu();
+      if (mobileMenuToggle && mobileNavMenu && mobileNavOverlay && mobileNavClose) {
+        // Open mobile menu
+        function openMobileMenu() {
+          mobileMenuToggle.classList.add('active');
+          mobileNavMenu.classList.add('active');
+          mobileNavOverlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          mobileMenuToggle.setAttribute('aria-expanded', 'true');
         }
-      });
 
-      // Close menu on close button click
-      mobileNavClose.addEventListener('click', closeMobileMenu);
-
-      // Close menu on overlay click
-      mobileNavOverlay.addEventListener('click', closeMobileMenu);
-
-      // Close menu on link click
-      const mobileNavLinks = mobileNavMenu.querySelectorAll('.mobile-nav-link');
-      mobileNavLinks.forEach(link => {
-        link.addEventListener('click', closeMobileMenu);
-      });
-
-      // Handle window resize
-      window.addEventListener('resize', function () {
-        if (window.innerWidth > 768) {
-          closeMobileMenu();
+        // Close mobile menu
+        function closeMobileMenu() {
+          mobileMenuToggle.classList.remove('active');
+          mobileNavMenu.classList.remove('active');
+          mobileNavOverlay.classList.remove('active');
+          document.body.style.overflow = '';
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
         }
-      });
 
-      // Handle escape key
-      document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape' && mobileNavMenu.classList.contains('active')) {
-          closeMobileMenu();
-        }
-      });
-    }
-  });
+        // Toggle menu on hamburger click
+        mobileMenuToggle.addEventListener('click', function () {
+          if (mobileNavMenu.classList.contains('active')) {
+            closeMobileMenu();
+          } else {
+            openMobileMenu();
+          }
+        });
 
-  // FAQ Accordion Functionality
-  document.addEventListener('DOMContentLoaded', function () {
-    const faqItems = document.querySelectorAll('.faq-item');
+        // Close menu on close button click
+        mobileNavClose.addEventListener('click', closeMobileMenu);
 
-    faqItems.forEach(item => {
-      const question = item.querySelector('.faq-question');
+        // Close menu on overlay click
+        mobileNavOverlay.addEventListener('click', closeMobileMenu);
 
-      if (question) {
-        question.addEventListener('click', function () {
-          // Close other items
-          faqItems.forEach(otherItem => {
-            if (otherItem !== item) {
-              otherItem.classList.remove('active');
-            }
-          });
+        // Close menu on link click
+        const mobileNavLinks = mobileNavMenu.querySelectorAll('.mobile-nav-link');
+        mobileNavLinks.forEach(link => {
+          link.addEventListener('click', closeMobileMenu);
+        });
 
-          // Toggle current item
-          item.classList.toggle('active');
+        // Handle window resize
+        window.addEventListener('resize', function () {
+          if (window.innerWidth > 768) {
+            closeMobileMenu();
+          }
+        });
+
+        // Handle escape key
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape' && mobileNavMenu.classList.contains('active')) {
+            closeMobileMenu();
+          }
         });
       }
     });
-  });
-</script>
+
+    // FAQ Accordion Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+
+        if (question) {
+          question.addEventListener('click', function () {
+            // Close other items
+            faqItems.forEach(otherItem => {
+              if (otherItem !== item) {
+                otherItem.classList.remove('active');
+              }
+            });
+
+            // Toggle current item
+            item.classList.toggle('active');
+          });
+        }
+      });
+    });
+  </script>
 
 </body>
 

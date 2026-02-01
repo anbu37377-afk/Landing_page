@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,198 +13,193 @@
 
 <body onload="updateNavbarAuth(); initFAQ();">
 
-<!-- MOBILE-FIRST HEADER -->
-<header class="site-header">
-  <div class="header-container">
-    
-    <!-- Mobile Menu Toggle -->
-    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-    </button>
+  <!-- MOBILE-FIRST HEADER -->
+  <header class="site-header">
+    <div class="header-container">
 
-    <!-- Brand Logo (Centered) -->
-    <div class="brand-center">
-      <div class="brand-logo"></div>
-      <span class="brand-name">NovaSaaS</span>
-    </div>
-
-    <!-- Desktop Navigation -->
-    <nav class="desktop-nav">
-      <a href="index.html" class="nav-link">Home 1</a>
-      <a href="home2.html" class="nav-link">Home 2</a>
-      <a href="services.html" class="nav-link">Services</a>
-      <a href="blog.html" class="nav-link">Blog</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-      <a href="dashboard/dashboard.html" class="nav-link">Dashboard</a>
-    </nav>
-
-    <!-- Desktop Auth -->
-    <div class="desktop-auth">
-      <button class="btn btn-ghost" onclick="toggleTheme()" aria-label="Toggle theme">
-        <span id="themeIcon">🌙</span>
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
-      <a href="auth/login.html" class="btn btn-ghost">Login</a>
-      <a href="auth/signup.html" class="btn btn-primary">Sign Up</a>
+
+      <!-- Brand Logo (Centered) -->
+      <div class="brand-center">
+        <div class="brand-logo"></div>
+        <span class="brand-name">NovaSaaS</span>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link">Home 1</a>
+        <a href="home2.html" class="nav-link">Home 2</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="dashboard/dashboard.html" class="nav-link">Dashboard</a>
+      </nav>
+
+      <!-- Desktop Auth -->
+      <div class="desktop-auth">
+        <button class="btn btn-ghost" onclick="toggleTheme()" aria-label="Toggle theme">
+          <span id="themeIcon">🌙</span>
+        </button>
+        <a href="auth/login.html" class="btn btn-ghost">Login</a>
+        <a href="auth/signup.html" class="btn btn-primary">Sign Up</a>
+      </div>
+
     </div>
 
-  </div>
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <div class="mobile-nav-menu" id="mobileNavMenu">
+      <div class="mobile-nav-header">
+        <div class="mobile-nav-title">Menu</div>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+          <span class="close-line"></span>
+          <span class="close-line"></span>
+        </button>
+      </div>
 
-  <!-- Mobile Navigation Menu -->
-  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
-  <div class="mobile-nav-menu" id="mobileNavMenu">
-    <div class="mobile-nav-header">
-      <div class="mobile-nav-title">Menu</div>
-      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
-        <span class="close-line"></span>
-        <span class="close-line"></span>
-      </button>
-    </div>
-    
-    <div class="mobile-nav-content">
-      <ul class="mobile-nav-list">
-        <li><a href="index.html" class="mobile-nav-link">Home 1</a></li>
-        <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
-        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
-        <li><a href="service-details.html" class="mobile-nav-link active">Service Details</a></li>
-        <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
-        <li><a href="blog-details.html" class="mobile-nav-link">Blog Details</a></li>
-        <li><a href="about.html" class="mobile-nav-link">About</a></li>
-        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
-        <li><a href="dashboard/dashboard.html" class="mobile-nav-link">Dashboard</a></li>
-      </ul>
-      
-      <div class="mobile-nav-divider"></div>
-      
-      <ul class="mobile-nav-list">
-        <li><a href="auth/login.html" class="mobile-nav-link">Login</a></li>
-        <li><a href="auth/signup.html" class="mobile-nav-link">Sign Up</a></li>
-      </ul>
-    </div>
-  </div>
-</header>
-
-<main class="container section" style="margin-top: 40px;">
-
-  <!-- PAGE TITLE -->
-  <div class="page-title">
-    <div>
-      <h2>Service Details</h2>
-      <p class="lead">
-        Startup-ready service breakdown with pricing, roadmap, deliverables & FAQs.
-      </p>
-    </div>
-    <a class="btn btn-ghost" href="services.html">← Back to Services</a>
-  </div>
-
-  <div class="detail-layout">
-
-    <!-- LEFT CONTENT -->
-    <div class="card detail-hero">
-
-      <img
-        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80"
-        alt="service"
-      />
-
-      <div style="padding:16px;">
-
-        <!-- INTRO -->
-        <h2 style="margin-bottom:8px;">SaaS Website + Dashboard Development</h2>
-        <p class="lead">
-          We build modern SaaS startup landing pages with authentication, dashboard UI,
-          and conversion-focused design. Perfect for MVP launch, waitlist pages,
-          or full SaaS product websites.
-        </p>
-
-        <ul class="ul">
-          <li>High-converting landing pages (Home 1 + Home 2 sections)</li>
-          <li>Services, blog, about, contact modules included</li>
-          <li>User signup/login + protected SaaS dashboard experience</li>
-          <li>Fast performance, responsive design, 2-color SaaS theme</li>
+      <div class="mobile-nav-content">
+        <ul class="mobile-nav-list">
+          <li><a href="index.html" class="mobile-nav-link">Home 1</a></li>
+          <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
+          <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+          <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+          <li><a href="about.html" class="mobile-nav-link">About</a></li>
+          <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+          <li><a href="dashboard/dashboard.html" class="mobile-nav-link">Dashboard</a></li>
         </ul>
 
-        <!-- PRICING -->
-        <section class="pricing">
-          <h2>Pricing Plans</h2>
+        <div class="mobile-nav-divider"></div>
 
-          <div class="price-grid">
-            <div class="card price-card">
-              <div class="tag">Starter</div>
-              <h3>MVP Launch</h3>
-              <div class="price">$49 <small>/ one-time</small></div>
-              <ul>
-                <li>Landing page setup</li>
-                <li>Responsive SaaS theme</li>
-                <li>Contact module</li>
-                <li>Basic sections + structure</li>
-              </ul>
-              <div class="hero-actions">
-                <a class="btn btn-primary" href="contact.html">Choose Plan</a>
-              </div>
-            </div>
+        <ul class="mobile-nav-list">
+          <li><a href="auth/login.html" class="mobile-nav-link">Login</a></li>
+          <li><a href="auth/signup.html" class="mobile-nav-link">Sign Up</a></li>
+          <li><button class="mobile-nav-link" onclick="toggleTheme()"
+              style="width: 100%; text-align: left; background: none; border: none; cursor: pointer;">🌓 Toggle
+              Mode</button></li>
+        </ul>
+      </div>
+    </div>
+  </header>
 
-            <div class="card price-card best">
-              <div class="tag">⭐ Popular</div>
-              <h3>Startup Growth</h3>
-              <div class="price">$99 <small>/ one-time</small></div>
-              <ul>
-                <li>Everything in MVP Launch</li>
-                <li>Signup/Login system</li>
-                <li>Dashboard module</li>
-                <li>Services + Blog </li>
-              </ul>
-              <div class="hero-actions">
-                <a class="btn btn-accent" href="contact.html">Choose Plan</a>
-              </div>
-            </div>
+  <main class="container section sub-page-fix" style="margin-top: 40px;">
 
-            <div class="card price-card">
-              <div class="tag">Pro</div>
-              <h3>SaaS Scale</h3>
-              <div class="price">$199 <small>/ one-time</small></div>
-              <ul>
-                <li>Full website modules</li>
-                <li>Service + Blog details pages</li>
-                <li>FAQ + pricing structure</li>
-                
-              </ul>
-              <div class="hero-actions">
-                <a class="btn btn-primary" href="contact.html">Choose Plan</a>
-              </div>
-            </div>
-          </div>
-        </section>
+    <!-- PAGE TITLE -->
+    <div class="page-title">
+      <div>
+        <h2>Service Details</h2>
+        <p class="lead">
+          Startup-ready service breakdown with pricing, roadmap, deliverables & FAQs.
+        </p>
+      </div>
+      <a class="btn btn-ghost" href="services.html">← Back to Services</a>
+    </div>
 
-        <!-- DELIVERABLES -->
-        <section class="pricing">
-          <h2>What You Will Get</h2>
-          <p class="lead">Clear deliverables for SaaS startup success.</p>
+    <div class="detail-layout">
 
-          <div class="grid-3" style="margin-top:14px;">
-            <div class="card feature">
-              <div class="icon-pill">✅</div>
-              <h3>Full SaaS Website</h3>
-              <p>Complete SaaS website modules with startup-ready content and modern UI.</p>
-            </div>
+      <!-- LEFT CONTENT -->
+      <div class="card detail-hero">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80"
+          alt="service" />
+        <div style="padding:16px;">
+          <h2 style="margin-bottom:8px;">SaaS Website + Dashboard Development</h2>
+          <p class="lead">
+            We build modern SaaS startup landing pages with authentication, dashboard UI,
+            and conversion-focused design. Perfect for MVP launch, waitlist pages,
+            or full SaaS product websites.
+          </p>
+          <ul class="ul">
+            <li>High-converting landing pages (Home 1 + Home 2 sections)</li>
+            <li>Services, blog, about, contact modules included</li>
+            <li>User signup/login + protected SaaS dashboard experience</li>
+            <li>Fast performance, responsive design, 2-color SaaS theme</li>
+          </ul>
+        </div>
+      </div>
 
-            <div class="card feature">
-              <div class="icon-pill">🔒</div>
-              <h3>Auth + Dashboard</h3>
-              <p>Signup/login pages + protected dashboard module (real SaaS feel).</p>
-            </div>
-
-            <div class="card feature">
-              <div class="icon-pill">🚀</div>
-              <h3>Launch Ready</h3>
-              <p>Clean code structure + fast performance so you can deploy quickly.</p>
+      <!-- PRICING CARD -->
+      <div class="card" style="margin-top: 20px;">
+        <h2 style="margin-bottom:20px;">Pricing Plans</h2>
+        <div class="price-grid">
+          <div class="card price-card">
+            <div class="tag">Starter</div>
+            <h3>MVP Launch</h3>
+            <div class="price">$49 <small>/ one-time</small></div>
+            <ul class="ul" style="text-align: left; margin-bottom: 20px;">
+              <li>Landing page setup</li>
+              <li>Responsive SaaS theme</li>
+              <li>Contact module</li>
+              <li>Basic sections + structure</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="contact.html">Choose Plan</a>
             </div>
           </div>
-        </section>
 
-        <!-- TIMELINE -->
+          <div class="card price-card best">
+            <div class="tag">⭐ Popular</div>
+            <h3>Startup Growth</h3>
+            <div class="price">$99 <small>/ one-time</small></div>
+            <ul class="ul" style="text-align: left; margin-bottom: 20px;">
+              <li>Everything in MVP Launch</li>
+              <li>Signup/Login system</li>
+              <li>Dashboard module</li>
+              <li>Services + Blog </li>
+            </ul>
+            <div class="hero-actions">
+              <a class="btn btn-accent" href="contact.html">Choose Plan</a>
+            </div>
+          </div>
+
+          <div class="card price-card">
+            <div class="tag">Pro</div>
+            <h3>SaaS Scale</h3>
+            <div class="price">$199 <small>/ one-time</small></div>
+            <ul class="ul" style="text-align: left; margin-bottom: 20px;">
+              <li>Full website modules</li>
+              <li>Service + Blog details pages</li>
+              <li>FAQ + pricing structure</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="contact.html">Choose Plan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DELIVERABLES -->
+      <section class="pricing">
+        <h2>What You Will Get</h2>
+        <p class="lead">Clear deliverables for SaaS startup success.</p>
+
+        <div class="grid-3" style="margin-top:14px;">
+          <div class="card feature">
+            <div class="icon-pill">✅</div>
+            <h3>Full SaaS Website</h3>
+            <p>Complete SaaS website modules with startup-ready content and modern UI.</p>
+          </div>
+
+          <div class="card feature">
+            <div class="icon-pill">🔒</div>
+            <h3>Auth + Dashboard</h3>
+            <p>Signup/login pages + protected dashboard module (real SaaS feel).</p>
+          </div>
+
+          <div class="card feature">
+            <div class="icon-pill">🚀</div>
+            <h3>Launch Ready</h3>
+            <p>Clean code structure + fast performance so you can deploy quickly.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TIMELINE -->
+      <div class="card" style="margin-top:20px;">
         <section class="pricing">
           <h2>Project Timeline</h2>
           <p class="lead">Step-by-step delivery plan for founders & startup teams.</p>
@@ -228,102 +224,105 @@
             </div>
           </div>
         </section>
+      </div>
 
-        <!-- CASE STUDY -->
-        <section class="pricing">
-          <h2>Startup Results (Example)</h2>
-          <p class="lead">What happens after founders launch with this setup.</p>
+      <!-- CASE STUDY -->
+      <section class="pricing">
+        <h2>Startup Results (Example)</h2>
+        <p class="lead">What happens after founders launch with this setup.</p>
 
-          <div class="kpi-grid">
-            <div class="card kpi">
-              <p class="small">Signup Conversion</p>
-              <strong>+28%</strong>
-            </div>
-            <div class="card kpi">
-              <p class="small">MVP Launch Speed</p>
-              <strong>2 Days</strong>
-            </div>
-            <div class="card kpi">
-              <p class="small">Customer Trust</p>
-              <strong>4.9/5</strong>
-            </div>
+        <div class="kpi-grid">
+          <div class="card kpi">
+            <p class="small">Signup Conversion</p>
+            <strong>+28%</strong>
           </div>
-
-          <p class="small" style="margin-top:12px;">
-            Example: A founder launched a waitlist using NovaSaaS modules and got 300+ signups in the first week.
-          </p>
-        </section>
-
-        <!-- TECH STACK -->
-        <section class="pricing">
-          <h2>Technology Stack</h2>
-          <p class="lead">Frontend-based SaaS UI. Easy to extend with real backend.</p>
-
-          <div class="badges" style="margin-top:14px;">
-            <div class="badge">HTML5</div>
-            <div class="badge">CSS3</div>
-            <div class="badge">JavaScript</div>
-            <div class="badge">LocalStorage Auth</div>
-            <div class="badge">Firebase/Auth0 (Optional)</div>
-            <div class="badge">Stripe Payments (Optional)</div>
+          <div class="card kpi">
+            <p class="small">MVP Launch Speed</p>
+            <strong>2 Days</strong>
           </div>
-
-          <p class="small" style="margin-top:10px;">
-            Current version is frontend demo. Real OAuth and payments can be integrated later.
-          </p>
-        </section>
-
-        <!-- FAQ -->
-        <section class="pricing">
-          <h2>Frequently Asked Questions</h2>
-
-          <div class="faq">
-            <div class="card faq-item">
-              <div class="faq-q">
-                <span>Is this good for SaaS MVP launch?</span>
-                <span>▾</span>
-              </div>
-              <div class="faq-a">
-                Yes ✅ This website structure is built specifically for SaaS MVPs — landing + auth + dashboard.
-              </div>
-            </div>
-
-            <div class="card faq-item">
-              <div class="faq-q">
-                <span>Can I customize branding and colors?</span>
-                <span>▾</span>
-              </div>
-              <div class="faq-a">
-                Absolutely ✅ You can update logo, name, colors, text, and sections from HTML/CSS easily.
-              </div>
-            </div>
-
-            <div class="card faq-item">
-              <div class="faq-q">
-                <span>Can this support real Google/Facebook login?</span>
-                <span>▾</span>
-              </div>
-              <div class="faq-a">
-                Yes — integrate Firebase/Auth0 OAuth. Current setup is demo login using LocalStorage.
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- FINAL CTA -->
-        <div class="card cta" style="margin-top:16px;">
-          <div>
-            <h2>Launch your SaaS with a professional setup</h2>
-            <p class="lead">Get landing + dashboard experience and start growing today.</p>
-          </div>
-
-          <div class="hero-actions" style="text-align: center; justify-content: center;">
-            <a class="btn btn-accent" style="text-align: center; justify-content: center;" href="auth/signup.html">Start Free Trial</a>
-            <a class="btn btn-ghost" style="text-align: center; justify-content: center;" href="contact.html">Talk to Sales</a>
+          <div class="card kpi">
+            <p class="small">Customer Trust</p>
+            <strong>4.9/5</strong>
           </div>
         </div>
 
+        <p class="small" style="margin-top:12px;">
+          Example: A founder launched a waitlist using NovaSaaS modules and got 300+ signups in the first week.
+        </p>
+      </section>
+
+      <!-- TECH STACK -->
+      <section class="pricing">
+        <h2>Technology Stack</h2>
+        <p class="lead">Frontend-based SaaS UI. Easy to extend with real backend.</p>
+
+        <div class="badges" style="margin-top:14px;">
+          <div class="badge">HTML5</div>
+          <div class="badge">CSS3</div>
+          <div class="badge">JavaScript</div>
+          <div class="badge">LocalStorage Auth</div>
+          <div class="badge">Firebase/Auth0 (Optional)</div>
+          <div class="badge">Stripe Payments (Optional)</div>
+        </div>
+
+        <p class="small" style="margin-top:10px;">
+          Current version is frontend demo. Real OAuth and payments can be integrated later.
+        </p>
+      </section>
+
+      <!-- FAQ -->
+      <section class="pricing">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq">
+          <div class="card faq-item">
+            <div class="faq-q">
+              <span>Is this good for SaaS MVP launch?</span>
+              <span>▾</span>
+            </div>
+            <div class="faq-a">
+              Yes ✅ This website structure is built specifically for SaaS MVPs — landing + auth + dashboard.
+            </div>
+          </div>
+
+          <div class="card faq-item">
+            <div class="faq-q">
+              <span>Can I customize branding and colors?</span>
+              <span>▾</span>
+            </div>
+            <div class="faq-a">
+              Absolutely ✅ You can update logo, name, colors, text, and sections from HTML/CSS easily.
+            </div>
+          </div>
+
+          <div class="card faq-item">
+            <div class="faq-q">
+              <span>Can this support real Google/Facebook login?</span>
+              <span>▾</span>
+            </div>
+            <div class="faq-a">
+              Yes — integrate Firebase/Auth0 OAuth. Current setup is demo login using LocalStorage.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <div class="card cta" style="margin-top:16px;">
+        <div>
+          <h2>Launch your SaaS with a professional setup</h2>
+          <p class="lead">Get landing + dashboard experience and start growing today.</p>
+        </div>
+
+        <div class="hero-actions" style="text-align: center; justify-content: center;">
+          <a class="btn btn-accent" style="text-align: center; justify-content: center;" href="auth/signup.html">Start
+            Free Trial</a>
+          <a class="btn btn-ghost" style="text-align: center; justify-content: center;" href="contact.html">Talk to
+            Sales</a>
+        </div>
       </div>
+
+    </div>
     </div>
 
     <!-- RIGHT SIDEBAR -->
@@ -337,181 +336,183 @@
       <a class="sidebar-link" href="contact.html">✅ Support & Contact</a>
 
       <div style="margin-top:14px; text-align: center;">
-        <a class="btn btn-accent" style="width:100%; text-align: center; justify-content: center;" href="contact.html">Request a Custom Plan</a>
+        <a class="btn btn-accent" style="width:100%; text-align: center; justify-content: center;"
+          href="contact.html">Request a Custom Plan</a>
       </div>
 
       <div style="margin-top:14px; text-align: center;">
         <h3 style="text-align: center;">Need Help Choosing?</h3>
         <p class="lead" style="text-align: center;">Talk with our team and pick the best plan for your SaaS stage.</p>
-        <a class="btn btn-primary" style="width:100%; text-align: center; justify-content: center;" href="contact.html">Contact Sales</a>
+        <a class="btn btn-primary" style="width:100%; text-align: center; justify-content: center;"
+          href="contact.html">Contact Sales</a>
       </div>
     </aside>
-  </div>
-
-</main>
-
-<!-- NEW FOOTER -->
-<footer class="site-footer">
-  <div class="footer-container">
-
-    <!-- Brand Section -->
-    <div class="footer-brand">
-      <div class="footer-brand-info">
-        <div class="brand-logo"></div>
-        <span class="brand-name">NovaSaaS</span>
-      </div>
-      <p class="footer-description">
-        We help B2B SaaS companies design & build intuitive, high-converting web apps that users love.
-        From MVP to scale, we've got you covered.
-      </p>
-
-      <!-- Social Links -->
-      <div class="footer-social">
-        <a href="#" class="social-link" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-            <path
-              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-          </svg>
-        </a>
-        <a href="#" class="social-link" aria-label="Twitter">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-            <path
-              d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-          </svg>
-        </a>
-        <a href="#" class="social-link" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-            <path
-              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-          </svg>
-        </a>
-      </div>
     </div>
 
-    <!-- Footer Links Grid -->
-    <div class="footer-links-grid">
-      <div class="footer-column">
-        <h4 class="footer-title">Quick Links</h4>
-        <a href="index.html" class="footer-link">Home</a>
-        <a href="services.html" class="footer-link">Services</a>
-        <a href="blog.html" class="footer-link">Blog</a>
-        <a href="contact.html" class="footer-link">Contact</a>
+  </main>
+
+  <!-- NEW FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+
+      <!-- Brand Section -->
+      <div class="footer-brand">
+        <div class="footer-brand-info">
+          <div class="brand-logo"></div>
+          <span class="brand-name">NovaSaaS</span>
+        </div>
+        <p class="footer-description">
+          We help B2B SaaS companies design & build intuitive, high-converting web apps that users love.
+          From MVP to scale, we've got you covered.
+        </p>
+
+        <!-- Social Links -->
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path
+                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+        </div>
       </div>
 
-      <div class="footer-column">
-        <h4 class="footer-title">Modules</h4>
-        <a href="home2.html" class="footer-link">Home 2</a>
-        <a href="service-details.html" class="footer-link">Service Details</a>
-        <a href="blog-details.html" class="footer-link">Blog Details</a>
-        <a href="dashboard/dashboard.html" class="footer-link">Dashboard</a>
+      <!-- Footer Links Grid -->
+      <div class="footer-links-grid">
+        <div class="footer-column">
+          <h4 class="footer-title">Quick Links</h4>
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="services.html" class="footer-link">Services</a>
+          <a href="blog.html" class="footer-link">Blog</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Modules</h4>
+          <a href="home2.html" class="footer-link">Home 2</a>
+          <a href="service-details.html" class="footer-link">Service Details</a>
+          <a href="blog-details.html" class="footer-link">Blog Details</a>
+          <a href="dashboard/dashboard.html" class="footer-link">Dashboard</a>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Contact</h4>
+          <a href="mailto:contact@saaslanding.com" class="footer-link">contact@saaslanding.com</a>
+          <a href="tel:+919876543210" class="footer-link">+91 98765 43210</a>
+          <a href="#" class="footer-link">India</a>
+        </div>
       </div>
 
-      <div class="footer-column">
-        <h4 class="footer-title">Contact</h4>
-        <a href="mailto:contact@saaslanding.com" class="footer-link">contact@saaslanding.com</a>
-        <a href="tel:+919876543210" class="footer-link">+91 98765 43210</a>
-        <a href="#" class="footer-link">India</a>
-      </div>
     </div>
 
-  </div>
-
-  <!-- Footer Bottom -->
-  <div class="footer-bottom">
-    <div class="footer-bottom-content">
-      <span>&copy; 2026 NovaSaaS. All rights reserved.</span>
-      <span>Premium B2B SaaS Design & Development</span>
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <span>&copy; 2026 NovaSaaS. All rights reserved.</span>
+        <span>Premium B2B SaaS Design & Development</span>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-  // MOBILE-FIRST HEADER FUNCTIONALITY
-  document.addEventListener('DOMContentLoaded', function () {
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const mobileNavMenu = document.getElementById('mobileNavMenu');
-    const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-    const mobileNavClose = document.getElementById('mobileNavClose');
+  <script>
+    // MOBILE-FIRST HEADER FUNCTIONALITY
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const mobileNavMenu = document.getElementById('mobileNavMenu');
+      const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+      const mobileNavClose = document.getElementById('mobileNavClose');
 
-    if (mobileMenuToggle && mobileNavMenu && mobileNavOverlay && mobileNavClose) {
-      // Open mobile menu
-      function openMobileMenu() {
-        mobileMenuToggle.classList.add('active');
-        mobileNavMenu.classList.add('active');
-        mobileNavOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        mobileMenuToggle.setAttribute('aria-expanded', 'true');
-      }
-
-      // Close mobile menu
-      function closeMobileMenu() {
-        mobileMenuToggle.classList.remove('active');
-        mobileNavMenu.classList.remove('active');
-        mobileNavOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-        mobileMenuToggle.setAttribute('aria-expanded', 'false');
-      }
-
-      // Toggle menu on hamburger click
-      mobileMenuToggle.addEventListener('click', function () {
-        if (mobileNavMenu.classList.contains('active')) {
-          closeMobileMenu();
-        } else {
-          openMobileMenu();
+      if (mobileMenuToggle && mobileNavMenu && mobileNavOverlay && mobileNavClose) {
+        // Open mobile menu
+        function openMobileMenu() {
+          mobileMenuToggle.classList.add('active');
+          mobileNavMenu.classList.add('active');
+          mobileNavOverlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          mobileMenuToggle.setAttribute('aria-expanded', 'true');
         }
-      });
 
-      // Close menu on close button click
-      mobileNavClose.addEventListener('click', closeMobileMenu);
-
-      // Close menu on overlay click
-      mobileNavOverlay.addEventListener('click', closeMobileMenu);
-
-      // Close menu on link click
-      const mobileNavLinks = mobileNavMenu.querySelectorAll('.mobile-nav-link');
-      mobileNavLinks.forEach(link => {
-        link.addEventListener('click', closeMobileMenu);
-      });
-
-      // Handle window resize
-      window.addEventListener('resize', function () {
-        if (window.innerWidth > 768) {
-          closeMobileMenu();
+        // Close mobile menu
+        function closeMobileMenu() {
+          mobileMenuToggle.classList.remove('active');
+          mobileNavMenu.classList.remove('active');
+          mobileNavOverlay.classList.remove('active');
+          document.body.style.overflow = '';
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
         }
-      });
 
-      // Handle escape key
-      document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape' && mobileNavMenu.classList.contains('active')) {
-          closeMobileMenu();
-        }
-      });
-    }
-  });
+        // Toggle menu on hamburger click
+        mobileMenuToggle.addEventListener('click', function () {
+          if (mobileNavMenu.classList.contains('active')) {
+            closeMobileMenu();
+          } else {
+            openMobileMenu();
+          }
+        });
 
-  // FAQ Accordion Functionality
-  document.addEventListener('DOMContentLoaded', function () {
-    const faqItems = document.querySelectorAll('.faq-item');
+        // Close menu on close button click
+        mobileNavClose.addEventListener('click', closeMobileMenu);
 
-    faqItems.forEach(item => {
-      const question = item.querySelector('.faq-question');
+        // Close menu on overlay click
+        mobileNavOverlay.addEventListener('click', closeMobileMenu);
 
-      if (question) {
-        question.addEventListener('click', function () {
-          // Close other items
-          faqItems.forEach(otherItem => {
-            if (otherItem !== item) {
-              otherItem.classList.remove('active');
-            }
-          });
+        // Close menu on link click
+        const mobileNavLinks = mobileNavMenu.querySelectorAll('.mobile-nav-link');
+        mobileNavLinks.forEach(link => {
+          link.addEventListener('click', closeMobileMenu);
+        });
 
-          // Toggle current item
-          item.classList.toggle('active');
+        // Handle window resize
+        window.addEventListener('resize', function () {
+          if (window.innerWidth > 768) {
+            closeMobileMenu();
+          }
+        });
+
+        // Handle escape key
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape' && mobileNavMenu.classList.contains('active')) {
+            closeMobileMenu();
+          }
         });
       }
     });
-  });
-</script>
+
+    // FAQ Accordion Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+
+        if (question) {
+          question.addEventListener('click', function () {
+            // Close other items
+            faqItems.forEach(otherItem => {
+              if (otherItem !== item) {
+                otherItem.classList.remove('active');
+              }
+            });
+
+            // Toggle current item
+            item.classList.toggle('active');
+          });
+        }
+      });
+    });
+  </script>
 
 </body>
 
