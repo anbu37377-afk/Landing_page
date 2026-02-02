@@ -954,7 +954,7 @@ body.light .input::placeholder {
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 10px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -1031,6 +1031,8 @@ body.light .input::placeholder {
   display: none;
   gap: 24px;
   align-items: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
 }
 
 .desktop-nav .nav-link {
@@ -1040,6 +1042,7 @@ body.light .input::placeholder {
   padding: 8px 16px;
   border-radius: 8px;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .desktop-nav .nav-link:hover {
@@ -1198,7 +1201,8 @@ body.light .input::placeholder {
     transform: none;
     order: 2;
     flex: 1;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-left: 5px;
   }
 
   .desktop-nav,
@@ -2802,4 +2806,55 @@ body.light .social-btn {
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
+}
+
+/* ============================================================
+    PROJECT TIMELINE DESKTOP FIX
+    Reduces padding and sizes for a more compact desktop view.
+   ============================================================ */
+@media (min-width: 1024px) {
+  .timeline-container {
+    padding: 15px !important;
+  }
+
+  .timeline-container h2 {
+    font-size: 22px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .timeline-container .lead {
+    font-size: 14px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .timeline-container .feature {
+    padding: 10px !important;
+    min-height: auto !important;
+  }
+
+  .timeline-container .icon-pill {
+    width: 50px !important;
+    height: 24px !important;
+    font-size: 10px !important;
+    border-radius: 4px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .timeline-container .feature h3 {
+    font-size: 14px !important;
+    margin-top: 2px !important;
+  }
+
+  .timeline-container .feature p {
+    font-size: 13px !important;
+    margin-top: 4px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Compact grid and stop stretching to tallest item */
+  .timeline-container .grid-3 {
+    gap: 10px !important;
+    margin-top: 10px !important;
+    align-items: start !important;
+  }
 }
