@@ -574,6 +574,13 @@ body.light .input::placeholder {
   align-items: start;
 }
 
+/* Align blog sidebar with article cards */
+@media (min-width: 992px) {
+  .sidebar-offset-fix {
+    margin-top: 110px;
+  }
+}
+
 .detail-hero img {
   width: 100%;
   height: auto;
@@ -1917,7 +1924,7 @@ body.light .social-btn {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 18px;
   color: var(--text);
   text-decoration: none;
@@ -1926,7 +1933,7 @@ body.light .social-btn {
 .new-header .brand .logo {
   width: 36px;
   height: 36px;
-  border-radius: 12px;
+  border-radius: 10px;
   background: linear-gradient(135deg, var(--primary), var(--accent));
   box-shadow: 0 16px 40px rgba(37, 99, 235, 0.35);
 }
@@ -2108,7 +2115,7 @@ body.light .social-btn {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 18px;
   color: var(--text);
   text-decoration: none;
@@ -2117,7 +2124,7 @@ body.light .social-btn {
 .main-header .brand .logo {
   width: 36px;
   height: 36px;
-  border-radius: 12px;
+  border-radius: 10px;
   background: linear-gradient(135deg, var(--primary), var(--accent));
   box-shadow: 0 16px 40px rgba(37, 99, 235, 0.35);
 }
@@ -2654,6 +2661,15 @@ body.light .social-btn {
   .site-header .desktop-nav,
   .site-header .desktop-auth {
     display: none !important;
+  }
+
+  /* Allow mobile/tablet menu to show when active in this range */
+  .mobile-nav-menu.active {
+    display: flex !important;
+  }
+
+  .mobile-nav-overlay.active {
+    display: block !important;
   }
 }
 
